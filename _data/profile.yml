@@ -286,7 +286,6 @@ projects:
 
   - title: "TESTING2"
     redirect_folder: "project2"
-    title: "TESTING"
     description: "This is project test 2's description"
     icon: "icon.png"
     draft: false
@@ -303,7 +302,7 @@ projects:
     redirect_folder: "project4"
     description: "This is project test 4's description"
     icon: "icon.png"
-    draft: true
+    draft: false
     date: 2021-10-10 08:10:10 -04:00
 
   - title: "TESTING5"
