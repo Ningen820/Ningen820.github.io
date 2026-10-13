@@ -4,7 +4,7 @@ summary: "Reconstruct post-compromise activity from KAPE-collected Windows regis
 image: "/assets/images/writeups/baggage.png" # optional path, e.g. 
 image_alt: ""
 category: "DFIR"
-difficulty: 0
+difficulty: "Hard"
 platform: "HTB"
 os: "Windows"
 reading_time: 10
