@@ -7,7 +7,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
 <section class="hero-section" id="top">
   <div class="hero-grid section-wrap">
     <div class="hero-copy">
-      <p class="hero-status"><span class="status-dot"></span><span>//</span> {% if p.open_to_opportunities %}Open to opportunities{% else %}Cybersecurity portfolio{% endif %}</p>
+      <p class="hero-status"><span class="status-dot"></span><span>//</span>{{p.status}}</p>
       <h1 class="hero-title">{{ p.name | escape }}</h1>
       <p class="hero-role">{{ p.hero_specialty | escape }}</p>
       <p class="hero-summary">{{ p.summary | escape }}</p>
@@ -32,12 +32,11 @@ description: Offensive security, vulnerability research, digital forensics, and 
     </div>
   </div>
   <div class="stats-bar section-wrap" aria-label="Career highlights">
-    <div class="stat-item"><strong>{{ stats.writeups.size | escape }}</strong><span>Writeups Published</span></div>
-    <div class="stat-item"><strong>{{ p.stats.achievements | escape }}</strong><span>Total Achievements</span></div>
+    <div class="stat-item"><strong>{{ site.writeups.size | escape }}</strong><span>Writeups Published</span></div>
+    <div class="stat-item"><strong>{{ p.achievements.size | escape }}</strong><span>Total Achievements</span></div>
     <div class="stat-item"><strong>{{ p.stats.years_experience | escape }}</strong><span>Years Experience</span></div>
-    <div class="stat-item"><strong>{{ p.stats.certifications | escape }}</strong><span>Certifications</span></div>
+    <div class="stat-item"><strong>{{ p.certifications.size | escape }}</strong><span>Certificates</span></div>
   </div>
-  <a class="scroll-cue" href="#about"><span></span> SCROLL TO EXPLORE</a>
 </section>
 
 <section class="content-section section-wrap" id="about">
@@ -57,19 +56,18 @@ description: Offensive security, vulnerability research, digital forensics, and 
     <div class="about-copy">
       <p class="section-kicker"><span>//</span> about</p><h3>{{ p.about.heading | escape }}</h3>
       {% for paragraph in p.about.paragraphs %}<p>{{ paragraph | escape }}</p>{% endfor %}
-      <div class="tag-cloud">{% assign skill_entries = p.skills | sort %}{% for skill_entry in skill_entries %}{% assign skill = skill_entry[1] %}{% if forloop.index <= 3 %}<span class="tag-pill">{{ skill.title | escape }}</span>{% endif %}{% endfor %}<span class="tag-pill">Digital Forensics</span><span class="tag-pill">Secure Code Review</span></div>
+      <div class="tag-cloud">{% assign skill_entries = p.skills | sort %}{% for skill_entry in skill_entries %}{% assign skill = skill_entry[1] %}{% if forloop.index <= 5 %}<span class="tag-pill">{{ skill.title | escape }}</span>{% endif %}{% endfor %}</div>
     </div>
   </div>
 </section>
 
 <section class="content-section section-wrap section-tinted" id="experience">
-  <div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> FIELD EXPERIENCE</p><h2>Where I <span class="accent">work</span></h2><p class="section-intro">Practical security work across product environments, consulting, and research.</p></div>
+  <div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> FIELD EXPERIENCE</p><h2>Previos <span class="accent">Experiences</span></h2></div>
   <div class="experience-list">
     {% for item in p.experience %}
     <article class="experience-row spotlight">
       <div class="experience-index">0{{ forloop.index }}</div>
-      <div class="experience-main"><p class="experience-type">{{ item.type | escape }}</p><h3>{{ item.role | escape }}</h3><p>{{ item.description | escape }}</p></div>
-      <div class="experience-company">{{ item.company | escape }} <span aria-hidden="true">↗</span></div>
+      <div class="experience-main"><p class="experience-type">{{ item.role | escape }}</p><h3>{{ item.company | escape }}</h3><p>{{ item.description | escape }}</p></div>
     </article>
     {% endfor %}
   </div>
@@ -89,7 +87,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
 </section>
 
 <section class="content-section section-wrap section-tinted" id="projects">
-  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> BUILT &amp; TESTED</p><h2>Selected <span class="accent">projects</span></h2><p class="section-intro">Discovered from the repository’s <code>projects/</code> directory. Add a folder and README to extend this list.</p></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">↗</span></a></div>
+  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> BUILT &amp; TESTED</p><h2>Latest <span class="accent">projects</span></h2></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">↗</span></a></div>
   <div class="project-grid project-grid-home" data-projects-root data-project-mode="home" data-repo="{{ site.repository | escape }}">
     <div class="loading-state"><span class="loader-dot"></span> Discovering project folders…</div>
   </div>
@@ -104,15 +102,15 @@ description: Offensive security, vulnerability research, digital forensics, and 
     {% for writeup in home_writeups limit: home_writeup_limit %}
     <a class="writeup-card spotlight" href="{{ writeup.url | relative_url }}">
       <div class="writeup-card-top"><span class="section-kicker"><span>//</span> {{ writeup.category | default: "Writeup" | upcase | escape }}</span><span class="difficulty-chip difficulty-{{ writeup.difficulty | default: 'unrated' | slugify }}">{{ writeup.difficulty | default: "Unrated" | escape }}</span></div>
-      <h3>{% if writeup.image != blank %}<img class="writeup-card-thumb" src="{{ writeup.image | relative_url }}" alt="" loading="lazy">{% endif %}<span>{{ writeup.title | escape }}</span></h3><p>{{ writeup.summary | default: "A practical cybersecurity walkthrough." | escape }}</p>
-      <div class="writeup-card-foot"><span>{% assign wt = writeup.reading_time | plus: 0 %}{% if wt > 0 %}{{ wt }} min read{% else %}Field notes{% endif %}</span><span class="text-link">Read writeup <span aria-hidden="true">↗</span></span></div>
+      <h3>{% if writeup.image != blank %}<img class="writeup-card-thumb" src="{{ writeup.image | relative_url }}" alt="" loading="lazy">{% endif %}<span>{{ writeup.title | escape }}</span></h3><p>{{ writeup.summary | default: "Writeup Walkthrough" | escape }}</p>
+      <div class="writeup-card-foot"><span>{% assign wt = writeup.reading_time | plus: 0 %}{% if wt > 0 %}{{ wt }} min read{% else %}Field notes{% endif %}</span><span>{{writeup.date}}</span><span class="text-link">Read Writeup <span aria-hidden="true">↗</span></span></div>
     </a>
     {% endfor %}
   </div>
 </section>
 
 <section class="content-section section-wrap section-tinted" id="achievements">
-  <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2>CTF <span class="accent">achievements</span></h2><p class="section-intro">Competition results from the supplied profile details.</p></div>
+  <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2><span class="accent">Achievements</span></h2></div>
   <div class="achievements-grid">
     {% assign achievement_entries = p.achievements | sort %}
     {% for achievement_entry in achievement_entries %}{% assign item = achievement_entry[1] %}
