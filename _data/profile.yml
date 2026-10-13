@@ -123,7 +123,7 @@ skill2:
     key: 'no'
 
 
-    
+
 experience_highlights:
 - label: Vulnerability disclosure
   value: 6x CVE publisher
