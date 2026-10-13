@@ -32,9 +32,9 @@ description: Offensive security, vulnerability research, digital forensics, and 
     </div>
   </div>
   <div class="stats-bar section-wrap" aria-label="Career highlights">
-    <div class="stat-item"><strong>{{ p.stats.ctf_first_places | escape }}</strong><span>CTF 1st Places</span></div>
+    <div class="stat-item"><strong>{{ stats.writeups.size | escape }}</strong><span>Writeups Published</span></div>
+    <div class="stat-item"><strong>{{ p.stats.achievements | escape }}</strong><span>Total Achievements</span></div>
     <div class="stat-item"><strong>{{ p.stats.years_experience | escape }}</strong><span>Years Experience</span></div>
-    <div class="stat-item"><strong>{{ p.stats.cves_published | escape }}</strong><span>CVEs Published</span></div>
     <div class="stat-item"><strong>{{ p.stats.certifications | escape }}</strong><span>Certifications</span></div>
   </div>
   <a class="scroll-cue" href="#about"><span></span> SCROLL TO EXPLORE</a>
@@ -46,7 +46,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
     <div class="terminal-window spotlight">
       <div class="terminal-window-head"><div class="terminal-lights"><i></i><i></i><i></i></div><span>identity.sh</span><span class="terminal-mini-status">bash</span></div>
       <div class="terminal-window-body">
-        <p class="terminal-line"><span class="prompt-symbol">$</span> whoami</p><p class="terminal-output">{{ p.handle | escape }}</p>
+        <p class="terminal-line"><span class="prompt-symbol">$</span> whoami</p><p class="terminal-output">{{ p.name | escape }}</p>
         <p class="terminal-line"><span class="prompt-symbol">$</span> cat role.txt</p><p class="terminal-output">{{ p.role | escape }}<br>Cybersecurity Consultant (Freelance)</p>
         <p class="terminal-line"><span class="prompt-symbol">$</span> cat location.txt</p><p class="terminal-output">{{ p.location | escape }}</p>
         <p class="terminal-line"><span class="prompt-symbol">$</span> echo $LANGUAGES</p><p class="terminal-output">{% for language in p.languages %}{{ language | escape }}{% unless forloop.last %} <span class="terminal-pipe">|</span> {% endunless %}{% endfor %}</p>
@@ -55,7 +55,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
       </div>
     </div>
     <div class="about-copy">
-      <p class="section-kicker"><span>//</span> THE MINDSET</p><h3>{{ p.about.heading | escape }}</h3>
+      <p class="section-kicker"><span>//</span> about</p><h3>{{ p.about.heading | escape }}</h3>
       {% for paragraph in p.about.paragraphs %}<p>{{ paragraph | escape }}</p>{% endfor %}
       <div class="tag-cloud">{% assign skill_entries = p.skills | sort %}{% for skill_entry in skill_entries %}{% assign skill = skill_entry[1] %}{% if forloop.index <= 3 %}<span class="tag-pill">{{ skill.title | escape }}</span>{% endif %}{% endfor %}<span class="tag-pill">Digital Forensics</span><span class="tag-pill">Secure Code Review</span></div>
     </div>
