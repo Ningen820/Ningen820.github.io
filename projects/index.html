@@ -22,7 +22,7 @@ permalink: /projects/
       <div class="project-card-head">
         {% if project.icon != blank %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.redirect_folder | append: '/' | append: project.icon | relative_url }}">
         {% else %}<span class="project-symbol"></span>{% endif %}
-        <span class="project-date">{{ project.date | date: "%Y-%m-%d %H:%M" }}</span>
+        <span class="project-date">{{project.date}}</span>
       </div>
       <h3>{{ project.title | escape }}</h3>
       <p>{{ project.description | escape }}</p>
