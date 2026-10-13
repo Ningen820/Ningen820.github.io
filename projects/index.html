@@ -1,20 +1,36 @@
+
+
 ---
 layout: default
 title: Projects
-description: Projects discovered automatically from the GitHub repository projects directory.
+description: Projects, research utilities, and practical security work.
 permalink: /projects/
 ---
+
+{% assign p = site.data.profile %}
+{% assign projects = p.projects | where_exp: "item", "item.draft != true" | sort: "date" | reverse %}
+
 <section class="page-intro projects-intro section-wrap">
   <a class="back-link" href="{{ '/' | relative_url }}"><span aria-hidden="true">←</span> Homepage</a>
   <p class="section-kicker"><span>//</span> BUILD LOG</p><h1>Projects<span class="accent">.</span></h1>
   <p>Small experiments, research utilities, and practical security work. This page discovers folders in the repository’s <code>projects/</code> directory and reads their README metadata.</p>
   <div class="project-page-meta"><span class="status-dot"></span><span data-project-count>Checking repository…</span><a class="text-link" href="{{ site.data.profile.repo_url | escape }}/tree/main/projects" target="_blank" rel="noopener noreferrer">Open project directory on GitHub <span aria-hidden="true">↗</span></a></div>
 </section>
+
 <section class="section-wrap project-archive-section">
-  <div class="project-archive-bar"><div><span class="section-kicker"><span>//</span> REPOSITORY INDEX</span><h2>Browse the <span class="accent">workbench</span></h2></div><span class="subtle-mono">AUTO-DISCOVERED</span></div>
-  <div class="projects-archive-grid project-grid" data-projects-root data-project-mode="all" data-repo="{{ site.repository | escape }}">
-    <div class="loading-state"><span class="loader-dot"></span> Reading project folders…</div>
+  <div class="project-grid">
+    {% for project in projects %}
+        <div class="project-card-head">
+          <img class="project-symbol-image" src="{{ '/projects/' | append: project.redirect_folder | append: '/' | append: project.icon | relative_url }}" alt="./">
+          <span class="project-date">{{ project.date }}</span>
+        </div>
+        <h3>{{ project.title | escape }}</h3>
+        <p>{{ project.description | escape }}</p>
+        <div class="project-card-foot">
+          <span class="project-folder">projects/{{ project.redirect_folder }}/</span>
+          <span class="project-open">Open on GitHub ↗</span>
+        </div>
+      </a>
+    {% endfor %}
   </div>
-  <p class="dynamic-status" data-project-status aria-live="polite"></p>
-  <div class="project-empty-guidance"><span class="prompt-symbol">$</span><p>To add a project, create a folder under <code>projects/</code> and add a <code>README.md</code> (or <code>readme.md</code>). Optional front matter: <code>title</code>, <code>description</code>, <code>image</code> (a path relative to that project folder), <code>image_alt</code>, <code>release_date</code>, <code>repository</code>, and <code>draft</code>.</p></div>
 </section>
