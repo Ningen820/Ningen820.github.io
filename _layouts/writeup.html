@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{% assign p = site.data.profile %}
+<article class="writeup-page">
+  <section class="writeup-hero section-wrap">
+    <a class="back-link" href="{{ '/writeups/' | relative_url }}"><span aria-hidden="true">←</span> All writeups</a>
+    <p class="section-kicker"><span>//</span> FIELD NOTES <span class="kicker-divider">/</span> {{ page.category | default: "Writeup" | upcase | escape }}</p>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.summary %}<p class="writeup-lede">{{ page.summary | escape }}</p>{% endif %}
+    <div class="metadata-line" aria-label="Writeup metadata">
+      <span class="metadata-chip">{{ page.category | default: "Uncategorized" | escape }}</span>
+      <span class="difficulty-chip difficulty-{{ page.difficulty | default: 'unrated' | slugify }}">{{ page.difficulty | default: "Unrated" | escape }}</span>
+      <span><span class="meta-label">Platform</span> {{ page.platform | default: "Unspecified" | escape }}</span>
+      <span><span class="meta-label">OS</span> {{ page.os | default: "Unspecified" | escape }}</span>
+      {% assign read_time = page.reading_time | plus: 0 %}
+      {% if read_time > 0 %}<span>{{ read_time }} min read</span>{% endif %}
+      {% if page.date %}<span>{{ page.date | date: "%b %d, %Y" }}</span>{% endif %}
+    </div>
+  </section>
+
+  {% if page.image != blank %}
+  <div class="section-wrap writeup-cover-wrap">
+    <figure class="writeup-cover spotlight">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" loading="lazy">
+      {% if page.image_caption != blank %}<figcaption>{{ page.image_caption | escape }}</figcaption>{% endif %}
+    </figure>
+  </div>
+  {% endif %}
+
+  <div class="article-layout section-wrap">
+    <aside class="article-sidebar" aria-label="Article navigation">
+      <div class="sidebar-sticky">
+        <p class="sidebar-heading">// ON THIS PAGE</p>
+        <nav id="writeup-toc" class="writeup-toc" aria-label="Table of contents"><p class="toc-loading">Sections appear here as the article loads.</p></nav>
+        <a class="sidebar-back" href="{{ '/writeups/' | relative_url }}">← Browse all writeups</a>
+      </div>
+    </aside>
+    <div class="article-content-wrap">
+      <div class="article-content" data-writeup-content>{{ content }}</div>
+      <div class="article-endnote"><span class="prompt-symbol">$</span> End of notes <span class="endnote-line"></span></div>
+      {% assign related_count = 0 %}
+      <section class="related-writeups" aria-labelledby="related-title">
+        <div class="section-title-row"><div><p class="section-kicker"><span>//</span> KEEP EXPLORING</p><h2 id="related-title">More writeups</h2></div><a class="text-link" href="{{ '/writeups/' | relative_url }}">View all <span aria-hidden="true">↗</span></a></div>
+        <div class="related-grid">
+          {% assign related = site.writeups | sort: 'reading_time' | reverse %}
+          {% for item in related limit: 2 %}
+            {% if item.url != page.url %}
+              <a class="related-card spotlight" href="{{ item.url | relative_url }}">
+                <span class="card-index">/0{{ forloop.index }}</span>
+                <h3>{{ item.title | escape }}</h3>
+                <p>{{ item.summary | default: "A practical security walkthrough." | escape }}</p>
+                <span class="text-link">Read notes <span aria-hidden="true">↗</span></span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </div>
+</article>

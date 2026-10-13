@@ -1,0 +1,217 @@
+# Edit this file to control profile content and every numbered card.
+# For skill/certificate/achievement images, use files stored in /assets/random_images/.
+name: Alaaeddine Khani
+handle: Ningen820
+location: Tunisia
+role: Offensive Security Engineer
+open_to_opportunities: true
+hero_specialty: Penetration Testing · Vulnerability Research
+summary: Offensive Security Engineer with 5+ years of experience identifying and mitigating security vulnerabilities.
+  6x CVE publisher affecting plugins with 2M+ active installs, and a CTF champion across MENA and global competitions.
+  Passionate about breaking things to make them stronger.
+about:
+  heading: Breaking Systems to Build Stronger Ones
+  paragraphs:
+  - I'm a cybersecurity professional focused on offensive security, vulnerability research, and competitive hacking.
+    I've spent years dissecting systems and competing in cybersecurity challenges across the MENA region.
+  - My work spans proactive vulnerability management, secure code review, SIEM deployment aligned with ISO 27001,
+    and cyber threat intelligence. I also work as a freelance consultant investigating cyber threats and helping
+    build resilient defenses.
+hero_roles:
+- Offensive Security Engineer
+- Vulnerability Researcher
+- CTF Competitor
+repo_url: https://github.com/Ningen820/Ningen820.github.io
+github_url: https://github.com/Ningen820
+linkedin_url: ''
+email: ''
+cv_path: /assets/ningen820-cv.md
+stats:
+  ctf_first_places: 7+
+  years_experience: 5+
+  cves_published: 6+
+  certifications: 11+
+  affected_installs: 2M+
+experience:
+- role: Offensive Security Engineer
+  company: ODDO BHF
+  type: Professional experience
+  description: Application security, vulnerability discovery, secure code review, and practical security assessment.
+- role: Cybersecurity Consultant
+  company: Freelance
+  type: Consulting
+  description: Investigating cyber threats and helping teams improve defensive posture through security assessments
+    and threat-focused work.
+skills:
+  skill1:
+    title: Offensive Security
+    description: Find weaknesses, validate impact, and communicate risk clearly.
+    items:
+    - Penetration Testing
+    - Web Exploitation
+    - Threat Modeling
+    - Risk Assessment
+    image: /assets/random_images/iconsubst1.png
+    key: 'no'
+  skill2:
+    title: Threat Hunting & DFIR
+    description: Trace activity across endpoint artifacts and investigation evidence.
+    items:
+    - Threat Hunting
+    - Incident Response
+    - Forensic Analysis
+    - Volatility
+    - Autopsy
+    - Shellbags
+    - KAPE
+    image: /assets/random_images/iconsubst2.png
+    key: 'no'
+  skill3:
+    title: Security Research
+    description: Research vulnerabilities and turn findings into actionable remediation.
+    items:
+    - Vulnerability Research
+    - Code Review (PHP)
+    - Semgrep
+    - CVE Discovery
+    - PoC Development
+    image: /assets/random_images/iconsubst3.png
+    key: 'no'
+  skill4:
+    title: Security Engineering
+    description: Build repeatable security practices into engineering workflows.
+    items:
+    - Secure Code Review
+    - SIEM Deployment
+    - ISO 27001
+    - Threat Intelligence
+    image: /assets/random_images/iconsubst4.png
+    key: 'no'
+  skill5:
+    title: Platforms & Investigation
+    description: Analyze host evidence and work through hands-on security labs.
+    items:
+    - Windows Artifacts
+    - Registry Analysis
+    - Digital Forensics
+    - CTF Challenges
+    image: /assets/random_images/iconsubst5.png
+    key: 'no'
+experience_highlights:
+- label: Vulnerability disclosure
+  value: 6x CVE publisher
+  description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied
+    profile reference.
+- label: Competitive security
+  value: MENA & global CTFs
+  description: Competition placements across regional and international events.
+achievements:
+  achievement1:
+    title: CSAW MENA Finals
+    place: 1st Place
+    detail: 2024 Abu Dhabi
+    rank: 1
+    image: /assets/random_images/achievement1.png
+    key: 'no'
+  achievement2:
+    title: CyberTek CTF
+    place: 1st Place
+    detail: '2025'
+    rank: 1
+    image: /assets/random_images/achievement2.png
+    key: 'no'
+  achievement3:
+    title: SPARK CTF
+    place: 1st Place
+    detail: '2024'
+    rank: 1
+    image: /assets/random_images/achievement3.png
+    key: 'no'
+  achievement4:
+    title: Al-Farahidi Cybersecurity Competition
+    place: 1st Place
+    detail: 2023 Arab ICT Organization
+    rank: 1
+    image: /assets/random_images/achievement4.png
+    key: 'no'
+  achievement5:
+    title: CSAW MENA
+    place: 2nd Place
+    detail: 2022 · Qualified to Dubai
+    rank: 2
+    image: /assets/random_images/achievement5.png
+    key: 'no'
+  achievement6:
+    title: CyberTalents Tunisia
+    place: 1st Place
+    detail: 2020 · Qualified to Egypt
+    rank: 1
+    image: /assets/random_images/achievement6.png
+    key: 'no'
+certifications:
+  certificate1:
+    name: SC-900
+    issuer: Microsoft
+    credential: '#A292F6FC0135EE1'
+    date: September 2026
+    image: /assets/random_images/certificate1.png
+    key: 'no'
+  certificate2:
+    name: C-AI/MLPen
+    issuer: The SecOps Group · 100%
+    credential: ''
+    date: August 2026 · With Merit
+    image: /assets/random_images/certificate2.png
+    key: 'no'
+  certificate3:
+    name: eCDFP
+    issuer: INE Security
+    credential: '#184099714'
+    date: June 2026
+    image: /assets/random_images/certificate3.png
+    key: 'no'
+  certificate4:
+    name: CBTeamerX
+    issuer: The SecOps Group
+    credential: '#11411905'
+    date: ''
+    image: /assets/random_images/certificate4.png
+    key: 'no'
+  certificate5:
+    name: eCTHP
+    issuer: INE Security
+    credential: '#178277790'
+    date: ''
+    image: /assets/random_images/certificate5.png
+    key: 'no'
+  certificate6:
+    name: CDAPen
+    issuer: The SecOps Group
+    credential: '#10991584'
+    date: ''
+    image: /assets/random_images/certificate6.png
+    key: 'no'
+education:
+- qualification: B.Eng Network Security
+  institution: Tek-Up University
+- qualification: B.Sc Computer Networks
+  institution: ISITCom Sousse
+languages:
+- Arabic (Native)
+- English (Bilingual)
+- French (Bilingual)
+research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. Detailed
+  CVE records and writeup evidence should be linked here as they are added to the repository.
+socials:
+- name: GitHub
+  label: Code, projects & repositories
+  url: https://github.com/Ningen820
+  mark: GH
+- name: LinkedIn
+  label: Professional profile
+  url: ''
+  mark: in
+- name: Email
+  label: Direct contact
+  url: ''
+  mark: '@'
