@@ -20,7 +20,6 @@ about:
     with ISO 27001. I also pursue offensive security research and competitive hacking, developing an adversarial understanding of attack
     techniques that complements my defensive security focus.
   - I hold a B.Eng. in Network Security from Tek-Up University and a B.Sc. in Computer Networks from ISITCom Sousse.
-    I speak Pular natively and have bilingual proficiency in English.
 
 hero_roles:
 - Threat Hunter
@@ -34,12 +33,19 @@ cv_path: /assets/ningen820-cv.md
 stats:
   ctf_first_places: 7+
   years_experience: 5+
-  cves_published: 6+
-  certifications: 11+
-  affected_installs: 2M+
+
 experience:
-- role: Offensive Security Engineer
-  company: ODDO BHF
+- role: Internship
+  company: 
+  type: Professional experience
+  description: Application security, vulnerability discovery, secure code review, and practical security assessment.
+- role: Cybersecurity Consultant
+  company: Freelance
+  type: Consulting
+  description: Investigating cyber threats and helping teams improve defensive posture through security assessments
+    and threat-focused work.
+- role: Internship
+  company: 
   type: Professional experience
   description: Application security, vulnerability discovery, secure code review, and practical security assessment.
 - role: Cybersecurity Consultant
