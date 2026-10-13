@@ -1,12 +1,12 @@
 ---
 title: "Interpreter"
 summary: "Walkthrough entry scaffold. Add the verified challenge context, evidence, and solution notes from the original writeup."
-image: "" # optional path, e.g. /assets/images/writeups/baggage-cover.png
+image: "/assets/images/writeups/reaper.png" # optional path, e.g. /assets/images/writeups/baggage-cover.png
 image_alt: ""
 category: "CTF"
-difficulty: "Unrated"
-platform: "Unspecified"
-os: "Unspecified"
+difficulty: 5
+platform: "THM"
+os: "Linux"
 reading_time: 7
 ---
 
