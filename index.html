@@ -96,49 +96,29 @@ description: Offensive security, vulnerability research, digital forensics, and 
 </section>
 -->
 <section class="content-section section-wrap" id="projects">
-  <div class="section-title-row">
-    <div class="section-heading section-heading-left">
-      <p class="section-kicker"><span>//</span> PROJECTS</p>
-      <h2>Latest <span class="accent">projects</span></h2>
-    </div>
-    <a class="button button-outline" href="{{ '/projects/' | relative_url }}">All projects ↗</a>
-  </div>
-  {% assign projects = site.pages | where_exp: "p", "p.path contains 'projects/projects_data/'" | where_exp: "p", "p.draft != true" | sort: "date" | reverse %}
+  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> PROJECTS</p><h2>Latest <span class="accent">Projects</span></h2><p class="section-intro">Projects sorted by date and time.</p></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">Browse all projects ↗</a></div>
+  {% assign projects = site.data.profile.projects | where_exp: "p", "p.draft != true" | sort: "date" | reverse %}
   <div class="project-grid project-grid-home">
-    {% for project in projects limit: 5 %}
-      <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.folder }}" target="_blank">
+    {% for project in projects limit: 3 %}
+      <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
         <div class="project-card-head">
-          {% if project.image %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.folder | append: '/' | append: project.image | relative_url }}" alt="{{ project.title | escape }}">
-          {% else %}<span class="project-symbol">./</span>{% endif %}
+          {% if project.icon %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.redirect_folder | append: '/' | append: project.icon | relative_url }}">{% else %}<span class="project-symbol">./</span>{% endif %}
+          <span class="project-date">{{ project.date | date: "%Y-%m-%d %H:%M" }}</span>
         </div>
-        <h3>{{ project.title | escape }}</h3>
-        <p>{{ project.description | escape }}</p>
-        <div class="project-card-foot">
-          <span class="project-folder">projects/{{ project.folder }}/</span><span>{{ project.date }}</span><span class="project-open">Open on GitHub ↗</span>
-        </div>
+        <h3>{{ project.title | escape }}</h3><p>{{ project.description | escape }}</p>
+        <div class="project-card-foot"><span class="project-folder">projects/{{ project.redirect_folder }}/</span><span class="project-open">Open on GitHub ↗</span></div>
       </a>
     {% endfor %}
   </div>
 </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
 <section class="content-section section-wrap" id="writeups">
-  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>WRITEUPS</p><h2>Latest <span class="accent">writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by update time to surface the latest pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
-  {% assign home_writeup_limit = 3 %}
+  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>WRITEUPS</p><h2>Latest <span class="accent">Writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by update time to surface the latest pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
+  {% assign home_writeups_limit = 3 %}
   {% assign home_writeups = site.writeups | sort: 'date' | reverse %}
   <div class="writeup-card-grid">
-    {% for writeup in home_writeups limit: home_writeup_limit %}
+    {% for writeup in home_writeups limit: home_writeups_limit %}
     <a class="writeup-card spotlight" href="{{ writeup.url | relative_url }}">
       <div class="writeup-card-top"><span class="section-kicker"><span>//</span> {{ writeup.category | default: "Writeup" | upcase | escape }}</span><span class="difficulty-chip difficulty-{{ writeup.difficulty | default: 'unrated' | slugify }}">{{ writeup.difficulty | default: "Unrated" | escape }}</span></div>
       <h3>{% if writeup.image != blank %}<img class="writeup-card-thumb" src="{{ writeup.image | relative_url }}" alt="" loading="lazy">{% endif %}<span>{{ writeup.title | escape }}</span></h3><p>{{ writeup.summary | default: "Writeup Walkthrough" | escape }}</p>
@@ -147,6 +127,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
     {% endfor %}
   </div>
 </section>
+
 
 <section class="content-section section-wrap section-tinted" id="achievements">
   <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2><span class="accent">Achievements</span></h2><p class="section-intro">My achievements across multiple cybersecurity-related platoforms.</p></div>
