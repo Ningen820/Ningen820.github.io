@@ -4,10 +4,10 @@ summary: "Walkthrough entry scaffold. Add the verified challenge context, eviden
 image: "/assets/images/writeups/reaper.png" # optional path, e.g. /assets/images/writeups/baggage-cover.png
 image_alt: ""
 category: "CTF"
-difficulty: 5
+difficulty: "Hard"
 platform: "THM"
 os: "Linux"
-reading_time: 7
+reading_time: 12
 ---
 
 ## 01 / Overview
