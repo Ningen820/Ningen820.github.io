@@ -21,7 +21,7 @@ permalink: /projects/
     <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
       <div class="project-card-head">
         {% if project.icon != blank %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.redirect_folder | append: '/' | append: project.icon | relative_url }}">
-        {% else %}<span class="project-symbol"></span>{% endif %}
+        {% else %}<span class="project-symbol">./</span>{% endif %}
         <span class="project-date">{{project.date}}</span>
       </div>
       <h3>{{ project.title | escape }}</h3>
