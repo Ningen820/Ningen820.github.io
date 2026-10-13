@@ -2,6 +2,7 @@
 # For skill/certificate/achievement images, use files stored in /assets/random_images/.
 name: Ahamad Jalloh
 handle: Ningen820
+status: Open to opportunities
 location: USA
 role: Threat Hunting Enthusiast
 open_to_opportunities: true
@@ -10,13 +11,17 @@ summary: Offensive Security Engineer with 5+ years of experience identifying and
   6x CVE publisher affecting plugins with 2M+ active installs, and a CTF champion across MENA and global competitions.
   Passionate about breaking things to make them stronger.
 about:
-  heading: Breaking Systems to Build Stronger Ones
+  heading: Blue Team & Threat Hunting
   paragraphs:
-  - I'm a cybersecurity professional focused on offensive security, vulnerability research, and competitive hacking.
-    I've spent years dissecting systems and competing in cybersecurity challenges across the MENA region.
-  - My work spans proactive vulnerability management, secure code review, SIEM deployment aligned with ISO 27001,
-    and cyber threat intelligence. I also work as a freelance consultant investigating cyber threats and helping
-    build resilient defenses.
+  - I'm a Cybersecurity professional focused on blue team operations and threat hunting, with an interest in identifying
+    stealthy threats, investigating suspicious activity, and analyzing security telemetry to uncover indicators of compromise.
+    My key areas of interest include threat hunting, Digital Forensics and Incident Response (DFIR), and endpoint investigations.
+  - My technical background spans cyber threat intelligence, vulnerability management, secure code review, and SIEM deployment aligned
+    with ISO 27001. I also pursue offensive security research and competitive hacking, developing an adversarial understanding of attack
+    techniques that complements my defensive security focus.
+  - I hold a B.Eng. in Network Security from Tek-Up University and a B.Sc. in Computer Networks from ISITCom Sousse.
+    I speak Pular natively and have bilingual proficiency in English.
+
 hero_roles:
 - Threat Hunter
 - SOC Analyst
@@ -222,9 +227,9 @@ education:
 - qualification: B.Sc Computer Networks
   institution: ISITCom Sousse
 languages:
-- Arabic (Native)
+- Pular (Native)
 - English (Bilingual)
-- French (Bilingual)
+
 research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. Detailed
   CVE records and writeup evidence should be linked here as they are added to the repository.
 socials:
