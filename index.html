@@ -138,7 +138,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
 
           <span class="project-date">
             {% if project.date %}
-              ADDED / {{ project.date | date: "%Y-%m-%d" }}
+             {% raw %}{{ project.date | date: "%Y-%m-%d %H:%M" }}{% endraw %}
             {% else %}
               ADDED / NOT SET
             {% endif %}
