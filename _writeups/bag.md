@@ -2,7 +2,7 @@
 title: "bag"
 summary: "Walkthrougiteup."
 image: "/assets/images/writeups/baggage.png" # optional path, e.g. /assets/images/writeups/baggage-cover.png
-image_alt: ""
+date: 2026-10-11 18:03 -4:00
 category: "DFIR"
 difficulty: "Hard"
 platform: "THM"
