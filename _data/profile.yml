@@ -1,7 +1,9 @@
 # Edit this file to control profile content and every numbered card.
 # For skill/certificate/achievement images, use files stored in /assets/random_images/.
 name: Ahamad Jalloh
+age: 17
 handle: Ningen820
+joinname: Ahamad_Jalloh
 status: Open to opportunities
 location: USA
 role: Threat Hunting Enthusiast
