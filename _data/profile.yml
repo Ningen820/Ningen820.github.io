@@ -287,28 +287,28 @@ projects:
   - title: "TESTING2"
     redirect_folder: "project2"
     description: "This is project test 2's description"
-    icon: "icon.png"
+    icon: ""
     draft: false
     date: "2024-10-10 08:10:10 -04:00"
 
   - title: "TESTING3"
     redirect_folder: "project3"
     description: "This is project test 3's description"
-    icon: "icon.png"
+    icon: ""
     draft: true
     date: "2023-10-10 08:10:10 -04:00"
 
   - title: "TESTING4"
     redirect_folder: "project4"
     description: "This is project test 4's description"
-    icon: "icon.png"
+    icon: ""
     draft: false
     date: "2021-10-10 08:10:10 -04:00"
 
   - title: "TESTING5"
     redirect_folder: "projecttet"
     description: "This is projecttet's description"
-    icon: "icon.png"
+    icon: ""
     draft: false
     date: "2022-10-10 08:10:10 -04:00"
 
