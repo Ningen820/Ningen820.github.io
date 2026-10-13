@@ -1,11 +1,11 @@
 ---
 title: "Baggage"
 summary: "Reconstruct post-compromise activity from KAPE-collected Windows registry artifacts and Shellbags evidence."
-image: "" # optional path, e.g. /assets/images/writeups/baggage-cover.png
+image: "/assets/images/writeups/baggage.png" # optional path, e.g. 
 image_alt: ""
 category: "DFIR"
-difficulty: "Unrated"
-platform: "Case study"
+difficulty: 0
+platform: "HTB"
 os: "Windows"
 reading_time: 10
 ---
