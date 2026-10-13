@@ -2,7 +2,7 @@
 title: "Inte"
 summary: "Walkthrough entry scaffold. Add the verified challenge context, evidence, and solution notes from the original writeup."
 image: "/assets/images/writeups/reaper.png" # optional path, e.g. /assets/images/writeups/baggage-cover.png
-image_alt: ""
+date: 2026-10-11 20:03:40 -4:00
 category: "CTF"
 difficulty: "Hard"
 platform: "THM"
