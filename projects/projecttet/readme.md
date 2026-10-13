@@ -1,6 +1,7 @@
 ---
-title:"TESTING"
-description:"abcd efg"
+title: "TESTING"
+description: "abcd efg"
+image: "icon.png"
 draft: false
 ---
 
