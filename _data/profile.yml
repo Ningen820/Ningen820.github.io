@@ -36,38 +36,27 @@ stats:
 
 experience:
 - role: Internship
-  company: 
-  type: Professional experience
+  company: XXXX
+  date: Aug 2023 - Nov 2023
   description: Application security, vulnerability discovery, secure code review, and practical security assessment.
-- role: Cybersecurity Consultant
-  company: Freelance
-  type: Consulting
+- role: Internship
+  company: XXXX
+  date: Feb 2025 - Apr 2025
   description: Investigating cyber threats and helping teams improve defensive posture through security assessments
     and threat-focused work.
 - role: Internship
-  company: 
-  type: Professional experience
+  company: XXXX
+  date: Jun 2026 - Aug 2026
   description: Application security, vulnerability discovery, secure code review, and practical security assessment.
-- role: Cybersecurity Consultant
-  company: Freelance
-  type: Consulting
+- role: Internship
+  company: XXXX
+  date: October 2026 - Present
   description: Investigating cyber threats and helping teams improve defensive posture through security assessments
     and threat-focused work.
 
     
-skills:
+skills:    
   skill1:
-    title: Offensive Security
-    description: Find weaknesses, validate impact, and communicate risk clearly.
-    items:
-    - Penetration Testing
-    - Web Exploitation
-    - Threat Modeling
-    - Risk Assessment
-    image: /assets/random_images/pfp.png
-    key: 'no'
-    
-  skill2:
     title: Threat Hunting & DFIR
     description: Trace activity across endpoint artifacts and investigation evidence.
     items:
@@ -78,9 +67,22 @@ skills:
     - Autopsy
     - Shellbags
     - KAPE
+    - Hayabusa
+    - Log Correlation
     image: /assets/random_images/idk.png
+    key: 'yes'
+
+skill2:
+    title: Offensive Security
+    description: Find weaknesses, validate impact, and communicate risk clearly.
+    items:
+    - Penetration Testing
+    - Web Exploitation
+    - Threat Modeling
+    - Risk Assessment
+    image: /assets/random_images/pfp.png
     key: 'no'
-    
+  
   skill3:
     title: Security Research
     description: Research vulnerabilities and turn findings into actionable remediation.
@@ -236,18 +238,27 @@ languages:
 - Pular (Native)
 - English (Bilingual)
 
+
 research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. Detailed
   CVE records and writeup evidence should be linked here as they are added to the repository.
+
+
 socials:
 - name: GitHub
   label: Code, projects & repositories
   url: https://github.com/Ningen820
   mark: GH
+  
 - name: LinkedIn
   label: Professional profile
   url: ''
   mark: in
+  
 - name: Email
   label: Direct contact
   url: ''
   mark: '@'
+
+
+
+#a
