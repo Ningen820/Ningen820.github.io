@@ -12,10 +12,9 @@ description: Offensive security, vulnerability research, digital forensics, and 
       <p class="hero-role">{{ p.hero_specialty | escape }}</p>
       <p class="hero-summary">{{ p.summary | escape }}</p>
       <div class="hero-actions">
-        {% if p.email != blank %}<a class="button button-primary" href="mailto:{{ p.email | escape }}"><span aria-hidden="true">✉</span> Get in touch</a>{% else %}<a class="button button-primary" href="#contact"><span aria-hidden="true">✉</span> Get in touch</a>{% endif %}
-        <a class="button button-outline" href="{{ p.cv_path | relative_url }}" download><span aria-hidden="true">↓</span> Download CV</a>
-        {% if p.linkedin_url != blank %}<a class="button button-outline" href="{{ p.linkedin_url | escape }}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">in</span> LinkedIn</a>{% endif %}
-        <a class="button button-outline" href="{{ p.github_url | escape }}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span> GitHub</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button button-primary" href="{{ p.cv_path | relative_url }}" download><span aria-hidden="true">↓</span> Download CV</a>
+        <a class="button button-primary" href="#contact"><span aria-hidden="true">✉</span> Get in touch</a>
+
       </div>
     </div>
     <div class="hero-aside" aria-label="Profile summary">
