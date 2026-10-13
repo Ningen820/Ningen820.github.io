@@ -60,7 +60,7 @@ experience:
     and threat-focused work.
 
   
-skills:    
+skills:
   skill1:
     title: Threat Hunting & DFIR
     description: Trace activity across endpoint artifacts and investigation evidence.
@@ -77,7 +77,7 @@ skills:
     image: /assets/random_images/idk.png
     key: 'yes'
 
-skill2:
+  skill2:
     title: Offensive Security
     description: Find weaknesses, validate impact, and communicate risk clearly.
     items:
@@ -123,15 +123,6 @@ skill2:
     key: 'no'
 
 
-
-experience_highlights:
-- label: Vulnerability disclosure
-  value: 6x CVE publisher
-  description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied
-    profile reference.
-- label: Competitive security
-  value: MENA & global CTFs
-  description: Competition placements across regional and international events.
 
   
 achievements:
@@ -244,6 +235,15 @@ languages:
 - English (Bilingual)
 
 
+
+experience_highlights:
+- label: Vulnerability disclosure
+  value: 6x CVE publisher
+  description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied
+    profile reference.
+- label: Competitive security
+  value: MENA & global CTFs
+  description: Competition placements across regional and international events.
 research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. Detailed
   CVE records and writeup evidence should be linked here as they are added to the repository.
 
