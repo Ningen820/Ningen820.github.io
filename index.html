@@ -98,65 +98,25 @@ description: Offensive security, vulnerability research, digital forensics, and 
 <section class="content-section section-wrap" id="projects">
   <div class="section-title-row">
     <div class="section-heading section-heading-left">
-      <p class="section-kicker"><span>//</span> BUILD LOG</p>
+      <p class="section-kicker"><span>//</span> PROJECTS</p>
       <h2>Latest <span class="accent">projects</span></h2>
-      <p class="section-intro">
-        Practical security projects, research tools, and technical experiments.
-      </p>
     </div>
-
-    <a class="button button-outline" href="{{ '/projects/' | relative_url }}">
-      Browse all projects <span aria-hidden="true">↗</span>
-    </a>
+    <a class="button button-outline" href="{{ '/projects/' | relative_url }}">All projects ↗</a>
   </div>
-
-  {% assign projects = site.pages
-    | where_exp: "p", "p.path contains 'projects/projects_data/'"
-    | where_exp: "p", "p.draft != true"
-    | sort: "date"
-    | reverse %}
-
+  {% assign projects = site.pages | where_exp: "p", "p.path contains 'projects/projects_data/'" | where_exp: "p", "p.draft != true" | sort: "date" | reverse %}
   <div class="project-grid project-grid-home">
     {% for project in projects limit: 2 %}
-      <a
-        class="project-card spotlight"
-        href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.folder | uri_escape }}"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.folder }}" target="_blank">
         <div class="project-card-head">
-          {% if project.image != blank %}
-            <img
-              class="project-symbol-image"
-              src="{{ '/projects/' | append: project.folder | append: '/' | append: project.image | relative_url }}"
-              alt="{{ project.image_alt | default: project.title | append: ' project image' | escape }}"
-              loading="lazy"
-            >
-          {% else %}
-            <span class="project-symbol" aria-hidden="true">./</span>
-          {% endif %}
-
-          <span class="project-date">
-            {% if project.date %}
-             {{ project.date }}
-            {% else %}
-              ADDED / NOT SET
-            {% endif %}
-          </span>
+          {% if project.image %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.folder | append: '/' | append: project.image | relative_url }}" alt="{{ project.title | escape }}">
+          {% else %}<span class="project-symbol">./</span>{% endif %}
+          <span class="project-date">{{ project.date | date: "%Y-%m-%d" }}</span>
         </div>
-
-        <h3>{{ project.title | default: project.folder | escape }}</h3>
-
-        <p>{{ project.description | default: "Project details coming soon." | escape }}</p>
-
+        <h3>{{ project.title | escape }}</h3>
+        <p>{{ project.description | escape }}</p>
         <div class="project-card-foot">
-          <span class="project-folder">
-            projects/{{ project.folder | escape }}/
-          </span>
-
-          <span class="project-open">
-            Open on GitHub <span aria-hidden="true">↗</span>
-          </span>
+          <span class="project-folder">projects/{{ project.folder }}/</span>
+          <span class="project-open">Open on GitHub ↗</span>
         </div>
       </a>
     {% endfor %}
