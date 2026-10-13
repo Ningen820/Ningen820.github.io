@@ -12,18 +12,17 @@ description: Offensive security, vulnerability research, digital forensics, and 
       <p class="hero-role">{{ p.hero_specialty | escape }}</p>
       <p class="hero-summary">{{ p.summary | escape }}</p>
       <div class="hero-actions">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button button-primary" href="{{ p.cv_path | relative_url }}" download><span aria-hidden="true">↓</span> Download CV</a>
-        <a class="button button-primary" href="#contact"><span aria-hidden="true">✉</span> Get in touch</a>
-
+        &nbsp;&nbsp;<a class="button button-primary" href="{{ p.cv_path | relative_url }}" download><span aria-hidden="true">↓</span> Download CV</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button button-outline" href="#contact"><span aria-hidden="true">✉</span> Get in touch</a>
       </div>
     </div>
     <div class="hero-aside" aria-label="Profile summary">
       <div class="hero-aside-top"><span class="terminal-led"></span><span class="terminal-led"></span><span class="terminal-led"></span><span class="terminal-label">profile.status</span><span class="terminal-live">LIVE</span></div>
       <div class="hero-aside-body">
         <p class="terminal-line"><span class="prompt-symbol">$</span> whoami</p>
-        <p class="terminal-output">{{ p.handle | escape }}</p>
-        <p class="terminal-line"><span class="prompt-symbol">$</span> current_role</p>
-        <p class="terminal-output">{{ p.role | escape }}</p>
+        <p class="terminal-output">{{ p.name | escape }}@{{p.handle | escape}}</p>
+        <p class="terminal-line"><span class="prompt-symbol">$</span> age</p>
+        <p class="terminal-output">{{ p.age | escape }}</p>
         <p class="terminal-line"><span class="prompt-symbol">$</span> location</p>
         <p class="terminal-output">{{ p.location | escape }}</p>
         <div class="terminal-footer"><span>ACCESS: PUBLIC</span><span>STATUS: <b>ACTIVE</b></span></div>
@@ -45,7 +44,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
       <div class="terminal-window-head"><div class="terminal-lights"><i></i><i></i><i></i></div><span>identity.sh</span><span class="terminal-mini-status">bash</span></div>
       <div class="terminal-window-body">
         <p class="terminal-line"><span class="prompt-symbol">$</span> whoami</p><p class="terminal-output">{{ p.name | escape }}</p>
-        <p class="terminal-line"><span class="prompt-symbol">$</span> cat role.txt</p><p class="terminal-output">{{ p.role | escape }}<br>Cybersecurity Consultant (Freelance)</p>
+        <p class="terminal-line"><span class="prompt-symbol">$</span> cat roles.txt</p><p class="terminal-output">{% for role in p.hero_roles %}{{ role | escape }}{% unless forloop.last %} <span class="terminal-pipe">|</span> {% endunless %}{% endfor %}</p>
         <p class="terminal-line"><span class="prompt-symbol">$</span> cat location.txt</p><p class="terminal-output">{{ p.location | escape }}</p>
         <p class="terminal-line"><span class="prompt-symbol">$</span> echo $LANGUAGES</p><p class="terminal-output">{% for language in p.languages %}{{ language | escape }}{% unless forloop.last %} <span class="terminal-pipe">|</span> {% endunless %}{% endfor %}</p>
         <p class="terminal-line"><span class="prompt-symbol">$</span> cat education.txt</p>{% for item in p.education %}<p class="terminal-output">{{ item.qualification | escape }} — {{ item.institution | escape }}</p>{% endfor %}
@@ -61,19 +60,20 @@ description: Offensive security, vulnerability research, digital forensics, and 
 </section>
 
 <section class="content-section section-wrap section-tinted" id="experience">
-  <div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> FIELD EXPERIENCE</p><h2>Previos <span class="accent">Experiences</span></h2></div>
+  <div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> FIELD EXPERIENCE</p><h2>Experience <span class="accent">History</span></h2></div>
   <div class="experience-list">
     {% for item in p.experience %}
     <article class="experience-row spotlight">
       <div class="experience-index">0{{ forloop.index }}</div>
       <div class="experience-main"><p class="experience-type">{{ item.role | escape }}</p><h3>{{ item.company | escape }}</h3><p>{{ item.description | escape }}</p></div>
+      <div class="experience-company">{{ item.date | escape }} <span aria-hidden="true">↗</span></div>
     </article>
     {% endfor %}
   </div>
 </section>
 
 <section class="content-section section-wrap" id="skills">
-  <div class="section-heading"><p class="section-kicker"><span>//</span> ARSENAL</p><h2>Skills <span class="accent">&amp; tools</span></h2><p class="section-intro">A practical toolkit shaped by security research, incident analysis, and hands-on testing.</p></div>
+  <div class="section-heading"><p class="section-kicker"><span>//</span> ARSENAL</p><h2>Skills <span class="accent">&amp; tools</span></h2><p class="section-intro">My areas of expertise and toolkits.</p></div>
   <div class="skills-grid">
     {% assign skill_entries = p.skills | sort %}
     {% for skill_entry in skill_entries %}{% assign skill = skill_entry[1] %}
@@ -86,7 +86,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
 </section>
 
 <section class="content-section section-wrap section-tinted" id="projects">
-  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> BUILT &amp; TESTED</p><h2>Latest <span class="accent">projects</span></h2></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">↗</span></a></div>
+  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>PROJECTS</p><h2>Latest <span class="accent">projects</span></h2></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">↗</span></a></div>
   <div class="project-grid project-grid-home" data-projects-root data-project-mode="home" data-repo="{{ site.repository | escape }}">
     <div class="loading-state"><span class="loader-dot"></span> Discovering project folders…</div>
   </div>
@@ -94,9 +94,9 @@ description: Offensive security, vulnerability research, digital forensics, and 
 </section>
 
 <section class="content-section section-wrap" id="writeups">
-  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> RESEARCH LOG</p><h2>Latest <span class="accent">writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by reading time to surface the most substantial pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
+  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>WRITEUPS</p><h2>Latest <span class="accent">writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by update time to surface the latest pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
   {% assign home_writeup_limit = 3 %}
-  {% assign home_writeups = site.writeups | sort: 'reading_time' | reverse %}
+  {% assign home_writeups = site.writeups | sort: 'date' | reverse %}
   <div class="writeup-card-grid">
     {% for writeup in home_writeups limit: home_writeup_limit %}
     <a class="writeup-card spotlight" href="{{ writeup.url | relative_url }}">
@@ -109,7 +109,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
 </section>
 
 <section class="content-section section-wrap section-tinted" id="achievements">
-  <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2><span class="accent">Achievements</span></h2></div>
+  <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2><span class="accent">Achievements</span></h2><p class="section-intro">My achievements across multiple cybersecurity-related platoforms.</p></div>
   <div class="achievements-grid">
     {% assign achievement_entries = p.achievements | sort %}
     {% for achievement_entry in achievement_entries %}{% assign item = achievement_entry[1] %}
@@ -126,7 +126,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
 </section>
 
 <section class="content-section section-wrap section-tinted" id="certifications">
-  <div class="section-heading"><p class="section-kicker"><span>//</span> CREDENTIALS</p><h2>Certifications</h2><p class="section-intro">Selected credentials from the supplied portfolio reference. Add verification links in the profile data when available.</p></div>
+  <div class="section-heading"><p class="section-kicker"><span>//</span> CREDENTIALS</p><h2>Certifications</h2><p class="section-intro">Industry standard certifications &amp; more</p></div>
   <div class="cert-grid">
     {% assign certificate_entries = p.certifications | sort %}
     {% for certificate_entry in certificate_entries %}{% assign cert = certificate_entry[1] %}
