@@ -105,18 +105,16 @@ description: Offensive security, vulnerability research, digital forensics, and 
   </div>
   {% assign projects = site.pages | where_exp: "p", "p.path contains 'projects/projects_data/'" | where_exp: "p", "p.draft != true" | sort: "date" | reverse %}
   <div class="project-grid project-grid-home">
-    {% for project in projects limit: 2 %}
+    {% for project in projects limit: 5 %}
       <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.folder }}" target="_blank">
         <div class="project-card-head">
           {% if project.image %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.folder | append: '/' | append: project.image | relative_url }}" alt="{{ project.title | escape }}">
           {% else %}<span class="project-symbol">./</span>{% endif %}
-          <span class="project-date">{{ project.date | date: "%Y-%m-%d" }}</span>
         </div>
         <h3>{{ project.title | escape }}</h3>
         <p>{{ project.description | escape }}</p>
         <div class="project-card-foot">
-          <span class="project-folder">projects/{{ project.folder }}/</span>
-          <span class="project-open">Open on GitHub ↗</span>
+          <span class="project-folder">projects/{{ project.folder }}/</span><span>{{ project.date }}</span><span class="project-open">Open on GitHub ↗</span>
         </div>
       </a>
     {% endfor %}
