@@ -5,7 +5,7 @@
 .project-card::before { content: ""; position: absolute; right: -35px; top: -45px; width: 135px; height: 135px; border: 1px solid rgba(182,255,59,.13); border-radius: 50%; box-shadow: 0 0 0 18px rgba(182,255,59,.018), 0 0 0 38px rgba(182,255,59,.012); pointer-events: none; }
 .project-card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
 .project-symbol-image { display: block; width: 100px; height: 100px; flex: 0 0 100px; object-fit: contain; padding: 5px; border-radius: 13px; background: rgba(182,255,59,.055); }
-.project-symbol { display: grid; place-items: center; width: 80px; height: 80px; flex: 0 0 80px; border: 1px solid rgba(182,255,59,.24); border-radius: 11px; background: rgba(182,255,59,.075); color: var(--lime); font-family: var(--mono); font-size: 75px; }
+.project-symbol { display: grid; place-items: center; width: 80px; height: 80px; flex: 0 0 80px; border: 1px solid rgba(182,255,59,.24); border-radius: 11px; background: rgba(182,255,59,.075); color: var(--lime); font-family: var(--mono); font-size: 30px; }
 .project-date { color: var(--muted); font-family: var(--mono); font-size: 9px; text-align: right; }
 .project-card h3 { margin: 0; font-size: 18px; line-height: 1.35; letter-spacing: -.025em; }
 .project-card p { margin: 10px 0 22px; color: var(--muted); font-size: 12px; line-height: 1.75; }
