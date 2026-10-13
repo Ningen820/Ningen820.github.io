@@ -2,12 +2,16 @@
 layout: default
 ---
 {% assign p = site.data.profile %}
+{% assign current_category = page.category | default: "" | downcase | strip %}
+{% assign current_difficulty = page.difficulty | default: "" | downcase | strip %}
+
 <article class="writeup-page">
   <section class="writeup-hero section-wrap">
     <a class="back-link" href="{{ '/writeups/' | relative_url }}"><span aria-hidden="true">←</span> All writeups</a>
     <p class="section-kicker"><span>//</span> FIELD NOTES <span class="kicker-divider">/</span> {{ page.category | default: "Writeup" | upcase | escape }}</p>
     <h1>{{ page.title | escape }}</h1>
     {% if page.summary %}<p class="writeup-lede">{{ page.summary | escape }}</p>{% endif %}
+
     <div class="metadata-line" aria-label="Writeup metadata">
       <span class="metadata-chip">{{ page.category | default: "Uncategorized" | escape }}</span>
       <span class="difficulty-chip difficulty-{{ page.difficulty | default: 'unrated' | slugify }}">{{ page.difficulty | default: "Unrated" | escape }}</span>
@@ -32,30 +36,125 @@ layout: default
     <aside class="article-sidebar" aria-label="Article navigation">
       <div class="sidebar-sticky">
         <p class="sidebar-heading">// ON THIS PAGE</p>
-        <nav id="writeup-toc" class="writeup-toc" aria-label="Table of contents"><p class="toc-loading">Sections appear here as the article loads.</p></nav>
+        <nav id="writeup-toc" class="writeup-toc" aria-label="Table of contents">
+          <p class="toc-loading">Sections appear here as the article loads.</p>
+        </nav>
         <a class="sidebar-back" href="{{ '/writeups/' | relative_url }}">← Browse all writeups</a>
       </div>
     </aside>
+
     <div class="article-content-wrap">
       <div class="article-content" data-writeup-content>{{ content }}</div>
       <div class="article-endnote"><span class="prompt-symbol">$</span> End of notes <span class="endnote-line"></span></div>
-      {% assign related_count = 0 %}
-      <section class="related-writeups" aria-labelledby="related-title">
-        <div class="section-title-row"><div><p class="section-kicker"><span>//</span> KEEP EXPLORING</p><h2 id="related-title">More writeups</h2></div><a class="text-link" href="{{ '/writeups/' | relative_url }}">View all <span aria-hidden="true">↗</span></a></div>
-        <div class="related-grid">
-          {% assign related = site.writeups | sort: 'reading_time' | reverse %}
-          {% for item in related limit: 2 %}
-            {% if item.url != page.url %}
-              <a class="related-card spotlight" href="{{ item.url | relative_url }}">
-                <span class="card-index">/0{{ forloop.index }}</span>
-                <h3>{{ item.title | escape }}</h3>
-                <p>{{ item.summary | default: "A practical security walkthrough." | escape }}</p>
-                <span class="text-link">Read notes <span aria-hidden="true">↗</span></span>
-              </a>
-            {% endif %}
+
+      <section class="related-writeups" id="related-writeups" aria-labelledby="related-title">
+        <div class="section-title-row">
+          <div>
+            <p class="section-kicker"><span>//</span> KEEP EXPLORING</p>
+            <h2 id="related-title">More writeups</h2>
+          </div>
+          <a class="text-link" href="{{ '/writeups/' | relative_url }}">View all <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="related-grid" id="related-grid"></div>
+
+        <!-- Candidate cards are rendered by Liquid, then filtered by JavaScript. -->
+        <div id="related-candidates" hidden>
+          {% for item in site.writeups %}
+            {% unless item.url == page.url %}
+            <a
+              class="related-card spotlight"
+              href="{{ item.url | relative_url }}"
+              data-related-candidate
+              data-category="{{ item.category | default: '' | downcase | strip | escape }}"
+              data-difficulty="{{ item.difficulty | default: '' | downcase | strip | escape }}"
+            >
+              {% if item.image != blank %}
+              <img
+                class="writeup-card-thumb"
+                src="{{ item.image | relative_url }}"
+                alt="{{ item.image_alt | default: item.title | escape }}"
+                loading="lazy"
+              >
+              {% endif %}
+
+              <h3>{{ item.title | escape }}</h3>
+              <p>{{ item.summary | default: "A practical security walkthrough." | escape }}</p>
+              <span class="text-link">Read notes <span aria-hidden="true">↗</span></span>
+            </a>
+            {% endunless %}
           {% endfor %}
         </div>
       </section>
     </div>
   </div>
 </article>
+
+<script>
+(function () {
+  const section = document.getElementById("related-writeups");
+  const grid = document.getElementById("related-grid");
+  const source = document.getElementById("related-candidates");
+
+  if (!section || !grid || !source) return;
+
+  const candidates = Array.from(
+    source.querySelectorAll("[data-related-candidate]")
+  );
+
+  const category = {{ current_category | jsonify }};
+  const difficulty = {{ current_difficulty | jsonify }};
+
+  function shuffle(items) {
+    const result = [...items];
+
+    for (let i = result.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [result[i], result[j]] = [result[j], result[i]];
+    }
+
+    return result;
+  }
+
+  const sameCategoryAndDifficulty = candidates.filter(item =>
+    category &&
+    difficulty &&
+    item.dataset.category === category &&
+    item.dataset.difficulty === difficulty
+  );
+
+  const sameCategory = candidates.filter(item =>
+    category && item.dataset.category === category
+  );
+
+  const sameDifficulty = candidates.filter(item =>
+    difficulty && item.dataset.difficulty === difficulty
+  );
+
+  let matches;
+
+  if (sameCategoryAndDifficulty.length > 0) {
+    matches = sameCategoryAndDifficulty;
+  } else if (sameCategory.length > 0) {
+    matches = sameCategory;
+  } else if (sameDifficulty.length > 0) {
+    matches = sameDifficulty;
+  } else {
+    matches = candidates;
+  }
+
+  const selected = shuffle(matches).slice(0, 2);
+
+  selected.forEach((item, index) => {
+    const number = document.createElement("span");
+    number.className = "card-index";
+    number.textContent = "/0" + (index + 1);
+    item.prepend(number);
+    grid.appendChild(item);
+  });
+
+  if (selected.length === 0) {
+    section.hidden = true;
+  }
+})();
+</script>
