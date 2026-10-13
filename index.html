@@ -98,7 +98,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
 
 <section class="content-section section-wrap" id="writeups">
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> RESEARCH LOG</p><h2>Latest <span class="accent">writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by reading time to surface the most substantial pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
-  {% assign home_writeup_limit = 2 %}
+  {% assign home_writeup_limit = 3 %}
   {% assign home_writeups = site.writeups | sort: 'reading_time' | reverse %}
   <div class="writeup-card-grid">
     {% for writeup in home_writeups limit: home_writeup_limit %}
