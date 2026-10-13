@@ -109,7 +109,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
         <span>{{ project.title | escape }}</span>
       </div>
       <h3>{{ project.title | escape }}</h3><p>{{ project.description | escape }}</p>
-      <div class="project-card-foot"><span class="project-folder">projects/{{ project.redirect_folder }}/</span><span>{{ project.date }}</span><span class="project-open">Open on GitHub ↗</span></div>
+      <div class="project-card-foot"><span>projects/{{ project.redirect_folder }}</span><span>{{ project.date }}</span><span class="project-open">Open on GitHub ↗</span></div>
     </a>
     {% endfor %}
   </div>
