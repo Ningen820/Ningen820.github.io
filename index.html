@@ -95,19 +95,22 @@ description: Offensive security, vulnerability research, digital forensics, and 
   <p class="dynamic-status" data-project-status aria-live="polite"></p>
 </section>
 -->
-<section class="content-section section-wrap" id="projects">
-  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> PROJECTS</p><h2>Latest <span class="accent">Projects</span></h2><p class="section-intro">Projects sorted by date and time.</p></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">Browse all projects ↗</a></div>
-  {% assign projects = site.data.profile.projects | where_exp: "p", "p.draft != true" | sort: "date" | reverse %}
+<section class="content-section section-wrap" id="writeups">
+  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>PROJECTS</p><h2>Latest <span class="accent">Projects</span></h2><p class="section-intro">Projects sorted by their date time.</p></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">Browse all projects <span aria-hidden="true">↗</span></a></div>
+  {% assign projects_limit = 3 %}
+  {% assign p = site.data.profile %}
+  {% assign projects = p.projects | where_exp: "item", "item.draft != true" | sort: "date" | reverse %}
   <div class="project-grid project-grid-home">
-    {% for project in projects limit: 3 %}
-      <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
-        <div class="project-card-head">
-          {% if project.icon %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.redirect_folder | append: '/' | append: project.icon | relative_url }}">{% else %}<span class="project-symbol">./</span>{% endif %}
-          <span class="project-date">{{ project.date | date: "%Y-%m-%d %H:%M" }}</span>
-        </div>
-        <h3>{{ project.title | escape }}</h3><p>{{ project.description | escape }}</p>
-        <div class="project-card-foot"><span class="project-folder">projects/{{ project.redirect_folder }}/</span><span class="project-open">Open on GitHub ↗</span></div>
-      </a>
+    {% for project in projects limit: projects_limit %}
+    <a class="writeup-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
+      <div class="project-card-head">
+        {% if project.icon != blank %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.redirect_folder | append: '/' | append: project.icon | relative_url }}">
+        {% else %}<span class="project-symbol">./</span>{% endif %}
+        <span>{{ project.title | escape }}</span>
+      </div>
+      <h3>{{ project.title | escape }}</h3><p>{{ project.description | escape }}</p>
+      <div class="project-card-foot"><span class="project-folder">projects/{{ project.redirect_folder }}/</span><span>{{ project.date | date: "%Y-%m-%d %H:%M" }}</span><span class="project-open">Open on GitHub ↗</span></div>
+    </a>
     {% endfor %}
   </div>
 </section>
