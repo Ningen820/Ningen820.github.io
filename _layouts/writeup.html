@@ -1,88 +1,160 @@
 ---
 layout: default
 ---
+
 {% assign p = site.data.profile %}
 {% assign current_category = page.category | default: "" | downcase | strip %}
 {% assign current_difficulty = page.difficulty | default: "" | downcase | strip %}
 
 <article class="writeup-page">
   <section class="writeup-hero section-wrap">
-    <a class="back-link" href="{{ '/writeups/' | relative_url }}"><span aria-hidden="true">←</span> All writeups</a>
-    <p class="section-kicker"><span>//</span> FIELD NOTES <span class="kicker-divider">/</span> {{ page.category | default: "Writeup" | upcase | escape }}</p>
+    <a class="back-link" href="{{ '/writeups/' | relative_url }}">
+      <span aria-hidden="true">←</span> All writeups
+    </a>
+
+    <p class="section-kicker">
+      <span>//</span> FIELD NOTES
+      <span class="kicker-divider">/</span>
+      {{ page.category | default: "Writeup" | upcase | escape }}
+    </p>
+
     <h1>{{ page.title | escape }}</h1>
-    {% if page.summary %}<p class="writeup-lede">{{ page.summary | escape }}</p>{% endif %}
+
+    {% if page.summary %}
+      <p class="writeup-lede">{{ page.summary | escape }}</p>
+    {% endif %}
 
     <div class="metadata-line" aria-label="Writeup metadata">
-      <span class="metadata-chip">{{ page.category | default: "Uncategorized" | escape }}</span>
-      <span class="difficulty-chip difficulty-{{ page.difficulty | default: 'unrated' | slugify }}">{{ page.difficulty | default: "Unrated" | escape }}</span>
-      <span><span class="meta-label">Platform</span> {{ page.platform | default: "Unspecified" | escape }}</span>
-      <span><span class="meta-label">OS</span> {{ page.os | default: "Unspecified" | escape }}</span>
+      <span class="metadata-chip">
+        {{ page.category | default: "Uncategorized" | escape }}
+      </span>
+
+      <span class="difficulty-chip difficulty-{{ page.difficulty | default: 'unrated' | slugify }}">
+        {{ page.difficulty | default: "Unrated" | escape }}
+      </span>
+
+      <span>
+        <span class="meta-label">Platform</span>
+        {{ page.platform | default: "Unspecified" | escape }}
+      </span>
+
+      <span>
+        <span class="meta-label">OS</span>
+        {{ page.os | default: "Unspecified" | escape }}
+      </span>
+
       {% assign read_time = page.reading_time | plus: 0 %}
-      {% if read_time > 0 %}<span>{{ read_time }} min read</span>{% endif %}
-      {% if page.date %}<span>{{ page.date | date: "%b %d, %Y" }}</span>{% endif %}
+      {% if read_time > 0 %}
+        <span>{{ read_time }} min read</span>
+      {% endif %}
+
+      {% if page.date %}
+        <span>{{ page.date | date: "%b %d, %Y" }}</span>
+      {% endif %}
     </div>
   </section>
 
   {% if page.image != blank %}
-  <div class="section-wrap writeup-cover-wrap">
-    <figure class="writeup-cover spotlight">
-      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" loading="lazy">
-      {% if page.image_caption != blank %}<figcaption>{{ page.image_caption | escape }}</figcaption>{% endif %}
-    </figure>
-  </div>
+    <div class="section-wrap writeup-cover-wrap">
+      <figure class="writeup-cover spotlight">
+        <img
+          src="{{ page.image | relative_url }}"
+          alt="{{ page.image_alt | default: page.title | escape }}"
+          loading="lazy"
+        >
+
+        {% if page.image_caption != blank %}
+          <figcaption>{{ page.image_caption | escape }}</figcaption>
+        {% endif %}
+      </figure>
+    </div>
   {% endif %}
 
   <div class="article-layout section-wrap">
     <aside class="article-sidebar" aria-label="Article navigation">
       <div class="sidebar-sticky">
         <p class="sidebar-heading">// ON THIS PAGE</p>
-        <nav id="writeup-toc" class="writeup-toc" aria-label="Table of contents">
+
+        <nav
+          id="writeup-toc"
+          class="writeup-toc"
+          aria-label="Table of contents"
+        >
           <p class="toc-loading">Sections appear here as the article loads.</p>
         </nav>
-        <a class="sidebar-back" href="{{ '/writeups/' | relative_url }}">← Browse all writeups</a>
+
+        <a class="sidebar-back" href="{{ '/writeups/' | relative_url }}">
+          ← Browse all writeups
+        </a>
       </div>
     </aside>
 
     <div class="article-content-wrap">
-      <div class="article-content" data-writeup-content>{{ content }}</div>
-      <div class="article-endnote"><span class="prompt-symbol">$</span> End of notes <span class="endnote-line"></span></div>
+      <div class="article-content" data-writeup-content>
+        {{ content }}
+      </div>
 
-      <section class="related-writeups" id="related-writeups" aria-labelledby="related-title">
+      <div class="article-endnote">
+        <span class="prompt-symbol">$</span>
+        End of notes
+        <span class="endnote-line"></span>
+      </div>
+
+      <section class="related-writeups" aria-labelledby="related-title">
         <div class="section-title-row">
           <div>
-            <p class="section-kicker"><span>//</span> KEEP EXPLORING</p>
+            <p class="section-kicker">
+              <span>//</span> KEEP EXPLORING
+            </p>
             <h2 id="related-title">More writeups</h2>
           </div>
-          <a class="text-link" href="{{ '/writeups/' | relative_url }}">View all <span aria-hidden="true">↗</span></a>
+
+          <a class="text-link" href="{{ '/writeups/' | relative_url }}">
+            View all <span aria-hidden="true">↗</span>
+          </a>
         </div>
 
-        <div class="related-grid" id="related-grid"></div>
+        <div
+          id="related-grid"
+          class="related-grid"
+          aria-live="polite"
+        ></div>
 
-        <!-- Candidate cards are rendered by Liquid, then filtered by JavaScript. -->
+        <!-- Hidden source cards; JavaScript randomly selects recommendations. -->
         <div id="related-candidates" hidden>
-          {% for item in site.writeups %}
-            {% unless item.url == page.url %}
-            <a
-              class="related-card spotlight"
-              href="{{ item.url | relative_url }}"
-              data-related-candidate
-              data-category="{{ item.category | default: '' | downcase | strip | escape }}"
-              data-difficulty="{{ item.difficulty | default: '' | downcase | strip | escape }}"
-            >
-              {% if item.image != blank %}
-              <img
-                class="writeup-card-thumb"
-                src="{{ item.image | relative_url }}"
-                alt="{{ item.image_alt | default: item.title | escape }}"
-                loading="lazy"
-              >
-              {% endif %}
+          {% assign related = site.writeups | sort: 'title' %}
 
-              <h3>{{ item.title | escape }}</h3>
-              <p>{{ item.summary | default: "A practical security walkthrough." | escape }}</p>
-              <span class="text-link">Read notes <span aria-hidden="true">↗</span></span>
-            </a>
-            {% endunless %}
+          {% for item in related %}
+            {% if item.url != page.url %}
+              <a
+                class="related-card spotlight"
+                href="{{ item.url | relative_url }}"
+                data-related-candidate
+                data-url="{{ item.url | escape }}"
+                data-category="{{ item.category | default: '' | downcase | strip | escape }}"
+                data-difficulty="{{ item.difficulty | default: '' | downcase | strip | escape }}"
+              >
+                {% if item.image != blank %}
+                  <img
+                    class="writeup-card-thumb"
+                    src="{{ item.image | relative_url }}"
+                    alt="{{ item.image_alt | default: item.title | escape }}"
+                    loading="lazy"
+                    style="display:block; width:100%; aspect-ratio:16 / 9; object-fit:cover;"
+                  >
+                {% endif %}
+
+                <h3>{{ item.title | escape }}</h3>
+
+                <p>
+                  {{ item.summary | default: "A practical security walkthrough." | escape }}
+                </p>
+
+                <span class="text-link">
+                  Read notes <span aria-hidden="true">↗</span>
+                </span>
+              </a>
+            {% endif %}
           {% endfor %}
         </div>
       </section>
@@ -91,70 +163,132 @@ layout: default
 </article>
 
 <script>
-(function () {
-  const section = document.getElementById("related-writeups");
-  const grid = document.getElementById("related-grid");
-  const source = document.getElementById("related-candidates");
+  document.addEventListener("DOMContentLoaded", function () {
+    const grid = document.getElementById("related-grid");
+    const source = document.getElementById("related-candidates");
 
-  if (!section || !grid || !source) return;
+    if (!grid || !source) return;
 
-  const candidates = Array.from(
-    source.querySelectorAll("[data-related-candidate]")
-  );
+    const currentCategory = {{ current_category | jsonify }};
+    const currentDifficulty = {{ current_difficulty | jsonify }};
 
-  const category = {{ current_category | jsonify }};
-  const difficulty = {{ current_difficulty | jsonify }};
+    const candidates = Array.from(
+      source.querySelectorAll("[data-related-candidate]")
+    );
 
-  function shuffle(items) {
-    const result = [...items];
+    // Randomize a copy of a candidate list.
+    function shuffled(items) {
+      const result = items.slice();
 
-    for (let i = result.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [result[i], result[j]] = [result[j], result[i]];
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+
+      return result;
     }
 
-    return result;
-  }
+    // Avoid recommending the same writeup twice.
+    function withoutSelected(items, selected) {
+      const selectedUrls = new Set(selected.map(item => item.dataset.url));
+      return items.filter(item => !selectedUrls.has(item.dataset.url));
+    }
 
-  const sameCategoryAndDifficulty = candidates.filter(item =>
-    category &&
-    difficulty &&
-    item.dataset.category === category &&
-    item.dataset.difficulty === difficulty
-  );
+    // Try a pair: one random candidate from each pool.
+    // Returns null if two different writeups cannot be selected.
+    function choosePair(firstPool, secondPool) {
+      const firstOptions = shuffled(firstPool);
 
-  const sameCategory = candidates.filter(item =>
-    category && item.dataset.category === category
-  );
+      for (const first of firstOptions) {
+        const remaining = secondPool.filter(
+          item => item.dataset.url !== first.dataset.url
+        );
 
-  const sameDifficulty = candidates.filter(item =>
-    difficulty && item.dataset.difficulty === difficulty
-  );
+        if (remaining.length > 0) {
+          const second = shuffled(remaining)[0];
+          return [first, second];
+        }
+      }
 
-  let matches;
+      return null;
+    }
 
-  if (sameCategoryAndDifficulty.length > 0) {
-    matches = sameCategoryAndDifficulty;
-  } else if (sameCategory.length > 0) {
-    matches = sameCategory;
-  } else if (sameDifficulty.length > 0) {
-    matches = sameDifficulty;
-  } else {
-    matches = candidates;
-  }
+    const categoryMatches = candidates.filter(
+      item => item.dataset.category === currentCategory
+    );
 
-  const selected = shuffle(matches).slice(0, 2);
+    const difficultyMatches = candidates.filter(
+      item => item.dataset.difficulty === currentDifficulty
+    );
 
-  selected.forEach((item, index) => {
-    const number = document.createElement("span");
-    number.className = "card-index";
-    number.textContent = "/0" + (index + 1);
-    item.prepend(number);
-    grid.appendChild(item);
+    const bothMatches = candidates.filter(
+      item =>
+        item.dataset.category === currentCategory &&
+        item.dataset.difficulty === currentDifficulty
+    );
+
+    // These pools exclude writeups that match both fields.
+    const categoryOnly = categoryMatches.filter(
+      item => !bothMatches.includes(item)
+    );
+
+    const difficultyOnly = difficultyMatches.filter(
+      item => !bothMatches.includes(item)
+    );
+
+    let selected = null;
+
+    // 1. Two writeups matching both category and difficulty.
+    if (!selected) {
+      selected = choosePair(bothMatches, bothMatches);
+    }
+
+    // 2. One matching both, followed by one matching category only.
+    if (!selected) {
+      selected = choosePair(bothMatches, categoryOnly);
+    }
+
+    // 3. One matching both, followed by one matching difficulty only.
+    if (!selected) {
+      selected = choosePair(bothMatches, difficultyOnly);
+    }
+
+    // 4. Two writeups matching the category.
+    if (!selected) {
+      selected = choosePair(categoryMatches, categoryMatches);
+    }
+
+    // 5. One matching the category, followed by one matching the difficulty.
+    if (!selected) {
+      selected = choosePair(categoryMatches, difficultyMatches);
+    }
+
+    // 6. Two writeups matching the difficulty.
+    if (!selected) {
+      selected = choosePair(difficultyMatches, difficultyMatches);
+    }
+
+    // 7. General fallback: two random writeups, regardless of metadata.
+    if (!selected) {
+      selected = choosePair(candidates, candidates);
+    }
+
+    // If only one other writeup exists, show that one.
+    if (!selected && candidates.length === 1) {
+      selected = [candidates[0]];
+    }
+
+    // If there are no other writeups, the section heading and View all link
+    // remain visible, and the recommendation grid stays empty.
+    if (!selected) return;
+
+    selected.forEach((card, index) => {
+      const number = document.createElement("span");
+      number.className = "card-index";
+      number.textContent = "/0" + (index + 1);
+
+      card.prepend(number);
+      grid.appendChild(card);
+    });
   });
-
-  if (selected.length === 0) {
-    section.hidden = true;
-  }
-})();
 </script>
