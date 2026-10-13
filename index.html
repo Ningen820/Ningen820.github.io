@@ -85,6 +85,8 @@ description: Offensive security, vulnerability research, digital forensics, and 
   </div>
 </section>
 
+
+<!--
 <section class="content-section section-wrap section-tinted" id="projects">
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>PROJECTS</p><h2>Latest <span class="accent">projects</span></h2></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">↗</span></a></div>
   <div class="project-grid project-grid-home" data-projects-root data-project-mode="home" data-repo="{{ site.repository | escape }}">
@@ -92,6 +94,86 @@ description: Offensive security, vulnerability research, digital forensics, and 
   </div>
   <p class="dynamic-status" data-project-status aria-live="polite"></p>
 </section>
+-->
+<section class="content-section section-wrap" id="projects">
+  <div class="section-title-row">
+    <div class="section-heading section-heading-left">
+      <p class="section-kicker"><span>//</span> BUILD LOG</p>
+      <h2>Latest <span class="accent">projects</span></h2>
+      <p class="section-intro">
+        Practical security projects, research tools, and technical experiments.
+      </p>
+    </div>
+
+    <a class="button button-outline" href="{{ '/projects/' | relative_url }}">
+      Browse all projects <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+
+  {% assign projects = site.pages
+    | where_exp: "p", "p.path contains 'projects/projects_data/'"
+    | where_exp: "p", "p.draft != true"
+    | sort: "date"
+    | reverse %}
+
+  <div class="project-grid project-grid-home">
+    {% for project in projects limit: 2 %}
+      <a
+        class="project-card spotlight"
+        href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.folder | uri_escape }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="project-card-head">
+          {% if project.image != blank %}
+            <img
+              class="project-symbol-image"
+              src="{{ '/projects/' | append: project.folder | append: '/' | append: project.image | relative_url }}"
+              alt="{{ project.image_alt | default: project.title | append: ' project image' | escape }}"
+              loading="lazy"
+            >
+          {% else %}
+            <span class="project-symbol" aria-hidden="true">./</span>
+          {% endif %}
+
+          <span class="project-date">
+            {% if project.date %}
+              ADDED / {{ project.date | date: "%Y-%m-%d" }}
+            {% else %}
+              ADDED / NOT SET
+            {% endif %}
+          </span>
+        </div>
+
+        <h3>{{ project.title | default: project.folder | escape }}</h3>
+
+        <p>{{ project.description | default: "Project details coming soon." | escape }}</p>
+
+        <div class="project-card-foot">
+          <span class="project-folder">
+            projects/{{ project.folder | escape }}/
+          </span>
+
+          <span class="project-open">
+            Open on GitHub <span aria-hidden="true">↗</span>
+          </span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <section class="content-section section-wrap" id="writeups">
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>WRITEUPS</p><h2>Latest <span class="accent">writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by update time to surface the latest pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
