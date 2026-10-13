@@ -34,27 +34,32 @@ stats:
   ctf_first_places: 7+
   years_experience: 5+
 
+
+
 experience:
 - role: Internship
   company: XXXX
   date: Aug 2023 - Nov 2023
   description: Application security, vulnerability discovery, secure code review, and practical security assessment.
+
 - role: Internship
   company: XXXX
   date: Feb 2025 - Apr 2025
   description: Investigating cyber threats and helping teams improve defensive posture through security assessments
     and threat-focused work.
+
 - role: Internship
   company: XXXX
   date: Jun 2026 - Aug 2026
   description: Application security, vulnerability discovery, secure code review, and practical security assessment.
+
 - role: Internship
   company: XXXX
   date: October 2026 - Present
   description: Investigating cyber threats and helping teams improve defensive posture through security assessments
     and threat-focused work.
 
-    
+  
 skills:    
   skill1:
     title: Threat Hunting & DFIR
