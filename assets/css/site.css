@@ -291,10 +291,10 @@ button { color: inherit; }
 .related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
 .related-card { display: flex; flex-direction: column; min-height: 200px; padding: 17px; border: 1px solid var(--line); border-radius: 11px; background: var(--panel); transition: transform .2s ease, border-color .2s ease; }
 .card-index { color: var(--cyan); font-family: var(--mono); font-size: 10px; }
-.related-card h3 { margin: 12px 0 7px; font-size: 16px; }
-.related-card p { margin: 0 0 18px; color: var(--muted); font-size: 11px; line-height: 1.7; }
-.related-card .text-link { margin-top: auto; font-size: 10px; }
-.related-card .writeup-card-thumb { width: calc(100% -50px); height: 350; max-height: none; }
+.related-card h3 { margin: 12px 0 7px; font-size: 20px; }
+.related-card p { margin: 0 0 18px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.related-card .text-link { margin-top: auto; font-size: 12px; }
+.related-card .writeup-card-thumb { width: calc(100% -20px); height: 350; object-fit: contain; max-height: none; }
 @media (max-width: 1100px) {
   .site-header { gap: 16px; }
   .nav-links { gap: 12px; }
