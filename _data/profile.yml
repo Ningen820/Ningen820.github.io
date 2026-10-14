@@ -127,54 +127,15 @@ skills:
 
 
   
-achievements:
-  achievement1:
-    title: CSAW MENA Finals
-    place: 1st Place
-    detail: 2024 Abu Dhabi
-    rank: 1
-    image: /assets/random_images/border.png
-    key: 'no'
-    
-  achievement2:
-    title: CyberTek CTF
-    place: 1st Place
-    detail: '2025'
-    rank: 1
-    image: /assets/random_images/github.png
-    key: 'no'
-    
-  achievement3:
-    title: SPARK CTF
-    place: 1st Place
-    detail: '2024'
-    rank: 1
-    image: /assets/random_images/achievement3.png
-    key: 'no'
-    
-  achievement4:
-    title: Al-Farahidi Cybersecurity Competition
-    place: 1st Place
-    detail: 2023 Arab ICT Organization
-    rank: 1
-    image: /assets/random_images/achievement4.png
-    key: 'no'
-    
-  achievement5:
-    title: CSAW MENA
-    place: 2nd Place
-    detail: 2022 · Qualified to Dubai
-    rank: 2
-    image: /assets/random_images/achievement5.png
-    key: 'no'
-    
-  achievement6:
-    title: CyberTalents Tunisia
-    place: 1st Place
-    detail: 2020 · Qualified to Egypt
-    rank: 1
-    image: /assets/random_images/achievement6.png
-    key: 'no'
+achievements: []
+  #achievement1:
+    #title: ti
+    #place: 1st Place
+    #detail: 2024 Abu Dhabi
+    #rank: 1
+    #image: /assets/random_images/border.png
+    #key: 'no'    
+
 
     
 certifications:
@@ -263,7 +224,7 @@ socials:
   
 - name: Email
   label: Direct contact
-  url: ''
+  url: 'ahmadbobo2009@gmail.com'
   mark: '@'
 
 
