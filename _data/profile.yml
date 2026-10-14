@@ -44,8 +44,7 @@ experience:
 - role: Internship
   company: XXXX
   date: Feb 2025 - Apr 2025
-  description: Investigating cyber threats and helping teams improve defensive posture through security assessments
-    and threat-focused work.
+  description: Investigating cyber threats and helping teams improve defensive posture through security assessments and threat-focused work.
 
 - role: Internship
   company: XXXX
@@ -55,8 +54,7 @@ experience:
 - role: Internship
   company: XXXX
   date: October 2026 - Present
-  description: Investigating cyber threats and helping teams improve defensive posture through security assessments
-    and threat-focused work.
+  description: Investigating cyber threats and helping teams improve defensive posture through security assessments and threat-focused work.
 
   
 skills:
@@ -115,8 +113,7 @@ languages:
 experience_highlights:
 - label: Vulnerability disclosure
   value: 6x CVE publisher
-  description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied
-  profile reference.
+  description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied profile reference.
 - label: Competitive security
   value: MENA & global CTFs
   description: Competition placements across regional and international events.
