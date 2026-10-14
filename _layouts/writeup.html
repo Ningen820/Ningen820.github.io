@@ -8,68 +8,70 @@ layout: default
 
 <article class="writeup-page">
   <section class="writeup-hero section-wrap">
-    <a class="back-link" href="{{ '/writeups/' | relative_url }}">
-      <span aria-hidden="true">←</span> All writeups
-    </a>
+    <div class="writeup-hero-grid">
+      <div class="writeup-hero-copy">
+        <a class="back-link" href="{{ '/writeups/' | relative_url }}">
+          <span aria-hidden="true">←</span> All writeups
+        </a>
 
-    <p class="section-kicker">
-      <span>//</span> WALKTHROUGH
-      <span class="kicker-divider">/</span>
-      {{ page.category | upcase | escape }}
-    </p>
+        <p class="section-kicker">
+          <span>//</span> WALKTHROUGH
+          <span class="kicker-divider">/</span>
+          {{ page.category | upcase | escape }}
+        </p>
 
-    <h1>{{ page.title | escape }}</h1>
+        <h1>{{ page.title | escape }}</h1>
 
-    {% if page.summary %}
-      <p class="writeup-lede">{{ page.summary | escape }}</p>
-    {% endif %}
+        {% if page.summary %}
+          <p class="writeup-lede">{{ page.summary | escape }}</p>
+        {% endif %}
 
-    <div class="metadata-line" aria-label="Writeup metadata">
-      <span class="metadata-chip">
-        {{ page.category | escape }}
-      </span>
+        <div class="metadata-line" aria-label="Writeup metadata">
+          <span class="metadata-chip">
+            {{ page.category | escape }}
+          </span>
 
-      <span class="difficulty-chip difficulty-{{ page.difficulty | slugify }}">
-        {{ page.difficulty | escape }}
-      </span>
+          <span class="difficulty-chip difficulty-{{ page.difficulty | slugify }}">
+            {{ page.difficulty | escape }}
+          </span>
 
-      <span>
-        <span class="meta-label">Platform</span>
-        {{ page.platform | escape }}
-      </span>
+          <span>
+            <span class="meta-label">Platform</span>
+            {{ page.platform | escape }}
+          </span>
 
-      <span>
-        <span class="meta-label">OS</span>
-        {{ page.os | escape }}
-      </span>
+          <span>
+            <span class="meta-label">OS</span>
+            {{ page.os | escape }}
+          </span>
 
-      {% assign read_time = page.reading_time | plus: 0 %}
-      {% if read_time > 0 %}
-        <span>{{ read_time }} min read</span>
-      {% endif %}
+          {% assign read_time = page.reading_time | plus: 0 %}
+          {% if read_time > 0 %}
+            <span>{{ read_time }} min read</span>
+          {% endif %}
 
-      {% if page.date %}
-        <span>{{ page.date | date: "%b %d, %Y" }}</span>
+          {% if page.date %}
+            <span>{{ page.date | date: "%b %d, %Y" }}</span>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if page.image != blank %}
+        <figure class="writeup-cover spotlight">
+          <img
+            src="{{ page.image | relative_url }}"
+            alt="{{ page.image_alt | escape }}"
+            loading="eager"
+            onerror="this.style.display='none'"
+          >
+
+          {% if page.image_caption != blank %}
+            <figcaption>{{ page.image_caption | escape }}</figcaption>
+          {% endif %}
+        </figure>
       {% endif %}
     </div>
   </section>
-
-  {% if page.image != blank %}
-    <div class="section-wrap writeup-cover-wrap">
-      <figure class="writeup-cover spotlight">
-        <img
-          src="{{ page.image | relative_url }}"
-          alt="{{ page.image_alt | escape }}"
-          loading="lazy" onerror="this.style.display='none'"
-        >
-
-        {% if page.image_caption != blank %}
-          <figcaption>{{ page.image_caption | escape }}</figcaption>
-        {% endif %}
-      </figure>
-    </div>
-  {% endif %}
-
   <div class="article-layout section-wrap">
     <aside class="article-sidebar" aria-label="Article navigation">
       <div class="sidebar-sticky">
