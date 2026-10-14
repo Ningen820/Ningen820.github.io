@@ -1,0 +1,18 @@
+---
+title: "Campfire2"
+
+category: "DFIR"
+
+difficulty: "Very Easy"
+
+image: "/assets/images/writeups/campfire2.png"
+
+summary: "Forela's Network is constantly under attack. The security system raised an alert about an old admin account requesting a ticket from KDC on a domain controller. Inventory shows that this user account is not used as of now, so you are tasked to take a look at this. This may be an AS-REP roasting attack, as anyone can request any user's ticket which has preauthentication disabled."
+
+platform: "HTB"
+date: 2026-10-05 01:26:39 -04:00
+
+reading_time: 10
+---
+
+.
