@@ -1,0 +1,49 @@
+---
+layout: default
+title: Projects
+description: Projects, research utilities, and practical security work.
+permalink: /projects/
+---
+
+{% assign p = site.data.profile %}
+{% assign projects = p.projects | where_exp: "item", "item.draft != true" | sort: "date" | reverse %}
+
+<section class="page-intro projects-intro section-wrap">
+  <a class="back-link" href="{{ '/' | relative_url }}"><span aria-hidden="true">←</span> Homepage</a>
+  <p class="section-kicker"><span>//</span> BUILD LOG</p><h1>Projects<span class="accent">.</span></h1>
+  <p>A collection of tools and projects I've developed.</p>
+  <div class="project-page-meta"><span class="status-dot"></span><span>{{ projects.size }} projects found</span><a class="text-link" href="{{ p.repo_url | escape }}/tree/main/projects" target="_blank" rel="noopener noreferrer">Open project directory on GitHub <span aria-hidden="true">↗</span></a></div>
+</section>
+
+<section class="section-wrap project-archive-section">
+  <div class="project-grid">
+    {% for project in projects %}
+    <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
+      <div class="project-card-head">
+        {% if project.icon != blank %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.redirect_folder | append: '/' | append: project.icon | relative_url }}" loading="lazy" onerror="this.style.display='none'">
+        {% else %}<span class="project-symbol" aria-hidden="true">./</span>{% endif %}
+        <span class="project-date">{{project.date}}</span>
+      </div>
+      <h3>{{ project.title | escape }}</h3>
+      <p>{{ project.description | escape }}</p>
+      <div class="project-card-foot">
+        <span class="project-folder">projects/{{ project.redirect_folder }}/</span>
+        <span class="project-open">Open on GitHub ↗</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!--
+m
+-->
