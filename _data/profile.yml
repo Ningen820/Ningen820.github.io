@@ -87,8 +87,8 @@ projects:
   - title: "TESTING"
     redirect_folder: "project1"
     description: "This is project test 1's description"
-    icon: "/projects/project1/icon.png"
-    draft: true
+    icon: "/assets/random_images/idk.png"
+    draft: false
     date: "2025-10-10 04:10:10 -04:00"    
 
 
