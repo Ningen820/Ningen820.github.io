@@ -27,7 +27,7 @@
 .project-archive-section { padding-bottom: 72px; }
 .project-empty-guidance { margin-top: 22px; }
 .project-empty-guidance p { margin: 0; }
-@media (max-width: 900px) { .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .project-grid, .project-grid-home { grid-template-columns: 1fr; } .project-card { min-height: 210px; padding: 19px; } .project-archive-bar { align-items: flex-start; flex-direction: column; } }
 
 
