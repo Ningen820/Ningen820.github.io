@@ -66,11 +66,19 @@ description: Offensive security, vulnerability research, digital forensics, and 
   <div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> FIELD EXPERIENCE</p><h2>Experience <span class="accent">History</span></h2></div>
   <div class="experience-list">
     {% for item in p.experience %}
-    {% if item.url == blank %}<article class="experience-row spotlight">{% else %}<a href="{{ item.url | escape }}" class="experience-row spotlight" target="_blank" rel="noopener noreferrer">{% endif %}
+    {% if item.url == blank %}
+    <article class="experience-row spotlight">
+      <div class="experience-index">0{{ forloop.index }}</div>
+      <div class="experience-main"><p class="experience-type">{{ item.role | escape }}</p><h3>{{ item.company | escape }}</h3><p>{{ item.description | escape }}</p></div>
+      <div class="experience-company">{{ item.date | escape }}</div>
+    </article>
+    {% else %}
+    <a href="{{ item.url | escape }}" class="experience-row spotlight" target="_blank" rel="noopener noreferrer">
       <div class="experience-index">0{{ forloop.index }}</div>
       <div class="experience-main"><p class="experience-type">{{ item.role | escape }}</p><h3>{{ item.company | escape }}</h3><p>{{ item.description | escape }}</p></div>
       <div class="experience-company">{{ item.date | escape }} <span aria-hidden="true">↗</span></div>
-    {% if item.url == blank %}</article>{% else %}</a>{% endif %}
+    </a>
+    {% endif %}
     {% endfor %}
   </div>
 </section>
