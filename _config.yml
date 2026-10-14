@@ -1,5 +1,5 @@
 title: "Ningen820 | Cybersecurity Portfolio"
-description: "Offensive security, vulnerability research, digital forensics, and cybersecurity writeups."
+description: "Blue Team security, threat hunting, digital forensics, and cybersecurity writeups."
 url: "https://ningen820.github.io"
 baseurl: ""
 repository: "Ningen820/Ningen820.github.io"
@@ -32,6 +32,9 @@ defaults:
       difficulty: "Unrated"
       platform: "Unspecified"
       os: "Unspecified"
+
+plugins:
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
