@@ -1,17 +1,27 @@
-# Edit this file to control profile content and every numbered card.
-# For skill/certificate/achievement images, use files stored in /assets/random_images/.
-name: Ahamad Jalloh
-age: 17
-handle: Ningen820
-joinname: Ahamad_Jalloh
+# For skill/certificate/achievement images, use files stored in /assets/random_images/image.ext.
+# For projects images, use files stored in /path_to_project/image.ext
 status: Open to opportunities
-location: USA
-role: Threat Hunting Enthusiast
-open_to_opportunities: true
+name: Ahamad Jalloh
 hero_specialty: Threat Hunting · DFIR
 summary: Offensive Security Engineer with 5+ years of experience identifying and mitigating security vulnerabilities.
   6x CVE publisher affecting plugins with 2M+ active installs, and a CTF champion across MENA and global competitions.
   Passionate about breaking things to make them stronger.
+joinname: Ahamad_Jalloh
+handle: Ningen820
+age: 17
+location: USA
+languages:
+- English
+education: []
+# - qualification: 
+#   institution: 
+hero_roles:
+- Threat Hunter
+- SOC Analyst
+- DFIR
+stats:
+  years_experience: 5+
+
 about:
   heading: Blue Team & Threat Hunting
   paragraphs:
@@ -22,16 +32,6 @@ about:
     with ISO 27001. I also pursue offensive security research and competitive hacking, developing an adversarial understanding of attack
     techniques that complements my defensive security focus.
   - I hold a B.Eng. in Network Security from Tek-Up University and a B.Sc. in Computer Networks from ISITCom Sousse.
-
-hero_roles:
-- Threat Hunter
-- SOC Analyst
-- DFIR
-repo_url: https://github.com/Ningen820/Ningen820.github.io
-github_url: https://github.com/Ningen820
-cv_path: /assets/ningen820-cv.md
-stats:
-  years_experience: 5+
 
 
 
@@ -75,9 +75,6 @@ skills:
     key: 'yes'
 
 
-
-
-  
 achievements: {}
   # achievement1:
   #   title: Hackathon
@@ -97,29 +94,31 @@ certifications: {}
   #   image: /assets/random_images/certificate1.png
   #   key: 'no'
     
-
-
-    
-education: []
-# - qualification: B.Eng Network Security
-#   institution: Tek-Up University
-# - qualification: B.Sc Computer Networks
-#   institution: ISITCom Sousse
-languages:
-- English
+projects:
+  - title: "TESTING"
+    redirect_folder: "project1"
+    description: "This is project test 1's description"
+    icon: "icon.png"
+    draft: false
+    date: "2025-10-10 04:10:10 -04:00"    
 
 
 
-experience_highlights:
-- label: Vulnerability disclosure
-  value: 6x CVE publisher
-  description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied profile reference.
-- label: Competitive security
-  value: MENA & global CTFs
-  description: Competition placements across regional and international events.
-research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. DetailedCVE records and writeup evidence should be linked here as they are added to the repository.
+
+experience_highlights: []
+# - label: Vulnerability disclosure
+#   value: 6x CVE publisher
+#   description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied profile reference.
+# - label: Competitive security
+#   value: MENA & global CTFs
+#   description: Competition placements across regional and international events.
+# research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. DetailedCVE records and writeup evidence should be linked here as they are added to the repository.
 
 
+
+repo_url: https://github.com/Ningen820/Ningen820.github.io
+github_url: https://github.com/Ningen820
+cv_path: /assets/ningen820-cv.md
 socials:
 - name: GitHub
   label: Code, projects & repositories
@@ -135,24 +134,7 @@ socials:
 
 
 
-
-
-
-
-
-
-projects:
-  - title: "TESTING"
-    redirect_folder: "project1"
-    description: "This is project test 1's description"
-    icon: "icon.png"
-    draft: false
-    date: "2025-10-10 04:10:10 -04:00"
-
   
-
-
-
 
 
 
