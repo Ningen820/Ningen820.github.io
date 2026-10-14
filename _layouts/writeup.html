@@ -143,20 +143,42 @@ layout: default
                     style="display:block; width:100%; aspect-ratio:16 / 9; object-fit:cover;"
                   >
                 {% endif %}
-
+                
                 <h3>{{ item.title | escape }}</h3>
-
-                <p>
-                  {{ item.summary | escape }}
-                </p>
-
-                <span class="text-link">
-                  Read notes <span aria-hidden="true">↗</span>
-                </span>
+                <div class="metadata-line" aria-label="Writeup metadata">
+                  <span class="metadata-chip">
+                    {{ item.category | escape }}
+                  </span>
+        
+                  <span class="difficulty-chip difficulty-{{ item.difficulty | slugify }}">
+                    {{ item.difficulty | escape }}
+                  </span>
+        
+                  <span>
+                    <span class="meta-label">Platform</span>
+                    {{ item.platform | escape }}
+                  </span>
+        
+                  <span>
+                    <span class="meta-label">OS</span>
+                    {{ item.os | escape }}
+                  </span>
+        
+                  {% assign read_time = item.reading_time | plus: 0 %}
+                  {% if read_time > 0 %}
+                    <span>{{ read_time }} min read</span>
+                  {% endif %}
+        
+                  {% if item.date %}
+                    <span>{{ item.date | date: "%b %d, %Y" }}</span>
+                  {% endif %}
+                </div>
+                <br>
+                <span class="text-link">Read Writeup <span aria-hidden="true">↗</span></span> 
               </a>
             {% endif %}
           {% endfor %}
-        </div>
+        </div>        
       </section>
     </div>
   </div>
