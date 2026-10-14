@@ -1,4 +1,5 @@
 ---
+
 title: "Antarctica"
 
 category: "MALWARE"
@@ -14,5 +15,6 @@ platform: "HTB"
 date: "2026-08-16 14:34:44 -04:00"
 
 reading_time: 10
+
 ---
 
