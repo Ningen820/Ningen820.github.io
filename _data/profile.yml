@@ -102,7 +102,7 @@ certifications:
     credential: ''
     date: September 2026
     image: /assets/random_images/certificate1.png
-    url: app.hackthebox.com/sherlocks
+    url: "app.hackthebox.com/sherlocks"
     key: 'no'
   certificate2:
     name: CJCA
