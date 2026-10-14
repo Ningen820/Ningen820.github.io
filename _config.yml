@@ -4,6 +4,7 @@ url: "https://ningen820.github.io"
 baseurl: ""
 repository: "Ningen820/Ningen820.github.io"
 lang: "en"
+
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
