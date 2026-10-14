@@ -7,7 +7,7 @@ GitHub: [Ningen820](https://github.com/Ningen820)
 
 Aspiring cybersecurity professional focused on threat hunting, security operations, and digital forensics and incident response (DFIR). Developing practical skills through cybersecurity labs, investigative challenges, and vulnerability research. Interested in analyzing security events, investigating suspicious activity, identifying vulnerabilities, and understanding attacker techniques to strengthen defensive security.
 
-## Experience / Job History
+## Experience
 
 **Cybersecurity Research & Practical Labs**
 - Investigated cybersecurity challenges across digital forensics, security operations, and offensive security.
@@ -22,13 +22,6 @@ Aspiring cybersecurity professional focused on threat hunting, security operatio
 - Vulnerability Research & Application Security
 - Memory Forensics
 - Python Programming
-
-## Certifications
-
-*Add earned certifications here.*
-
-## Education
-
 
 ## Languages
 
