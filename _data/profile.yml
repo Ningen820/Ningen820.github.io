@@ -132,7 +132,7 @@ achievements:
     title: Hackathon
     place: 1st Place
     detail: August 2025 | Indiana
-    rank: 1
+    rank: 3
     image: /assets/random_images/achievement1.png
     key: 'no'    
 
@@ -141,7 +141,7 @@ certifications:
   certificate1:
     name: CJCA
     issuer: Hack The Box
-    credential: '#ADYH43456M54DFE'
+    credential: ''
     date: September 2026
     image: /assets/random_images/certificate1.png
     key: 'no'
