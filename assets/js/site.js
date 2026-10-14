@@ -226,7 +226,7 @@
     const apply = () => {
       const query = norm(search.value).toLowerCase();
       const visible = rows.filter((row) => {
-        const searchable = [row.dataset.title, row.dataset.summary, row.dataset.category, row.dataset.difficulty, row.dataset.platform, row.dataset.os].join(' ').toLowerCase();
+        const searchable = [row.dataset.title].join(' ').toLowerCase();
         return (!query || searchable.includes(query))
           && (!category.value || row.dataset.category === category.value)
           && (!difficulty.value || row.dataset.difficulty === difficulty.value)
