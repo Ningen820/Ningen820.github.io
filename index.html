@@ -3,7 +3,6 @@ layout: default
 title: Home
 description: Offensive security, vulnerability research, digital forensics, and cybersecurity writeups.
 ---
-
 {% assign p = site.data.profile %}
 <section class="hero-section" id="top">
   <div class="hero-grid section-wrap">
@@ -30,7 +29,14 @@ description: Offensive security, vulnerability research, digital forensics, and 
       </div>
     </div>
   </div>
+  <div class="stats-bar section-wrap" aria-label="Career highlights">
+    <div class="stat-item"><strong>{{ site.writeups.size | escape }}</strong><span>Writeups Published</span></div>
+    <div class="stat-item"><strong>{{ p.achievements.size | escape }}</strong><span>Total Achievements</span></div>
+    <div class="stat-item"><strong>{{ p.stats.years_experience | escape }}</strong><span>Years Experience</span></div>
+    <div class="stat-item"><strong>{{ p.certifications.size | escape }}</strong><span>Certificates</span></div>
+  </div>
 </section>
+
 <section class="content-section section-wrap" id="about">
   <div class="section-heading"><p class="section-kicker"><span>//</span> WHOAMI</p><h2>About <span class="accent">me</span></h2><p class="section-intro">Curiosity-driven security work, from understanding how systems fail to helping make them stronger.</p></div>
   <div class="about-grid">
@@ -53,17 +59,18 @@ description: Offensive security, vulnerability research, digital forensics, and 
   </div>
 </section>
 
-
-<section class="content-section section-wrap" id="highlights">
-  <div class="section-heading"><p class="section-kicker"><span>//</span> QUICK OVERVIEW</p><h2>About <span class="accent">Highlights</span></h2><p class="section-intro">A snapshot of my work and progress in cybersecurity.</p></div>
-  <div class="stats-bar section-wrap" aria-label="About highlights">
-    <div class="stat-item"><strong>{{ site.writeups.size | escape }}</strong><span>Writeups Published</span></div>
-    <div class="stat-item"><strong>{{ p.achievements.size | escape }}</strong><span>Total Achievements</span></div>
-    <div class="stat-item"><strong>{{ p.stats.years_experience | escape }}</strong><span>Years Experience</span></div>
-    <div class="stat-item"><strong>{{ p.certifications.size | escape }}</strong><span>Certificates</span></div>
+<section class="content-section section-wrap section-tinted" id="experience">
+  <div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> FIELD EXPERIENCE</p><h2>Experience <span class="accent">History</span></h2></div>
+  <div class="experience-list">
+    {% for item in p.experience %}
+    <article class="experience-row spotlight">
+      <div class="experience-index">0{{ forloop.index }}</div>
+      <div class="experience-main"><p class="experience-type">{{ item.role | escape }}</p><h3>{{ item.company | escape }}</h3><p>{{ item.description | escape }}</p></div>
+      <div class="experience-company">{{ item.date | escape }} <span aria-hidden="true">↗</span></div>
+    </article>
+    {% endfor %}
   </div>
 </section>
-
 
 <section class="content-section section-wrap" id="skills">
   <div class="section-heading"><p class="section-kicker"><span>//</span> ARSENAL</p><h2>Skills <span class="accent">&amp; tools</span></h2><p class="section-intro">My areas of expertise and toolkits.</p></div>
@@ -79,31 +86,6 @@ description: Offensive security, vulnerability research, digital forensics, and 
 </section>
 
 
-<section class="content-section section-wrap section-tinted" id="experience">
-  <div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> FIELD EXPERIENCE</p><h2>Experience <span class="accent">History</span></h2></div>
-  <div class="experience-list">
-    {% for item in p.experience %}
-    <article class="experience-row spotlight">
-      <div class="experience-index">0{{ forloop.index }}</div>
-      <div class="experience-main"><p class="experience-type">{{ item.role | escape }}</p><h3>{{ item.company | escape }}</h3><p>{{ item.description | escape }}</p></div>
-      <div class="experience-company">{{ item.date | escape }} <span aria-hidden="true">↗</span></div>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-
-
-<section class="content-section section-wrap section-tinted" id="certifications">
-  <div class="section-heading"><p class="section-kicker"><span>//</span> CREDENTIALS</p><h2>Certifications</h2><p class="section-intro">Industry standard certifications &amp; more</p></div>
-  <div class="cert-grid">
-    {% assign certificate_entries = p.certifications | sort %}
-    {% for certificate_entry in certificate_entries %}{% assign cert = certificate_entry[1] %}
-    <article class="cert-card spotlight{% if cert.key == 'yes' %} is-featured{% endif %}"><div class="cert-icon">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}</article>
-    {% endfor %}
-  </div>
-</section>
-
-
 <section class="content-section section-wrap section-tinted" id="achievements">
   <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2><span class="accent">Achievements</span></h2><p class="section-intro">My achievements across multiple cybersecurity-related platoforms.</p></div>
   <div class="achievements-grid">
@@ -114,11 +96,13 @@ description: Offensive security, vulnerability research, digital forensics, and 
   </div>
 </section>
 
-
-<section class="content-section section-wrap" id="cves">
-  <div class="research-panel spotlight">
-    <div class="research-copy"><p class="section-kicker"><span>//</span> DISCLOSURE &amp; IMPACT</p><h2>Research that <span class="accent">matters</span></h2><p>{{ p.research_note | escape }}</p><a class="text-link" href="{{ p.github_url | escape }}" target="_blank" rel="noopener noreferrer">Explore public repositories <span aria-hidden="true">↗</span></a></div>
-    <div class="research-metrics"><div><strong>{{ p.stats.cves_published | escape }}</strong><span>CVE publications</span></div><div><strong>{{ p.stats.affected_installs | escape }}</strong><span>Plugin installs affected</span></div><div><strong>PHP</strong><span>Code review experience</span></div></div>
+<section class="content-section section-wrap section-tinted" id="certifications">
+  <div class="section-heading"><p class="section-kicker"><span>//</span> CREDENTIALS</p><h2>Certifications</h2><p class="section-intro">Industry standard certifications &amp; more</p></div>
+  <div class="cert-grid">
+    {% assign certificate_entries = p.certifications | sort %}
+    {% for certificate_entry in certificate_entries %}{% assign cert = certificate_entry[1] %}
+    <article class="cert-card spotlight{% if cert.key == 'yes' %} is-featured{% endif %}"><div class="cert-icon">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}</article>
+    {% endfor %}
   </div>
 </section>
 
@@ -139,7 +123,6 @@ description: Offensive security, vulnerability research, digital forensics, and 
   </div>
 </section>
 
-
 <section class="content-section section-wrap" id="writeups">
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>WRITEUPS</p><h2>Latest <span class="accent">Writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by update time to surface the latest pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
   {% assign home_writeups_limit = 3 %}
@@ -156,6 +139,16 @@ description: Offensive security, vulnerability research, digital forensics, and 
 </section>
 
 
+
+
+<!-- <section class="content-section section-wrap" id="cves">
+  <div class="research-panel spotlight">
+    <div class="research-copy"><p class="section-kicker"><span>//</span> DISCLOSURE &amp; IMPACT</p><h2>Research that <span class="accent">matters</span></h2><p>{{ p.research_note | escape }}</p><a class="text-link" href="{{ p.github_url | escape }}" target="_blank" rel="noopener noreferrer">Explore public repositories <span aria-hidden="true">↗</span></a></div>
+    <div class="research-metrics"><div><strong>{{ p.stats.cves_published | escape }}</strong><span>CVE publications</span></div><div><strong>{{ p.stats.affected_installs | escape }}</strong><span>Plugin installs affected</span></div><div><strong>PHP</strong><span>Code review experience</span></div></div>
+  </div>
+</section> -->
+
+
 <section class="content-section section-wrap contact-section" id="contact">
   <div class="section-heading"><p class="section-kicker"><span>//</span> ESTABLISH CONNECTION</p><h2>Let’s talk <span class="accent">security</span></h2><p class="section-intro">For security collaboration, research discussion, and professional opportunities.</p></div>
   <div class="contact-grid">
@@ -168,3 +161,19 @@ description: Offensive security, vulnerability research, digital forensics, and 
     {% endfor %}
   </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+a
+ -->
+
