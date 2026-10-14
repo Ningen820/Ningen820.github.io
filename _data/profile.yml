@@ -40,6 +40,7 @@ experience:
   company: XXXX
   date: Aug 2023 - Nov 2023
   description: Application security, vulnerability discovery, secure code review, and practical security assessment.
+  url: "hackthebox.com"
 
 - role: Internship
   company: XXXX
@@ -75,24 +76,26 @@ skills:
     key: 'yes'
 
 
-achievements: {}
-  # achievement1:
-  #   title: Hackathon
-  #   place: 1st Place
-  #   detail: August 2025 | USA
-  #   rank: 1
-  #   image: /assets/random_images/achievement1.png
-  #   key: 'no'    
+achievements:
+  achievement1:
+    title: Hackathon
+    place: 1st Place
+    detail: August 2025 | USA
+    rank: 1
+    image: /assets/random_images/achievement1.png
+    url: "app.hackthebox.com/sherlocks"
+    key: 'no'    
 
 
-certifications: {}
-  # certificate1:
-  #   name: CJCA
-  #   issuer: Hack The Box
-  #   credential: ''
-  #   date: September 2026
-  #   image: /assets/random_images/certificate1.png
-  #   key: 'no'
+certifications:
+  certificate1:
+    name: CJCA
+    issuer: Hack The Box
+    credential: ''
+    date: September 2026
+    image: /assets/random_images/certificate1.png
+    url: "app.hackthebox.com/sherlocks"
+    key: 'no'
     
 projects:
   - title: "TESTING"
