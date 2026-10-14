@@ -60,7 +60,7 @@ layout: default
         <img
           src="{{ page.image | relative_url }}"
           alt="{{ page.image_alt | default: page.title | escape }}"
-          loading="lazy"
+          loading="lazy" onerror="this.style.display='none'"
         >
 
         {% if page.image_caption != blank %}
