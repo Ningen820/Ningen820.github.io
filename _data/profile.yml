@@ -130,11 +130,6 @@ socials:
   url: https://github.com/Ningen820
   mark: GH
   
-- name: LinkedIn
-  label: Professional profile
-  url: ''
-  mark: in
-  
 - name: Email
   label: Direct contact
   url: 'mailto:ahmadbobo2009@gmail.com'
