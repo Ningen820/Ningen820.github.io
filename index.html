@@ -105,8 +105,8 @@ description: Offensive security, vulnerability research, digital forensics, and 
     {% for project in projects limit: projects_limit %}
     <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
       <div class="project-card-head"><span> </span></div>
-      <h3>{% if project.icon != blank %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.redirect_folder | append: '/' | append: project.icon | relative_url }}" loading="lazy" onerror="this.outerHTML = '<span class=\'project-symbol\' aria-hidden=\'true\'>./</span>'">{% else %}<span class="project-symbol" aria-hidden="true">./</span>{% endif %}<span>{{ project.title | escape }}</span></h3><p>{{ project.description | escape }}</p>      
-      <div class="writeup-card-foot"><span>projects/{{ project.redirect_folder }}</span><span>{{project.date | date: "%Y-%m-%d %H:%M"}}</span><span class="project-open">Open on GitHub ↗</span></div>
+      <h3>{% if project.icon != blank %}<img class="project-symbol-image" src="{{ '/projects/' | append: project.redirect_folder | append: '/' | append: project.icon | relative_url }}" loading="lazy" onerror="this.style.display='none'">{% else %}<span class="project-symbol" aria-hidden="true">./</span>{% endif %}<span>{{ project.title | escape }}</span></h3><p>{{ project.description | escape }}</p>      
+      <div class="writeup-card-foot"><span>projects/{{ project.redirect_folder }}</span><span>{{project.date | date: "%Y-%m-%d %H:%M"}}</span><span class="project-open">Open on GitHub ↗</span></div>         <!-- onerror="this.outerHTML = '<span class=\'project-symbol\' aria-hidden=\'true\'>./</span>'"-->
     </a>
     {% endfor %}
   </div>
@@ -120,7 +120,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
     {% for writeup in home_writeups limit: home_writeups_limit %}
     <a class="writeup-card spotlight" href="{{ writeup.url | relative_url }}">
       <div class="writeup-card-top"><span class="section-kicker"><span>//</span> {{ writeup.category | default: "Writeup" | upcase | escape }}</span><span class="difficulty-chip difficulty-{{ writeup.difficulty | default: 'unrated' | slugify }}">{{ writeup.difficulty | default: "Unrated" | escape }}</span></div>
-      <h3>{% if writeup.image != blank %}<img class="writeup-card-thumb" src="{{ writeup.image | relative_url }}" alt="" loading="lazy">{% endif %}<span>{{ writeup.title | escape }}</span></h3><p>{{ writeup.summary | default: "Writeup Walkthrough" | escape }}</p>
+      <h3>{% if writeup.image != blank %}<img class="writeup-card-thumb" src="{{ writeup.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}<span>{{ writeup.title | escape }}</span></h3><p>{{ writeup.summary | default: "Writeup Walkthrough" | escape }}</p>
       <div class="writeup-card-foot"><span>{% assign wt = writeup.reading_time | plus: 0 %}{% if wt > 0 %}{{ wt }} min read{% else %}Field notes{% endif %}</span><span>{{writeup.date | date: "%Y-%m-%d %H:%M"}}</span><span class="text-link">Read Writeup <span aria-hidden="true">↗</span></span></div>
     </a>
     {% endfor %}
