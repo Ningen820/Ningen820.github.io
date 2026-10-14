@@ -29,11 +29,8 @@ hero_roles:
 - DFIR
 repo_url: https://github.com/Ningen820/Ningen820.github.io
 github_url: https://github.com/Ningen820
-linkedin_url: ''
-email: 'ahmadbobo2009@gmail.com'
 cv_path: /assets/ningen820-cv.md
 stats:
-  ctf_first_places: 7+
   years_experience: 5+
 
 
@@ -79,97 +76,52 @@ skills:
     image: /assets/random_images/idk.png
     key: 'yes'
 
-  skill2:
-    title: Offensive Security
-    description: Find weaknesses, validate impact, and communicate risk clearly.
-    items:
-    - Penetration Testing
-    - Web Exploitation
-    - Threat Modeling
-    - Risk Assessment
-    image: /assets/random_images/pfp.png
-    key: 'no'
-  
-  skill3:
-    title: Security Research
-    description: Research vulnerabilities and turn findings into actionable remediation.
-    items:
-    - Vulnerability Research
-    - Code Review (PHP)
-    - Semgrep
-    - CVE Discovery
-    - PoC Development
-    image: /assets/random_images/iconsubst3.png
-    key: 'no'
-    
-  skill4:
-    title: Security Engineering
-    description: Build repeatable security practices into engineering workflows.
-    items:
-    - Secure Code Review
-    - SIEM Deployment
-    - ISO 27001
-    - Threat Intelligence
-    image: /assets/random_images/iconsubst4.png
-    key: 'no'
-    
-  skill5:
-    title: Platforms & Investigation
-    description: Analyze host evidence and work through hands-on security labs.
-    items:
-    - Windows Artifacts
-    - Registry Analysis
-    - Digital Forensics
-    - CTF Challenges
-    image: /assets/random_images/iconsubst5.png
-    key: 'no'
 
 
 
   
-achievements:
-  achievement1:
-    title: Hackathon
-    place: 1st Place
-    detail: August 2025 | Indiana
-    rank: 1
-    image: /assets/random_images/achievement1.png
-    key: 'no'    
+achievements: {}
+  # achievement1:
+  #   title: Hackathon
+  #   place: 1st Place
+  #   detail: August 2025 | USA
+  #   rank: 1
+  #   image: /assets/random_images/achievement1.png
+  #   key: 'no'    
 
 
-certifications:
-  certificate1:
-    name: CJCA
-    issuer: Hack The Box
-    credential: ''
-    date: September 2026
-    image: /assets/random_images/certificate1.png
-    key: 'no'
+certifications: {}
+  # certificate1:
+  #   name: CJCA
+  #   issuer: Hack The Box
+  #   credential: ''
+  #   date: September 2026
+  #   image: /assets/random_images/certificate1.png
+  #   key: 'no'
     
 
 
     
-education:
-- qualification: B.Eng Network Security
-  institution: Tek-Up University
-- qualification: B.Sc Computer Networks
-  institution: ISITCom Sousse
+education: []
+# - qualification: B.Eng Network Security
+#   institution: Tek-Up University
+# - qualification: B.Sc Computer Networks
+#   institution: ISITCom Sousse
 languages:
-- Pular (Native)
-- English (Bilingual)
+- English
 
 
 
-experience_highlights:
-- label: Vulnerability disclosure
-  value: 6x CVE publisher
-  description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied
-    profile reference.
-- label: Competitive security
-  value: MENA & global CTFs
-  description: Competition placements across regional and international events.
-research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. Detailed
-  CVE records and writeup evidence should be linked here as they are added to the repository.
+experience_highlights: []
+# - label: Vulnerability disclosure
+#   value: 6x CVE publisher
+#   description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied
+#     profile reference.
+# - label: Competitive security
+#   value: MENA & global CTFs
+#   description: Competition placements across regional and international events.
+# research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. Detailed
+#   CVE records and writeup evidence should be linked here as they are added to the repository.
 
 
 socials:
@@ -198,41 +150,13 @@ socials:
 
 
 
-projects:
-  - title: "TESTING"
-    redirect_folder: "project1"
-    description: "This is project test 1's description"
-    icon: "icon.png"
-    draft: false
-    date: "2025-10-10 04:10:10 -04:00"
-
-  - title: "TESTING2"
-    redirect_folder: "project2"
-    description: "This is project test 2's description"
-    icon: ""
-    draft: false
-    date: "2024-10-10 08:10:10 -04:00"
-
-  - title: "TESTING3"
-    redirect_folder: "project3"
-    description: "This is project test 3's description"
-    icon: ""
-    draft: true
-    date: "2023-10-10 08:10:10 -04:00"
-
-  - title: "TESTING4"
-    redirect_folder: "project4"
-    description: "This is project test 4's description"
-    icon: ""
-    draft: false
-    date: "2021-10-10 08:10:10 -04:00"
-
-  - title: "TESTING5"
-    redirect_folder: "projecttet"
-    description: "This is projecttet's description"
-    icon: ""
-    draft: false
-    date: "2022-10-10 08:10:10 -04:00"
+projects: []
+  # - title: "TESTING"
+  #   redirect_folder: "project1"
+  #   description: "This is project test 1's description"
+  #   icon: "icon.png"
+  #   draft: false
+  #   date: "2025-10-10 04:10:10 -04:00"
 
   
 
