@@ -294,7 +294,7 @@ button { color: inherit; }
 .related-card h3 { margin: 12px 0 7px; font-size: 16px; }
 .related-card p { margin: 0 0 18px; color: var(--muted); font-size: 11px; line-height: 1.7; }
 .related-card .text-link { margin-top: auto; font-size: 10px; }
-.related-card .writeup-card-thumb { width: calc(100% -50px); height: 250; object-fit: contain; flex: 0 0 auto; }
+.related-card .writeup-card-thumb { width: calc(100% -50px); height: 350; object-fit: contain; max-height: none; }
 @media (max-width: 1100px) {
   .site-header { gap: 16px; }
   .nav-links { gap: 12px; }
