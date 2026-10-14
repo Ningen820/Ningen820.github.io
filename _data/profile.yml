@@ -35,28 +35,12 @@ about:
 
 
 
-experience:
-- role: Internship
-  company: XXXX
-  date: Aug 2023 - Nov 2023
-  description: Application security, vulnerability discovery, secure code review, and practical security assessment.
-  url: "https://hackthebox.com"
-
-- role: Internship
-  company: XXXX
-  date: Feb 2025 - Apr 2025
-  description: Investigating cyber threats and helping teams improve defensive posture through security assessments and threat-focused work.
-  url: ""
-
-- role: Internship
-  company: XXXX
-  date: Jun 2026 - Aug 2026
-  description: Application security, vulnerability discovery, secure code review, and practical security assessment.
-
-- role: Internship
-  company: XXXX
-  date: October 2026 - Present
-  description: Investigating cyber threats and helping teams improve defensive posture through security assessments and threat-focused work.
+experience: []
+# - role: Internship
+#   company: XXXX
+#   date: Aug 2023 - Nov 2023
+#   description: Application security, vulnerability discovery, secure code review, and practical security assessment.
+#   url: ""
 
   
 skills:
@@ -79,47 +63,32 @@ skills:
 
 achievements:
   achievement1:
-    title: Hackathon
-    place: 1st Place
-    detail: August 2025 | USA
-    rank: 1
+    title: Wow, That Was A SOCer
+    place: Badge
+    detail: October 2026 | HTB
+    rank: 2
     image: /assets/random_images/achievement1.png
-    url: "https://app.hackthebox.com/sherlocks"
-    key: 'no'
-  achievement2:
-    title: Hackathon
-    place: 1st Place
-    detail: August 2025 | USA
-    rank: 1
-    image: /assets/random_images/achievement1.png
-    url: ""
-    key: 'no'    
+    url: "https://labs.hackthebox.com/achievement/badge/3353541/243"
+    key: 'no'  
 
 
-certifications:
-  certificate1:
-    name: CJCA
-    issuer: Hack The Box
-    credential: ''
-    date: September 2026
-    image: /assets/random_images/certificate1.png
-    url: "https://app.hackthebox.com/sherlocks"
-    key: 'no'
-  certificate2:
-    name: CJCA
-    issuer: Hack The Box
-    credential: ''
-    date: September 2026
-    image: /assets/random_images/certificate1.png
-    url: ""
-    key: 'no'
+certifications: {}
+  # certificate1:
+  #   name: CJCA
+  #   issuer: Hack The Box
+  #   credential: ''
+  #   date: September 2026
+  #   image: /assets/random_images/certificate1.png
+  #   url: "https://app.hackthebox.com/sherlocks"
+  #   key: 'no'
+
     
 projects:
   - title: "TESTING"
     redirect_folder: "project1"
     description: "This is project test 1's description"
-    icon: "icon.png"
-    draft: false
+    icon: "/projects/project1/icon.png"
+    draft: true
     date: "2025-10-10 04:10:10 -04:00"    
 
 
@@ -146,7 +115,7 @@ socials:
   mark: GH
   
 - name: Email
-  label: Direct contact
+  label: My Gmail
   url: 'mailto:ahmadbobo2009@gmail.com'
   mark: '@'
 
