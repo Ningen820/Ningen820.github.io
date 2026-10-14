@@ -127,65 +127,26 @@ skills:
 
 
   
-achievements: []
-  #achievement1:
-    #title: ti
-    #place: 1st Place
-    #detail: 2024 Abu Dhabi
-    #rank: 1
-    #image: /assets/random_images/border.png
-    #key: 'no'    
+achievements:
+  achievement1:
+    title: Hackathon
+    place: 1st Place
+    detail: August 2025 | Indiana
+    rank: 1
+    image: /assets/random_images/achievement1.png
+    key: 'no'    
 
 
-    
 certifications:
   certificate1:
-    name: SC-900
-    issuer: Microsoft
-    credential: '#A292F6FC0135EE1'
+    name: CJCA
+    issuer: Hack The Box
+    credential: '#ADYH43456M54DFE'
     date: September 2026
     image: /assets/random_images/certificate1.png
     key: 'no'
     
-  certificate2:
-    name: C-AI/MLPen
-    issuer: The SecOps Group · 100%
-    credential: ''
-    date: August 2026 · With Merit
-    image: /assets/random_images/idk.png
-    key: 'no'
-    
-  certificate3:
-    name: eCDFP
-    issuer: INE Security
-    credential: '#184099714'
-    date: June 2026
-    image: /assets/random_images/certificate3.png
-    key: 'no'
-    
-  certificate4:
-    name: CBTeamerX
-    issuer: The SecOps Group
-    credential: '#11411905'
-    date: ''
-    image: /assets/random_images/certificate4.png
-    key: 'no'
-    
-  certificate5:
-    name: eCTHP
-    issuer: INE Security
-    credential: '#178277790'
-    date: ''
-    image: /assets/random_images/certificate5.png
-    key: 'no'
-    
-  certificate6:
-    name: CDAPen
-    issuer: The SecOps Group
-    credential: '#10991584'
-    date: ''
-    image: /assets/random_images/certificate6.png
-    key: 'no'
+
 
     
 education:
@@ -224,7 +185,7 @@ socials:
   
 - name: Email
   label: Direct contact
-  url: 'ahmadbobo2009@gmail.com'
+  url: 'mailto:ahmadbobo2009@gmail.com'
   mark: '@'
 
 
