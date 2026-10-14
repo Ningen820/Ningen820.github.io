@@ -19,12 +19,12 @@ hero_roles:
 - SOC Analyst
 - DFIR
 stats:
-  years_experience: 5+
+  years_experience: 2+
 
 about:
   heading: Blue Team & Threat Hunting
   paragraphs:
-  - I'm a Aspiring cybersecurity professional focused on threat hunting, security operations, and digital forensics and incident response (DFIR). Developing practical skills through cybersecurity labs, investigative challenges, and vulnerability research. Interested in analyzing security events, investigating suspicious activity, identifying vulnerabilities, and understanding attacker techniques to strengthen defensive security.
+  - I'm an aspiring cybersecurity professional focused on threat hunting, security operations, and digital forensics and incident response (DFIR). Developing practical skills through cybersecurity labs, investigative challenges, and vulnerability research. Interested in analyzing security events, investigating suspicious activity, identifying vulnerabilities, and understanding attacker techniques to strengthen defensive security.
 
 
 
@@ -104,12 +104,12 @@ github_url: https://github.com/Ningen820
 cv_path: /assets/ningen820-cv.md
 socials:
 - name: GitHub
-  label: Code, projects & repositories
+  label: My Github
   url: https://github.com/Ningen820
   mark: GH
   
 - name: Email
-  label: My Gmail
+  label: My Email
   url: 'mailto:ahmadbobo2009@gmail.com'
   mark: '@'
 
