@@ -123,7 +123,7 @@ layout: default
         <!-- Hidden source cards; JavaScript randomly selects recommendations. -->
         <div id="related-candidates" hidden>
           {% assign related = site.writeups | sort: 'title' %}
-        
+
           {% for item in related %}
             {% if item.url != page.url %}
               <a
@@ -136,53 +136,27 @@ layout: default
               >
                 {% if item.image != blank %}
                   <img
-                    class="writeup-card-thumb"
+                    class="writeup-card related-card"
                     src="{{ item.image | relative_url }}"
                     alt="{{ item.image_alt | escape }}"
                     loading="lazy"
                     style="display:block; width:100%; aspect-ratio:16 / 9; object-fit:cover;"
                   >
                 {% endif %}
-        
+
                 <h3>{{ item.title | escape }}</h3>
-        
-                <div class="metadata-line" aria-label="Writeup metadata">
-                  <span class="metadata-chip">
-                    {{ item.category | escape }}
-                  </span>
-        
-                  <span class="difficulty-chip difficulty-{{ item.difficulty | slugify }}">
-                    {{ item.difficulty | escape }}
-                  </span>
-        
-                  <span>
-                    <span class="meta-label">Platform</span>
-                    {{ item.platform | escape }}
-                  </span>
-        
-                  <span>
-                    <span class="meta-label">OS</span>
-                    {{ item.os | escape }}
-                  </span>
-        
-                  {% assign read_time = item.reading_time | plus: 0 %}
-                  {% if read_time > 0 %}
-                    <span>{{ read_time }} min read</span>
-                  {% endif %}
-        
-                  {% if item.date %}
-                    <span>{{ item.date | date: "%b %d, %Y" }}</span>
-                  {% endif %}
-                </div>
-        
+
+                <p>
+                  {{ item.summary | escape }}
+                </p>
+
                 <span class="text-link">
-                  Read Writeup <span aria-hidden="true">↗</span>
+                  Read notes <span aria-hidden="true">↗</span>
                 </span>
               </a>
             {% endif %}
           {% endfor %}
         </div>
-        
       </section>
     </div>
   </div>
