@@ -136,10 +136,11 @@ layout: default
               >
                 {% if item.image != blank %}
                   <img
-                    class="related-card writeup-card-thumb"
+                    class="writeup-card-thumb"
                     src="{{ item.image | relative_url }}"
                     alt="{{ item.image_alt | escape }}"
                     loading="lazy"
+                    style="display:block; width:100%; aspect-ratio:16 / 9; object-fit:cover;"
                   >
                 {% endif %}
         
@@ -173,8 +174,10 @@ layout: default
                     <span>{{ item.date | date: "%b %d, %Y" }}</span>
                   {% endif %}
                 </div>
-                <br>
-                <span class="text-link">Read Writeup <span aria-hidden="true">↗</span></span> 
+        
+                <span class="text-link">
+                  Read Writeup <span aria-hidden="true">↗</span>
+                </span>
               </a>
             {% endif %}
           {% endfor %}
