@@ -253,7 +253,7 @@ button { color: inherit; }
 .meta-label { color: var(--subtle); }
 .writeup-cover-wrap { padding-top: 26px; }
 .writeup-cover { width: fit-content; max-width: min(100%, 750px); overflow: hidden; margin: 0 auto; border: 1px solid var(--line); border-radius: 13px; background: var(--panel); }
-.writeup-cover img { display: block; width: auto; height: 500px; max-width: 100%; max-height: 600px; object-fit: contain; }
+.writeup-cover img { display: block; width: auto; height: autopx; max-width: 100%; max-height: 300px; object-fit: contain; }
 .writeup-cover figcaption { padding: 10px 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
 .article-layout { display: grid; grid-template-columns: 210px minmax(0, 780px); justify-content: space-between; gap: clamp(28px, 5vw, 80px); padding-top: 42px; padding-bottom: 80px; }
 .sidebar-sticky { position: sticky; top: 100px; }
@@ -294,6 +294,7 @@ button { color: inherit; }
 .related-card h3 { margin: 12px 0 7px; font-size: 16px; }
 .related-card p { margin: 0 0 18px; color: var(--muted); font-size: 11px; line-height: 1.7; }
 .related-card .text-link { margin-top: auto; font-size: 10px; }
+.related-card .writeup-card-thumb { width: calc(100% -50px); height: 200px; object-fit: contain; flex: 0 0 auto; }
 @media (max-width: 1100px) {
   .site-header { gap: 16px; }
   .nav-links { gap: 12px; }
