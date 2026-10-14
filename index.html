@@ -88,7 +88,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
 
 <section class="content-section section-wrap" id="projects">
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>PROJECTS</p><h2>Latest <span class="accent">Projects</span></h2><p class="section-intro">Projects sorted by their date time.</p></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">Browse all projects <span aria-hidden="true">↗</span></a></div>
-  {% assign projects_limit = 3 %}
+  {% assign projects_limit = 2 %}
   {% assign p = site.data.profile %}
   {% assign projects = p.projects | where_exp: "item", "item.draft != true" | sort: "date" | reverse %}
   <div class="project-grid project-grid-home">
