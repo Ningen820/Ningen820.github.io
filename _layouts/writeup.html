@@ -3,8 +3,8 @@ layout: default
 ---
 
 {% assign p = site.data.profile %}
-{% assign current_category = page.category | default: "" | downcase | strip %}
-{% assign current_difficulty = page.difficulty | default: "" | downcase | strip %}
+{% assign current_category = page.category | downcase | strip %}
+{% assign current_difficulty = page.difficulty | downcase | strip %}
 
 <article class="writeup-page">
   <section class="writeup-hero section-wrap">
@@ -15,7 +15,7 @@ layout: default
     <p class="section-kicker">
       <span>//</span> WALKTHROUGH
       <span class="kicker-divider">/</span>
-      {{ page.category | default: "Writeup" | upcase | escape }}
+      {{ page.category | upcase | escape }}
     </p>
 
     <h1>{{ page.title | escape }}</h1>
@@ -26,21 +26,21 @@ layout: default
 
     <div class="metadata-line" aria-label="Writeup metadata">
       <span class="metadata-chip">
-        {{ page.category | default: "Uncategorized" | escape }}
+        {{ page.category | escape }}
       </span>
 
-      <span class="difficulty-chip difficulty-{{ page.difficulty | default: 'unrated' | slugify }}">
-        {{ page.difficulty | default: "Unrated" | escape }}
+      <span class="difficulty-chip difficulty-{{ page.difficulty | slugify }}">
+        {{ page.difficulty | escape }}
       </span>
 
       <span>
         <span class="meta-label">Platform</span>
-        {{ page.platform | default: "Unspecified" | escape }}
+        {{ page.platform | escape }}
       </span>
 
       <span>
         <span class="meta-label">OS</span>
-        {{ page.os | default: "Unspecified" | escape }}
+        {{ page.os | escape }}
       </span>
 
       {% assign read_time = page.reading_time | plus: 0 %}
@@ -59,7 +59,7 @@ layout: default
       <figure class="writeup-cover spotlight">
         <img
           src="{{ page.image | relative_url }}"
-          alt="{{ page.image_alt | default: page.title | escape }}"
+          alt="{{ page.image_alt | escape }}"
           loading="lazy" onerror="this.style.display='none'"
         >
 
@@ -131,14 +131,14 @@ layout: default
                 href="{{ item.url | relative_url }}"
                 data-related-candidate
                 data-url="{{ item.url | escape }}"
-                data-category="{{ item.category | default: '' | downcase | strip | escape }}"
-                data-difficulty="{{ item.difficulty | default: '' | downcase | strip | escape }}"
+                data-category="{{ item.category | downcase | strip | escape }}"
+                data-difficulty="{{ item.difficulty | downcase | strip | escape }}"
               >
                 {% if item.image != blank %}
                   <img
                     class="writeup-card-thumb"
                     src="{{ item.image | relative_url }}"
-                    alt="{{ item.image_alt | default: item.title | escape }}"
+                    alt="{{ item.image_alt | escape }}"
                     loading="lazy"
                     style="display:block; width:100%; aspect-ratio:16 / 9; object-fit:cover;"
                   >
@@ -147,7 +147,7 @@ layout: default
                 <h3>{{ item.title | escape }}</h3>
 
                 <p>
-                  {{ item.summary | default: "A practical security walkthrough." | escape }}
+                  {{ item.summary | escape }}
                 </p>
 
                 <span class="text-link">
