@@ -116,12 +116,11 @@ experience_highlights:
 - label: Vulnerability disclosure
   value: 6x CVE publisher
   description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied
-    profile reference.
+  profile reference.
 - label: Competitive security
   value: MENA & global CTFs
-   description: Competition placements across regional and international events.
- research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. Detailed
-   CVE records and writeup evidence should be linked here as they are added to the repository.
+  description: Competition placements across regional and international events.
+research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. DetailedCVE records and writeup evidence should be linked here as they are added to the repository.
 
 
 socials:
