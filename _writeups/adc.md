@@ -13,6 +13,7 @@ platform: "HTB"
 date: 2026-10-14 20:24:39 -04:00
 
 reading_time: 10
+permalink: /writeups/romcom-test/
 ---
 
 .
