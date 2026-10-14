@@ -136,11 +136,10 @@ layout: default
               >
                 {% if item.image != blank %}
                   <img
-                    class="writeup-card-thumb"
+                    class="related-card writeup-card-thumb"
                     src="{{ item.image | relative_url }}"
                     alt="{{ item.image_alt | escape }}"
                     loading="lazy"
-                    style="display:block; width:100%; aspect-ratio:16 / 16; object-fit:cover;"
                   >
                 {% endif %}
         
