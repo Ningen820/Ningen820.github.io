@@ -141,13 +141,13 @@ socials:
 
 
 
-projects: []
-  # - title: "TESTING"
-  #   redirect_folder: "project1"
-  #   description: "This is project test 1's description"
-  #   icon: "icon.png"
-  #   draft: false
-  #   date: "2025-10-10 04:10:10 -04:00"
+projects:
+  - title: "TESTING"
+    redirect_folder: "project1"
+    description: "This is project test 1's description"
+    icon: "icon.png"
+    draft: false
+    date: "2025-10-10 04:10:10 -04:00"
 
   
 
