@@ -4,6 +4,8 @@ title: Home
 description: Offensive security, vulnerability research, digital forensics, and cybersecurity writeups.
 ---
 {% assign p = site.data.profile %}
+
+<!-- about -->
 <section class="hero-section" id="top">
   <div class="hero-grid section-wrap">
     <div class="hero-copy">
@@ -59,6 +61,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
   </div>
 </section>
 
+<!-- experience -->
 <section class="content-section section-wrap section-tinted" id="experience">
   <div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> FIELD EXPERIENCE</p><h2>Experience <span class="accent">History</span></h2></div>
   <div class="experience-list">
@@ -72,6 +75,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
   </div>
 </section>
 
+<!--  skills -->
 <section class="content-section section-wrap" id="skills">
   <div class="section-heading"><p class="section-kicker"><span>//</span> ARSENAL</p><h2>Skills <span class="accent">&amp; tools</span></h2><p class="section-intro">My areas of expertise and toolkits.</p></div>
   <div class="skills-grid">
@@ -85,28 +89,29 @@ description: Offensive security, vulnerability research, digital forensics, and 
   </div>
 </section>
 
-
+<!-- achievements -->
 <section class="content-section section-wrap section-tinted" id="achievements">
   <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2><span class="accent">Achievements</span></h2><p class="section-intro">My achievements across multiple cybersecurity-related platoforms.</p></div>
   <div class="achievements-grid">
     {% assign achievement_entries = p.achievements | sort %}
     {% for achievement_entry in achievement_entries %}{% assign item = achievement_entry[1] %}
-    <article class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}"><div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div></article>
+    {% if item.url != blank %}<a href="{{ item.url | escape }}" class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">{% else %}<article class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}">{% endif %}<div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>{% if item.url != blank %}</a>{% else %}</article>{% endif %}
     {% endfor %}
   </div>
 </section>
 
+<!-- certifications -->
 <section class="content-section section-wrap section-tinted" id="certifications">
   <div class="section-heading"><p class="section-kicker"><span>//</span> CREDENTIALS</p><h2>Certifications</h2><p class="section-intro">Industry standard certifications &amp; more</p></div>
   <div class="cert-grid">
     {% assign certificate_entries = p.certifications | sort %}
     {% for certificate_entry in certificate_entries %}{% assign cert = certificate_entry[1] %}
-    <article class="cert-card spotlight{% if cert.key == 'yes' %} is-featured{% endif %}"><div class="cert-icon">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}</article>
+    {% if cert.url != blank %}<a href="{{ cert.url | escape }}" class="cert-card spotlight{% if cert.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">{% else %}<article class="cert-card spotlight{% if cert.key == 'yes' %} is-featured{% endif %}">{% endif %}<div class="cert-icon">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}{% if cert.url != blank %}</a>{% else %}</article>{% endif %}
     {% endfor %}
   </div>
 </section>
 
-
+<!-- projects -->
 <section class="content-section section-wrap" id="projects">
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>PROJECTS</p><h2>Latest <span class="accent">Projects</span></h2><p class="section-intro">Projects sorted by their date time.</p></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">Browse all projects <span aria-hidden="true">↗</span></a></div>
   {% assign projects_limit = 2 %}
@@ -123,6 +128,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
   </div>
 </section>
 
+<!-- writeups -->
 <section class="content-section section-wrap" id="writeups">
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>WRITEUPS</p><h2>Latest <span class="accent">Writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by update time to surface the latest pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
   {% assign home_writeups_limit = 3 %}
@@ -149,6 +155,7 @@ description: Offensive security, vulnerability research, digital forensics, and 
 </section> -->
 
 
+<!-- socials -->
 <section class="content-section section-wrap contact-section" id="contact">
   <div class="section-heading"><p class="section-kicker"><span>//</span> ESTABLISH CONNECTION</p><h2>Let’s talk <span class="accent">security</span></h2><p class="section-intro">For security collaboration, research discussion, and professional opportunities.</p></div>
   <div class="contact-grid">
