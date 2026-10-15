@@ -62,6 +62,7 @@ achievements:
     detail: October 2026 | HTB
     rank: 2
     image: /assets/random_images/achievement1.png
+    emoji: "🥈"
     url: "https://labs.hackthebox.com/achievement/badge/3353541/243"
     key: 'no'  
 
