@@ -35,6 +35,7 @@ defaults:
 
 plugins:
   - jekyll-sitemap
+
 exclude:
   - Gemfile
   - Gemfile.lock
