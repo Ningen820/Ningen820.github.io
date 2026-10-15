@@ -107,11 +107,11 @@ description: Explore technical writeups, investigation walkthroughs, certificati
     {% assign item_url = item.url | default: "" | strip %}
     {% if item_url == "" %}
     <article class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}">
-      <div class="achievement-trophy"><img src="{{ item.trophy }}"></div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
+      <div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='{{ item.trophy }}'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
     </article>
     {% else %}
     <a href="{{ item_url | escape }}" class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">
-      <div class="achievement-trophy"><img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'"></div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
+      <div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='{{ item.trophy }}'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
     </a>
     {% endif %}
     {% endfor %}
@@ -211,4 +211,3 @@ description: Explore technical writeups, investigation walkthroughs, certificati
 <!-- 
 a
  -->
-
