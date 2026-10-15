@@ -99,19 +99,24 @@ experience_highlights: []
 
 
 
-repo_url: https://github.com/Ningen820/Ningen820.github.io
-github_url: https://github.com/Ningen820
+repo_url: "https://github.com/Ningen820/Ningen820.github.io"
+github_url: "https://github.com/Ningen820"
 cv_path: /assets/ningen820-cv.md
 socials:
 - name: GitHub
-  label: My Github
-  url: https://github.com/Ningen820
+  label: github.com/Ningen820
+  url: "https://github.com/Ningen820"
   mark: GH
   
 - name: Email
-  label: My Email
+  label: ahmadbobo2009@gmail.com
   url: 'mailto:ahmadbobo2009@gmail.com'
   mark: '@'
+
+- name: HackTheBox
+  label: "User 3353541"
+  url: "https://app.hackthebox.com/users/3353541"
+  mark: "HTB"
 
 
 
