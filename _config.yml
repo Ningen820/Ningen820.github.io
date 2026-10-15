@@ -33,6 +33,8 @@ defaults:
       platform: "Unspecified"
       os: "Unspecified"
 
+plugins:
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
