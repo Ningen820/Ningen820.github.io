@@ -29,9 +29,11 @@ After all this, I needed some more information on how they got the credentials f
 By typing `cat auth.log |grep 06:3|grep -v 65.2.161.68`, I was able to reduce a lot of noise by excluding matches that contained the attacker's IP with the help of `-v` (does the reverse of a normal grep, it excludes the things we search for). This might sound odd at first because "WHY ARE WE EXCLUDING THAT? ISN'T THAT THE MOST IMPORTANT THING?", but we already searched through the 200+ lines that contained the attacker's IP and the info we are looking for is not located there. So by excluding it, 200+ lines are ignored and we also get to see what they did, if anything, after they logged in as "cyberjunkie". We just have to scroll down to the 32nd minute of the hour which was when he logged in as root. The main things I found them do after they logged in as root were: **making a cyberjunkie group, user, adding the user to group sudo, printing out (output) /etc/shadow using cat, and running a .sh script**
 
 
-> The timestamps in auth.log do not show a year so if we want to find it we have to utilize the wtmp file too, in there will look for the IP address of the attacker and get the year from there.
+> The timestamps in auth.log do not show the year so if we want to find it we have to utilize the wtmp file too, in there will look for the IP address of the attacker and get the year from there.
 
-> The descriptions above are a long and in-depth of my blind analysis so some of the things mentioned there might not be accurate. Double check them with the correct answers for each question below
+> The descriptions above are a long and in-depth of my blind analysis so some of the things mentioned there might not be accurate. Double check them with the correct answers for each question below.
+
+> Some of the code outputs have been simplified to make it fit better. Some of the output is omitted.  
 
 ## Questions
 
