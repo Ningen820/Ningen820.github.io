@@ -143,7 +143,7 @@ By typing `cat auth.log |grep 06:3|grep -v 65.2.161.68`, I was able to reduce a 
 
 
 
-	<article class="writeup-content-card" id="q3" markdown="1">
+	<article class="writeup-content-card" id="q3">
 		<div class="writeup-content-card-top">
 			<span class="section-kicker">
 				<span>//</span>QUESTION 03
