@@ -20,19 +20,7 @@ reading_time: 10
 ---
 
 
-
-## Contents
-
-- [Scenario](#scenario)
-- [Investigation](#investigation)
-  - [Q1 — Attacker IP](#q1)
-  - [Q2 — Compromised account](#q2)
-  - [Q3 — Interactive login timestamp](#q3)
-  - [Q4 — Session number](#q4)
-- [Final Answers](#final-answers)
-- [Key Notes](#key-notes)
-
-## Scenario
+## Overview
 
 Brutus investigates a Confluence server that was accessed after an SSH brute-force attack. The main artifacts are `auth.log`, which records authentication-related activity and some privileged commands, and `wtmp`, a binary record of login sessions. I used `auth.log` to identify the source and authentication events, then correlated it with `wtmp` to find when the interactive session actually started.
 
@@ -41,7 +29,7 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
 ## Investigation
 
 <div style="display:grid;gap:18px;">
-  <article class="writeup-card spotlight" id="q1">
+  <article class="writeup-card" id="q1">
     <div class="writeup-card-top">
       <span class="section-kicker"><span>//</span> QUESTION 01</span>
       <span class="difficulty-chip">AUTH.LOG</span>
@@ -49,14 +37,13 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
     <h3>What IP address did the attacker use to carry out the brute-force attack?</h3>
     <p><strong>Methodology</strong></p>
     <p>I extracted the IPv4 addresses found in SSH-related log entries, counted how often each appeared, and sorted the results. A source address appearing far more often than the others is a strong lead for the repeated login attempts.</p>
-    <div class="terminal-window spotlight">
+    <div class="terminal-window">
       <div class="terminal-window-head">
         <div class="terminal-lights"><i></i><i></i><i></i></div>
         <span>auth.log</span>
         <div style="display:flex;align-items:center;gap:9px;margin-left:auto;flex-shrink:0;">
           <span class="terminal-mini-status">bash</span>
           <span class="terminal-live" style="margin-left:0;">LIVE</span>
-          <button class="terminal-copy-button" type="button" data-copy-target="brutus-q1-command" style="padding:5px 8px;border:1px solid var(--line-strong);border-radius:6px;background:#121a27;color:#96a7c1;font-family:var(--mono);font-size:9px;cursor:pointer;">COPY</button>
         </div>
       </div>
       <div class="terminal-window-body">
@@ -67,7 +54,7 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
     <div class="writeup-card-foot"><span>ANSWER</span><strong><code>65.2.161.68</code></strong></div>
   </article>
 
-  <article class="writeup-card spotlight" id="q2">
+  <article class="writeup-card" id="q2">
     <div class="writeup-card-top">
       <span class="section-kicker"><span>//</span> QUESTION 02</span>
       <span class="difficulty-chip">AUTH.LOG</span>
@@ -75,14 +62,13 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
     <h3>Which account was compromised by the successful brute-force attempt?</h3>
     <p><strong>Methodology</strong></p>
     <p>I filtered for successful SSH password authentications from the attacker IP. The account named in an <code>Accepted password</code> message identifies which username the attacker accessed. The log shows a brief successful root login followed by another root authentication associated with the interactive session.</p>
-    <div class="terminal-window spotlight">
+    <div class="terminal-window">
       <div class="terminal-window-head">
         <div class="terminal-lights"><i></i><i></i><i></i></div>
         <span>auth.log</span>
         <div style="display:flex;align-items:center;gap:9px;margin-left:auto;flex-shrink:0;">
           <span class="terminal-mini-status">bash</span>
           <span class="terminal-live" style="margin-left:0;">LIVE</span>
-          <button class="terminal-copy-button" type="button" data-copy-target="brutus-q2-command" style="padding:5px 8px;border:1px solid var(--line-strong);border-radius:6px;background:#121a27;color:#96a7c1;font-family:var(--mono);font-size:9px;cursor:pointer;">COPY</button>
         </div>
       </div>
       <div class="terminal-window-body">
@@ -93,7 +79,7 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
     <div class="writeup-card-foot"><span>ANSWER</span><strong><code>root</code></strong></div>
   </article>
 
-  <article class="writeup-card spotlight" id="q3">
+  <article class="writeup-card" id="q3">
     <div class="writeup-card-top">
       <span class="section-kicker"><span>//</span> QUESTION 03</span>
       <span class="difficulty-chip">WTMP</span>
@@ -101,14 +87,13 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
     <h3>What is the UTC timestamp when the attacker manually logged in and established an interactive terminal session?</h3>
     <p><strong>Methodology</strong></p>
     <p>`auth.log` records the authentication event, but the question asks when the terminal session was established. Since `wtmp` is binary, I parsed it with the supplied `utmp.py` script and filtered the result by the attacker IP. The matching row identifies the root session one second after the authentication event.</p>
-    <div class="terminal-window spotlight">
+    <div class="terminal-window">
       <div class="terminal-window-head">
         <div class="terminal-lights"><i></i><i></i><i></i></div>
         <span>wtmp</span>
         <div style="display:flex;align-items:center;gap:9px;margin-left:auto;flex-shrink:0;">
           <span class="terminal-mini-status">bash</span>
           <span class="terminal-live" style="margin-left:0;">LIVE</span>
-          <button class="terminal-copy-button" type="button" data-copy-target="brutus-q3-command" style="padding:5px 8px;border:1px solid var(--line-strong);border-radius:6px;background:#121a27;color:#96a7c1;font-family:var(--mono);font-size:9px;cursor:pointer;">COPY</button>
         </div>
       </div>
       <div class="terminal-window-body">
@@ -119,7 +104,7 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
     <div class="writeup-card-foot"><span>ANSWER</span><strong><code>2024-03-06 06:32:45 UTC</code></strong></div>
   </article>
 
-  <article class="writeup-card spotlight" id="q4">
+  <article class="writeup-card" id="q4">
     <div class="writeup-card-top">
       <span class="section-kicker"><span>//</span> QUESTION 04</span>
       <span class="difficulty-chip">AUTH.LOG</span>
@@ -127,14 +112,13 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
     <h3>What session number was assigned to the attacker's root session?</h3>
     <p><strong>Methodology</strong></p>
     <p>I searched for session-related messages at the time of the second root authentication. Session 34 opened and closed in the same second, which is consistent with the brief automated login check. Session 37 appears at the later authentication time and matches the manual session found in `wtmp`.</p>
-    <div class="terminal-window spotlight">
+    <div class="terminal-window">
       <div class="terminal-window-head">
         <div class="terminal-lights"><i></i><i></i><i></i></div>
         <span>auth.log</span>
         <div style="display:flex;align-items:center;gap:9px;margin-left:auto;flex-shrink:0;">
           <span class="terminal-mini-status">bash</span>
           <span class="terminal-live" style="margin-left:0;">LIVE</span>
-          <button class="terminal-copy-button" type="button" data-copy-target="brutus-q4-command" style="padding:5px 8px;border:1px solid var(--line-strong);border-radius:6px;background:#121a27;color:#96a7c1;font-family:var(--mono);font-size:9px;cursor:pointer;">COPY</button>
         </div>
       </div>
       <div class="terminal-window-body">
@@ -162,21 +146,3 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
 - **Continue looking after initial access:** Later entries identify a new account, `cyberjunkie`, added to the `sudo` group. Account creation is a persistence clue worth investigating further.
 
 <p class="article-endnote"><span class="endnote-line"></span><span>END OF INVESTIGATION // HTB SHERLOCKS</span><span class="endnote-line"></span></p>
-
-<script>
-document.addEventListener("click", async function (event) {
-  const button = event.target.closest("[data-copy-target]");
-  if (!button) return;
-  const command = document.getElementById(button.dataset.copyTarget);
-  if (!command) return;
-  const originalLabel = button.dataset.originalLabel || button.textContent;
-  button.dataset.originalLabel = originalLabel;
-  try {
-    await navigator.clipboard.writeText(command.textContent.trim());
-    button.textContent = "COPIED";
-  } catch (error) {
-    button.textContent = "FAILED";
-  }
-  window.setTimeout(function () { button.textContent = originalLabel; }, 1200);
-});
-</script>
