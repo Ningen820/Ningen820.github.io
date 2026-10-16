@@ -29,8 +29,8 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
 ## Investigation
 
 <div style="display:grid;gap:18px;">
-  <article class="writeup-content-card" id="q1">
-    <div class="writeup-content-card-top">
+  <article class="writeup-card" id="q1">
+    <div class="writeup-card-top">
       <span class="section-kicker"><span>//</span> QUESTION 01</span>
       <span class="difficulty-chip">AUTH.LOG</span>
     </div>
@@ -51,11 +51,11 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
         <p class="terminal-output">170  65.2.161.68<br>1    172.31.35.28<br>1    203.101.190.9</p>
       </div>
     </div>
-    <div class="writeup-content-card-foot"><span>ANSWER</span><strong><code>65.2.161.68</code></strong></div>
+    <div class="writeup-card-foot"><span>ANSWER</span><strong><code>65.2.161.68</code></strong></div>
   </article>
 
-  <article class="writeup-content-card" id="q2">
-    <div class="writeup-content-card-top">
+  <article class="writeup-card" id="q2">
+    <div class="writeup-card-top">
       <span class="section-kicker"><span>//</span> QUESTION 02</span>
       <span class="difficulty-chip">AUTH.LOG</span>
     </div>
@@ -76,11 +76,11 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
         <p class="terminal-output">Mar  6 06:31:40 ... Accepted password for root from 65.2.161.68<br>Mar  6 06:32:44 ... Accepted password for root from 65.2.161.68</p>
       </div>
     </div>
-    <div class="writeup-content-card-foot"><span>ANSWER</span><strong><code>root</code></strong></div>
+    <div class="writeup-card-foot"><span>ANSWER</span><strong><code>root</code></strong></div>
   </article>
 
-  <article class="writeup-content-card" id="q3">
-    <div class="writeup-content-card-top">
+  <article class="writeup-card" id="q3">
+    <div class="writeup-card-top">
       <span class="section-kicker"><span>//</span> QUESTION 03</span>
       <span class="difficulty-chip">WTMP</span>
     </div>
@@ -101,11 +101,11 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
         <p class="terminal-output">"USER" "2549" "pts/1" "ts/1" "root" "65.2.161.68" ... "2024/03/06 06:32:45" ...</p>
       </div>
     </div>
-    <div class="writeup-content-card-foot"><span>ANSWER</span><strong><code>2024-03-06 06:32:45 UTC</code></strong></div>
+    <div class="writeup-card-foot"><span>ANSWER</span><strong><code>2024-03-06 06:32:45 UTC</code></strong></div>
   </article>
 
-  <article class="writeup-content-card" id="q4">
-    <div class="writeup-content-card-top">
+  <article class="writeup-card" id="q4">
+    <div class="writeup-card-top">
       <span class="section-kicker"><span>//</span> QUESTION 04</span>
       <span class="difficulty-chip">AUTH.LOG</span>
     </div>
@@ -126,7 +126,7 @@ Brutus investigates a Confluence server that was accessed after an SSH brute-for
         <p class="terminal-output">Mar  6 06:32:44 ip-172-31-35-28 systemd-logind[411]: New session 37 of user root.</p>
       </div>
     </div>
-    <div class="writeup-content-card-foot"><span>ANSWER</span><strong><code>37</code></strong></div>
+    <div class="writeup-card-foot"><span>ANSWER</span><strong><code>37</code></strong></div>
   </article>
 </div>
 
