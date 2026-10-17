@@ -33,9 +33,7 @@ overview:
 
 side_notes:
   - The timestamps in auth.log do not show the year so if we want to find it we have to utilize the wtmp file too, in there will look for the IP address of the attacker and get the year from there.
-
   - The descriptions above are a long and in-depth of my blind analysis so some of the things mentioned there might not be accurate. Double check them with the correct answers for each question below.
-
   - Some of the code outputs have been simplified to make it fit better. Some of the output is omitted.  
 
 cards:
