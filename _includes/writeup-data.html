@@ -1,0 +1,139 @@
+{%- assign cfg = page.configure -%}
+<div class="writeup-data" style="--writeup-card-gap: {{ cfg.card_gap | default: '45px' | escape }}; --writeup-card-padding: {{ cfg.card_padding | default: '24px' | escape }}; --writeup-card-min-height: {{ cfg.card_min_height | default: '0px' | escape }}; --writeup-grid-columns: {{ cfg.grid_columns | default: 1 | escape }}; --writeup-question-font-size: {{ cfg.question_font_size | default: '21px' | escape }}; --writeup-body-font-size: {{ cfg.body_font_size | default: '13px' | escape }}; --writeup-overview-font-size: {{ cfg.overview_font_size | default: '14px' | escape }}; --writeup-side-note-font-size: {{ cfg.side_note_font_size | default: '13px' | escape }}; --writeup-notes-font-size: {{ cfg.notes_font_size | default: '13px' | escape }}; --writeup-terminal-font-size: {{ cfg.terminal_font_size | default: '12px' | escape }}; --writeup-footer-font-size: {{ cfg.footer_font_size | default: '10px' | escape }}; --writeup-answer-font-size: {{ cfg.answer_font_size | default: '1em' | escape }}; --writeup-terminal-header-padding: {{ cfg.terminal_header_padding | default: '12px 16px' | escape }}; --writeup-terminal-body-padding: {{ cfg.terminal_body_padding | default: '20px 20px 24px' | escape }}; --writeup-terminal-gap: {{ cfg.terminal_gap | default: '20px' | escape }}; --writeup-footer-gap: {{ cfg.footer_gap | default: '12px' | escape }}; --writeup-footer-padding-top: {{ cfg.footer_padding_top | default: '22px' | escape }}; --writeup-card-radius: {{ cfg.card_radius | default: '13px' | escape }};">
+
+  {% if page.overview and page.overview.size > 0 %}
+    <section class="writeup-data-prose writeup-data-overview">
+      <h2>{{ page.overview_title | default: 'Overview' | escape }}</h2>
+      {% for paragraph in page.overview %}
+        {% if paragraph and paragraph != '' %}
+          {{ paragraph | markdownify }}
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  {% if page.side_notes and page.side_notes.size > 0 %}
+    <section class="writeup-data-side-notes" aria-label="Investigation notes">
+      {% for note in page.side_notes %}
+        {% if note and note != '' %}
+          <blockquote>{{ note | markdownify }}</blockquote>
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  {% if page.cards and page.cards.size > 0 %}
+    <section class="writeup-data-section writeup-data-questions">
+      <h2>{{ page.questions_heading | default: 'Questions' | escape }}</h2>
+      <div class="writeup-content-grid writeup-card-grid">
+        {% for card_entry in page.cards %}
+          {% assign card = card_entry[1] %}
+          {% assign qnumber = forloop.index %}
+          {% assign qnum = qnumber | prepend: '0' %}
+          {% if qnumber > 9 %}{% assign qnum = qnumber %}{% endif %}
+
+          {%- comment -%} A terminal is rendered only if at least one command/output is nonempty. {%- endcomment -%}
+          {% assign has_terminal_content = false %}
+          {% for terminal_index in (1..10) %}
+            {% assign code_key = 'terminal_code' | append: terminal_index %}
+            {% assign output_key = 'terminal_output' | append: terminal_index %}
+            {% assign code_value = card[code_key] %}
+            {% assign output_value = card[output_key] %}
+            {% if code_value and code_value != '' %}{% assign has_terminal_content = true %}{% endif %}
+            {% if output_value and output_value != '' %}{% assign has_terminal_content = true %}{% endif %}
+          {% endfor %}
+
+          <article class="writeup-content-card writeup-card spotlight" id="q{{ qnumber }}">
+            <div class="writeup-content-card-top writeup-card-top">
+              <span class="section-kicker"><span>//</span>{% if card.card_title and card.card_title != '' %} {{ card.card_title | upcase | escape }}{% else %} QUESTION {{ qnum }}{% endif %}</span>
+              {% if card.terminal_title and card.terminal_title != '' %}
+                <span class="difficulty-chip">{{ card.terminal_title | escape }}</span>
+              {% endif %}
+            </div>
+
+            {% if card.question and card.question != '' %}
+              <h3>{{ card.question | escape }}</h3>
+            {% endif %}
+
+            {% if card.explanation and card.explanation != '' %}
+              <p class="writeup-data-method-label"><strong>{{ page.explanation_label | default: 'Methodology' | escape }}</strong></p>
+              <div class="writeup-question-explanation">{{ card.explanation | markdownify }}</div>
+            {% endif %}
+
+            {% if has_terminal_content %}
+              {% assign prompt = cfg.prompt | default: '/home/ningen/brutus>' %}
+              {% assign terminal_label = card.terminal_label | default: cfg.terminal_label | default: '.bash' %}
+              <div class="terminal-window">
+                <div class="terminal-window-head">
+                  <div class="terminal-lights terminal-window-lights"><i></i><i></i><i></i></div>
+                  <span>{% if card.terminal_title and card.terminal_title != '' %}{{ card.terminal_title | escape }}{% else %}terminal{% endif %}</span>
+                  <div class="writeup-terminal-status" style="display:flex;align-items:center;gap:15px;margin-left:auto;flex-shrink:0;">
+                    <span class="terminal-mini-status">{{ terminal_label | escape }}</span>
+                  </div>
+                </div>
+                <div class="terminal-window-body">
+                  {% for terminal_index in (1..10) %}
+                    {% assign code_key = 'terminal_code' | append: terminal_index %}
+                    {% assign output_key = 'terminal_output' | append: terminal_index %}
+                    {% assign terminal_code = card[code_key] %}
+                    {% assign terminal_output = card[output_key] %}
+                    {% if terminal_code and terminal_code != '' %}
+                      <p class="terminal-line"><span class="prompt-symbol">{{ prompt | escape }}</span> <span id="{{ page.name | default: page.title | slugify }}-q{{ qnumber }}-command-{{ terminal_index }}">{{ terminal_code | escape }}</span></p>
+                    {% endif %}
+                    {% if terminal_output and terminal_output != '' %}
+                      <p class="terminal-output">{{ terminal_output | escape | newline_to_br }}</p>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+
+            {% if card.answer and card.answer != '' %}
+              <div class="writeup-content-card-foot writeup-card-foot">
+                <span>ANSWER</span>
+                <strong><code>{{ card.answer | escape }}</code></strong>
+              </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    {% assign has_answers = false %}
+    {% for card_entry in page.cards %}
+      {% assign card = card_entry[1] %}
+      {% if card.answer and card.answer != '' %}{% assign has_answers = true %}{% endif %}
+    {% endfor %}
+    {% if has_answers %}
+      <section class="writeup-data-section writeup-final-answers">
+        <h2>{{ page.answers_heading | default: 'Final Answers' | escape }}</h2>
+        <ol>
+          {% for card_entry in page.cards %}
+            {% assign card = card_entry[1] %}
+            {% if card.answer and card.answer != '' %}
+              <li>
+                {% if card.question and card.question != '' %}<strong>{{ card.question | escape }}</strong>{% else %}<strong>Question {{ forloop.index }}</strong>{% endif %}
+                — <code>{{ card.answer | escape }}</code>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ol>
+      </section>
+    {% endif %}
+  {% endif %}
+
+  {% if page.notes and page.notes.size > 0 %}
+    <section class="writeup-data-section writeup-data-key-notes">
+      <h2>{{ page.notes_heading | default: 'Key Notes' | escape }}</h2>
+      <ul>
+        {% for note_item in page.notes %}
+            {% if note_item and note_item != '' %}
+              <li>{{ note_item | markdownify }}</li>
+            {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+  <p class="article-endnote"><span class="endnote-line"></span><span>{{ page.endnote | default: 'END OF INVESTIGATION // HTB SHERLOCKS' | escape }}</span><span class="endnote-line"></span></p>
+</div>
