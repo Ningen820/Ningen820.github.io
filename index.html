@@ -164,7 +164,7 @@ title: "Home — Ningen820"
     {% for writeup in home_writeups limit: home_writeups_limit %}
     <a class="writeup-card spotlight" href="{{ writeup.url | relative_url }}">
       <div class="writeup-card-top"><span class="section-kicker"><span>//</span> {{ writeup.category | default: "Writeup" | upcase | escape }}</span><span class="difficulty-chip difficulty-{{ writeup.difficulty | default: 'unrated' | slugify }}">{{ writeup.difficulty | default: "Unrated" | escape }}</span></div>
-      <h3>{% if writeup.image != blank %}<img class="writeup-card-thumb" src="{{ writeup.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}<span>{{ writeup.title | escape }}</span></h3><p>{{ writeup.summary | default: "Writeup Walkthrough" | escape }}</p>
+      <h3>{% if writeup.image != blank %}<img class="writeup-card-thumb" src="{{ writeup.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}<span>{{ writeup.name | escape }}</span></h3><p>{{ writeup.summary | default: "Writeup Walkthrough" | escape }}</p>
       <div class="writeup-card-foot"><span>{% assign wt = writeup.reading_time | plus: 0 %}{% if wt > 0 %}{{ wt }} min read{% else %}Field notes{% endif %}</span><span>{{writeup.date | date: "%Y-%m-%d %H:%M"}}</span><span class="text-link">Read Writeup <span aria-hidden="true">↗</span></span></div>
     </a>
     {% endfor %}
