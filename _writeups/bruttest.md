@@ -16,8 +16,8 @@ overview_title: "Overview"
 overview:
   - Brutus is a HTB sherlock where an attacker brute-forced a server. The main artifacts are auth.log (records authentication events and some other privileged commands ran), wtmp (a binary record of login sessions) and utmp.py. Since the attack included a brute force attempt, we should expect to see multiple failed authentication events in a short time frame. That is because a brute force attempt is basically someone just running a tool that guesses multiple passwords against a certain account or system. **Brute forcing does not apply to only passwords**.
 
-  - |-
-      > First Things First: **Blind Analysis!!**
+  - |
+    >First Things First: **Blind Analysis!!**
 
   - First, I ran the command `cat auth.log |wc -l` to see how big the file was, it gave out `385` lines. `cat` is a command that expects a file name after it and prints out the contents of the file, `|` is a pipeline that passes the output of the command on the left to the command on the right (spacing doesnt matter), `wc -l` is a command that counts the total lines of a file or output. In order to get an idea of what the file contained without overflooding my screen with 300+ lines, I ran the command `head -n 220 auth.log |tail -n 50`. `head -n 220 auth.log` means take the top x lines (x is the number after the `-n`) from the file and show them, `tail -n 50` means take the last 50 lines and show them. The command I ran essentially did "grab 220 lines and then send it to the pipeline which sent it to the tail command" which resulted in it showing lines 170-220 of the file (around the middle). I also ran `head -n 1 auth.log` and `tail -n 1 auth.log` to see the earliest and latest timestamps and found that all events happened on March 6, between 06:18:01 and 06:41:01 . 
 
