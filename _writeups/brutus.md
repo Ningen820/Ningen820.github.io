@@ -14,7 +14,8 @@ reading_time: 10
 
 overview_title: "Overview"
 overview:
-  - Brutus is a HTB sherlock where an attacker bruteforced a server. The main artifacts are auth.log (records authentication events and some other privileged commands ran), wtmp (a binary record of login sessions) and utmp.py. Since the attack included a brute force attempt, we should expect to see multiple failed authentication events in a short time frame. That is because a brute force attempt is basically someone just running a tool that guesses multiple passwords against a certain account or system. Brute forcing does not apply to only passwords.
+  - |
+    Brutus is a HTB sherlock where an attacker bruteforced a server. The main artifacts are auth.log (records authentication events and some other privileged commands ran), wtmp (a binary record of login sessions) and utmp.py. Since the attack included a brute force attempt, we should expect to see multiple failed authentication events in a short time frame. That is because a brute force attempt is basically someone just running a tool that guesses multiple passwords against a certain account or system. Brute forcing does not apply to only passwords.
 
   - |
     >"First Things First: **Blind Analysis!!**"
