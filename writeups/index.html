@@ -19,20 +19,20 @@ permalink: /writeups/
   </div>
   <div class="category-summary" data-category-summary aria-label="Writeup counts by category"></div>
   <div class="filter-panel">
-    <label class="search-field"><span aria-hidden="true">⌕</span><span class="visually-hidden">Search writeups</span><input type="search" id="writeup-search" placeholder="Search titles, tags, platforms…" autocomplete="off"></label>
+    <label class="search-field"><span aria-hidden="true">⌕</span><span class="visually-hidden">Search writeups</span><input type="search" id="writeup-search" placeholder="Search names, tags, platforms…" autocomplete="off"></label>
     <label class="filter-label">Category<select id="filter-category"><option value="">All categories</option></select></label>
     <label class="filter-label">Difficulty<select id="filter-difficulty"><option value="">All difficulties</option></select></label>
     <label class="filter-label">Platform<select id="filter-platform"><option value="">All platforms</option></select></label>
     <label class="filter-label">OS<select id="filter-os"><option value="">All systems</option></select></label>
-    <label class="filter-label">Sort by<select id="sort-writeups"><option value="reading_time">Reading time</option><option value="date">Date</option><option value="title">Title</option><option value="difficulty">Difficulty</option></select></label>
+    <label class="filter-label">Sort by<select id="sort-writeups"><option value="reading_time">Reading time</option><option value="date">Date</option><option value="names">Name</option><option value="difficulty">Difficulty</option></select></label>
     <button class="button button-small button-quiet" type="button" id="clear-writeup-filters">Clear filters <span aria-hidden="true">↺</span></button>
   </div>
   <div class="archive-results-heading"><p><span data-result-count>0</span> result(s)</p><span class="subtle-mono">INDEX / WRITEUPS</span></div>
   <div class="writeup-list" id="writeup-results">
-    {% assign archive_items = site.writeups | sort: 'title' %}
+    {% assign archive_items = site.writeups | sort: 'Name' %}
     {% for item in archive_items %}
-    <article class="writeup-row spotlight" data-writeup-row data-title="{{ item.title | escape }}" data-summary="{{ item.summary | escape }}" data-category="{{ item.category | escape }}" data-difficulty="{{ item.difficulty | escape }}" data-platform="{{ item.platform | escape }}" data-os="{{ item.os | escape }}" data-read-time="{{ item.reading_time plus: 0 }}" data-date="{{ item.date }}">
-      <a class="writeup-row-main" href="{{ item.url | relative_url }}"><span class="row-index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span class="writeup-row-copy"><span class="writeup-row-kicker">{{ item.category | upcase | escape }}</span><strong class="writeup-row-title">{% if item.image != blank %}<img class="writeup-row-thumb" src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}<span>{{ item.title | escape }}</span></strong><span class="writeup-row-summary">{{ item.summary | escape }}</span></span><span class="row-arrow" aria-hidden="true">↗</span></a>
+    <article class="writeup-row spotlight" data-writeup-row data-title="{{ item.name | escape }}" data-summary="{{ item.summary | escape }}" data-category="{{ item.category | escape }}" data-difficulty="{{ item.difficulty | escape }}" data-platform="{{ item.platform | escape }}" data-os="{{ item.os | escape }}" data-read-time="{{ item.reading_time plus: 0 }}" data-date="{{ item.date }}">
+      <a class="writeup-row-main" href="{{ item.url | relative_url }}"><span class="row-index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span class="writeup-row-copy"><span class="writeup-row-kicker">{{ item.category | upcase | escape }}</span><strong class="writeup-row-title">{% if item.image != blank %}<img class="writeup-row-thumb" src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}<span>{{ item.name | escape }}</span></strong><span class="writeup-row-summary">{{ item.summary | escape }}</span></span><span class="row-arrow" aria-hidden="true">↗</span></a>
       <div class="writeup-row-meta"><span class="difficulty-chip difficulty-{{ item.difficulty | slugify }}">{{ item.difficulty | escape }}</span><span>{{ item.platform | escape }}</span><span>{{ item.os | escape }}</span>{% assign row_time = item.reading_time | plus: 0 %}{% if row_time > 0 %}<span>{{ row_time }} min</span>{% endif %}</div>
     </article>
     {% endfor %}
