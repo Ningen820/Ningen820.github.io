@@ -1,0 +1,97 @@
+/* Shared writeup defaults. Per-page overrides are set through front matter: configure. */
+.writeup-data { width: 100%; }
+.writeup-data-section, .writeup-data-prose { margin-block: 28px; }
+.writeup-data-section > h2, .writeup-data-prose > h2 { margin: 0 0 18px; }
+.writeup-data-overview > p { font-size: var(--writeup-overview-font-size, 14px); line-height: 1.9; }
+.writeup-data-overview > p + p { margin-top: 16px; }
+.writeup-data-side-notes blockquote { margin: 18px 0; font-size: var(--writeup-side-note-font-size, 13px); line-height: 1.8; }
+.writeup-data-side-notes blockquote p { margin: 0; }
+
+.writeup-data .writeup-content-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--writeup-grid-columns, 1), minmax(0, 1fr));
+  gap: var(--writeup-card-gap, 45px);
+}
+.writeup-data .writeup-content-card,
+.writeup-data .writeup-card {
+  display: flex;
+  min-width: 0;
+  min-height: var(--writeup-card-min-height, 0px);
+  flex-direction: column;
+  padding: var(--writeup-card-padding, 24px);
+  border: 1px solid var(--line, rgba(147, 167, 196, .18));
+  border-radius: var(--writeup-card-radius, 13px);
+  background: var(--panel-soft, rgba(21, 27, 43, .78));
+}
+.writeup-data .writeup-content-card-top,
+.writeup-data .writeup-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.writeup-data .writeup-content-card-top .section-kicker,
+.writeup-data .writeup-card-top .section-kicker { margin: 0; }
+.writeup-data .difficulty-chip { flex-shrink: 0; }
+.writeup-data .writeup-content-card h3,
+.writeup-data .writeup-card h3 {
+  margin: 22px 0 10px;
+  font-size: var(--writeup-question-font-size, 21px);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.writeup-data .writeup-content-card h3 p,
+.writeup-data .writeup-card h3 p { display: inline; margin: 0; }
+.writeup-data .writeup-data-method-label { margin: 4px 0 8px; }
+.writeup-data .writeup-question-explanation,
+.writeup-data .writeup-question-explanation p,
+.writeup-data .writeup-content-card > p,
+.writeup-data .writeup-card > p {
+  color: var(--muted, #8d9bb4);
+  font-size: var(--writeup-body-font-size, 13px);
+  line-height: 1.8;
+}
+.writeup-data .writeup-question-explanation p { margin: 0 0 12px; }
+.writeup-data .writeup-question-explanation p:last-child { margin-bottom: 0; }
+.writeup-data .terminal-window { width: 100%; max-width: 100%; margin-top: var(--writeup-terminal-gap, 20px); }
+.writeup-data .terminal-window-head { padding: var(--writeup-terminal-header-padding, 12px 16px); }
+.writeup-data .terminal-window-body { min-width: 0; padding: var(--writeup-terminal-body-padding, 20px 20px 24px); }
+.writeup-data .terminal-line,
+.writeup-data .terminal-output {
+  font-size: var(--writeup-terminal-font-size, 12px);
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+.writeup-data .writeup-content-card-foot,
+.writeup-data .writeup-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: var(--writeup-footer-gap, 12px);
+  margin-top: auto;
+  padding-top: var(--writeup-footer-padding-top, 22px);
+  border-top: 1px solid var(--line, rgba(147, 167, 196, .18));
+  color: var(--subtle, #5e6b82);
+  font-family: var(--mono, monospace);
+  font-size: var(--writeup-footer-font-size, 10px);
+}
+.writeup-data .writeup-content-card-foot strong,
+.writeup-data .writeup-card-foot strong { font-size: var(--writeup-answer-font-size, 1em); overflow-wrap: anywhere; }
+.writeup-data .writeup-content-card-foot code,
+.writeup-data .writeup-card-foot code { overflow-wrap: anywhere; white-space: normal; }
+.writeup-data .writeup-data-key-notes li { margin-block: 8px; font-size: var(--writeup-notes-font-size, 13px); line-height: 1.8; }
+.writeup-data .writeup-data-key-notes li p { display: inline; margin: 0; }
+.writeup-data .writeup-final-answers li { margin-block: 8px; }
+.writeup-data .writeup-final-answers li strong p { display: inline; margin: 0; }
+.writeup-data .writeup-final-answers code { overflow-wrap: anywhere; white-space: normal; }
+.writeup-data .article-endnote { display: flex; align-items: center; gap: 8px; margin: 42px 0 52px; }
+.writeup-data .endnote-line { height: 1px; flex: 1; background: var(--line, rgba(147, 167, 196, .18)); }
+
+@media (max-width: 800px) {
+  .writeup-data .writeup-content-grid { grid-template-columns: 1fr; }
+  .writeup-data .writeup-content-card,
+  .writeup-data .writeup-card { padding: min(var(--writeup-card-padding, 24px), 20px); }
+}
