@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: "Brutus (HTB)"
+title: "Bruttest (HTB)"
 name: "Brutus"
 description: "An in-depth investigation of the Brutus sherlock from HackTheBox (HTB)"
 category: "DFIR"
