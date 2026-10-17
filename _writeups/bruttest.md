@@ -89,11 +89,9 @@ cards:
     card_title: "question 05"
     question: "The attacker added a new user as part of their persistence strategy on the server and gave this new user account higher privileges. What is the name of this account?"
     answer: "cyberjunkie"
-    explanation: |
-    If we filter the log for the time period after they logged in as root and got their session ID 37, we will see the things the attacker did and one of those was creating a new user account and adding it to the sudo group. We could also try to filter for a keyword such as "user", "new" or "name". You could choose the easy one "new user" to get the least output or the way I highlighted in the overview section if you prefer to actually understand it better.
+    explanation: If we filter the log for the time period after they logged in as root and got their session ID 37, we will see the things the attacker did and one of those was creating a new user account and adding it to the sudo group. We could also try to filter for a keyword such as "user", "new" or "name". You could choose the easy one "new user" to get the least output or the way I highlighted in the overview section if you prefer to actually understand it better.
     terminal_title: "auth.log"
-    terminal_code1: |
-    "cat auth.log|grep -i \"new user\""
+    terminal_code1: "cat auth.log|grep -i \"new user\""
     terminal_output1: "[Mar 6 06:34:18] useradd[2592]: new user: name=cyberjunkie, UID=1002, GID=1002, home=/home/cyberjunkie, shell=/bin/bash, from=/dev/pts/1"
   card6:
     card_title: "question 06"
