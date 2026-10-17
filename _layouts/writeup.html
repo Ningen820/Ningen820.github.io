@@ -124,7 +124,7 @@ layout: default
 
         <!-- Hidden source cards; JavaScript randomly selects recommendations. -->
         <div id="related-candidates" hidden>
-          {% assign related = site.writeups | sort: 'title' %}
+          {% assign related = site.writeups | sort: 'name' %}
 
           {% for item in related %}
             {% if item.url != page.url %}
