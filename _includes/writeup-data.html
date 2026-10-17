@@ -43,7 +43,7 @@
             {% if output_value and output_value != '' %}{% assign has_terminal_content = true %}{% endif %}
           {% endfor %}
 
-          <article class="writeup-content-card writeup-card spotlight" id="q{{ qnumber }}">
+          <article class="writeup-content-card writeup-card" id="q{{ qnumber }}">
             <div class="writeup-content-card-top writeup-card-top">
               <span class="section-kicker"><span>//</span>{% if card.card_title and card.card_title != '' %} {{ card.card_title | upcase | escape }}{% else %} QUESTION {{ qnum }}{% endif %}</span>
               {% if card.terminal_title and card.terminal_title != '' %}
