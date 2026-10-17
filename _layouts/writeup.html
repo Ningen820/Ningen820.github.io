@@ -20,7 +20,7 @@ layout: default
           {{ page.category | upcase | escape }}
         </p>
 
-        <h1>{{ page.title | escape }}</h1>
+        <h1>{{ page.name | escape }}</h1>
 
         {% if page.summary %}
           <p class="writeup-lede">{{ page.summary | escape }}</p>
@@ -146,7 +146,7 @@ layout: default
                   >
                 {% endif %}
                 
-                <h3>{{ item.title | escape }}</h3>
+                <h3>{{ item.name | escape }}</h3>
                 <div class="metadata-line" aria-label="Writeup metadata">
                   <span class="metadata-chip">
                     {{ item.category | escape }}
