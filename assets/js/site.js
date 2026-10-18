@@ -105,55 +105,120 @@
   }
 
   // Build the long-form table of contents from rendered Markdown headings.
-  const article = document.querySelector('[data-writeup-content]');
-  const toc = document.getElementById('writeup-toc');
-  if (article && toc) {
-    const headings = Array.from(article.querySelectorAll('h2, h3'));
-    toc.replaceChildren();
-    if (!headings.length) {
-      const note = document.createElement('p');
-      note.className = 'toc-loading';
-      note.textContent = 'No sections found.';
-      toc.append(note);
-    } else {
-      const used = new Set();
-      headings.forEach((heading, index) => {
-        const base = heading.textContent.trim().toLowerCase()
-          .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-          .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || `section-${index + 1}`;
-        let id = base;
-        let suffix = 2;
-        while (used.has(id) || (document.getElementById(id) && document.getElementById(id) !== heading)) {
-          id = `${base}-${suffix}`;
-          suffix += 1;
+ const article = document.querySelector('[data-writeup-content]');
+const toc = document.getElementById('writeup-toc');
+
+if (article && toc) {
+  const headings = Array.from(article.querySelectorAll('h2, h3'));
+
+  toc.replaceChildren();
+
+  if (!headings.length) {
+    const note = document.createElement('p');
+    note.className = 'toc-loading';
+    note.textContent = 'No sections found.';
+    toc.append(note);
+  } else {
+    const used = new Set();
+    const observerTargets = [];
+
+    headings.forEach((heading, index) => {
+      const base = heading.textContent.trim().toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '') || `section-${index + 1}`;
+
+      let id = base;
+      let suffix = 2;
+
+      while (
+        used.has(id) ||
+        (document.getElementById(id) &&
+        document.getElementById(id) !== heading)
+      ) {
+        id = `${base}-${suffix}`;
+        suffix++;
+      }
+
+      used.add(id);
+      heading.id = id;
+
+      const link = document.createElement('a');
+      link.href = `#${id}`;
+      link.textContent = heading.textContent.replace(/^\d+\s*\/\s*/, '');
+
+      if (heading.tagName === 'H3') {
+        link.classList.add('toc-h3');
+      }
+
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 850) {
+          link.scrollIntoView({ block: 'nearest' });
         }
-        used.add(id);
-        heading.id = id;
-        const link = document.createElement('a');
-        link.href = `#${id}`;
-        link.textContent = heading.textContent.replace(/^\d+\s*\/\s*/, '');
-        if (heading.tagName === 'H3') link.classList.add('toc-h3');
-        link.addEventListener('click', () => {
-          if (window.innerWidth <= 850) link.scrollIntoView({ block: 'nearest' });
-        });
-        toc.append(link);
       });
-      if ('IntersectionObserver' in window) {
-        const tocLinks = Array.from(toc.querySelectorAll('a'));
-        const byId = new Map(tocLinks.map((link) => [link.hash.slice(1), link]));
-        const activeObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              tocLinks.forEach((link) => link.classList.remove('is-active'));
-              byId.get(entry.target.id)?.classList.add('is-active');
+
+      toc.append(link);
+
+      observerTargets.push(heading);
+
+      // Add Q1, Q2, Q3... underneath Questions
+      if (heading.textContent.trim().toLowerCase() === 'questions') {
+        const questionCards = Array.from(
+          article.querySelectorAll('.writeup-content-card[id^="q"]')
+        );
+
+        questionCards.forEach((card, qIndex) => {
+          const qLink = document.createElement('a');
+
+          qLink.href = `#${card.id}`;
+          qLink.textContent = `Q${qIndex + 1}`;
+
+          // Nested under Questions
+          qLink.classList.add('toc-h3');
+
+          qLink.addEventListener('click', () => {
+            if (window.innerWidth <= 850) {
+              qLink.scrollIntoView({ block: 'nearest' });
             }
           });
-        }, { rootMargin: '-12% 0px -72% 0px' });
-        headings.forEach((heading) => activeObserver.observe(heading));
+
+          toc.append(qLink);
+
+          observerTargets.push(card);
+        });
       }
+    });
+
+    if ('IntersectionObserver' in window) {
+      const tocLinks = Array.from(toc.querySelectorAll('a'));
+
+      const byId = new Map(
+        tocLinks.map((link) => [link.hash.slice(1), link])
+      );
+
+      const activeObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach((link) =>
+              link.classList.remove('is-active')
+            );
+
+            byId.get(entry.target.id)?.classList.add('is-active');
+          }
+        });
+      }, {
+        rootMargin: '-12% 0px -72% 0px'
+      });
+
+      observerTargets.forEach((target) => {
+        if (target.id) {
+          activeObserver.observe(target);
+        }
+      });
     }
   }
-
+}
   // Add copy buttons to real code blocks; code remains selectable if clipboard access is unavailable.
   document.querySelectorAll('[data-writeup-content] pre').forEach((pre) => {
     if (pre.querySelector('.copy-code-button')) return;
