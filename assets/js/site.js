@@ -108,7 +108,7 @@
   const article = document.querySelector('[data-writeup-content]');
   const toc = document.getElementById('writeup-toc');
   if (article && toc) {
-    const headings = Array.from(article.querySelectorAll('h2, h3'));
+    const headings = Array.from(article.querySelectorAll('h2'));
     toc.replaceChildren();
     if (!headings.length) {
       const note = document.createElement('p');
