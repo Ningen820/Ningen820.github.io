@@ -29,7 +29,7 @@
            <img src="{{ paragraph.image | relative_url | escape }}"
                 alt="{{ paragraph.alt | default: '' | escape }}"
                 loading="lazy"
-                style="display:block;max-width:50%;height:auto;margin:16px 0;">
+                style="display:block;max-width:100%;height:auto;margin:16px 0;">
          {% endif %}
        {% else %}
          {% if paragraph and paragraph != '' %}
@@ -92,7 +92,7 @@
             <img src="{{ card.image | relative_url | escape }}"
                  alt="{{ card.image_alt | default: '' | escape }}"
                  loading="lazy"
-                 style="display:block;max-width:50%;height:auto;margin:16px 0;">
+                 style="display:block;max-width:100%;height:auto;margin:16px 0;">
           {% endif %}
            
             {% if has_terminal_content %}
