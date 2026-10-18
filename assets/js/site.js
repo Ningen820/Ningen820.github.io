@@ -108,7 +108,7 @@
   const article = document.querySelector('[data-writeup-content]');
   const toc = document.getElementById('writeup-toc');
   if (article && toc) {
-    const headings = Array.from(article.querySelectorAll('h2'));
+    const headings = Array.from(article.querySelectorAll('h2, [data-toc-title]'));
     toc.replaceChildren();
     if (!headings.length) {
       const note = document.createElement('p');
@@ -131,7 +131,11 @@
         heading.id = id;
         const link = document.createElement('a');
         link.href = `#${id}`;
-        link.textContent = heading.textContent.replace(/^\d+\s*\/\s*/, '');
+
+        link.textContent = heading.hasAttribute('data-toc-title')
+  ? heading.dataset.tocTitle
+  : heading.textContent.replace(/^\d+\s*\/\s*/, '');
+        
         if (heading.tagName === 'H3') link.classList.add('toc-h3');
         link.addEventListener('click', () => {
           if (window.innerWidth <= 850) link.scrollIntoView({ block: 'nearest' });
