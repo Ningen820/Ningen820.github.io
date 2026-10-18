@@ -63,7 +63,7 @@
 
           <article class="writeup-content-card writeup-card" id="q{{ qnumber }}">
             <div class="writeup-content-card-top writeup-card-top">
-              <span class="section-kicker"><span>//</span>{% if card.card_title and card.card_title != '' %} {{ card.card_title | upcase | escape }}{% else %} QUESTION {{ qnum }}{% endif %}</span>
+             <h2 class="section-kicker"><span>//</span>{% if card.card_title and card.card_title != '' %} {{ card.card_title | upcase | escape }}{% else %} QUESTION {{ qnum }}{% endif %}</h2>
               {% if card.terminal_title and card.terminal_title != '' %}
                 <span class="difficulty-chip">{{ card.terminal_title | escape }}</span>
               {% endif %}
