@@ -23,7 +23,7 @@ layout: default
         <h1>{{ page.name | escape }}</h1>
 
         {% if page.summary %}
-          <p class="writeup-lede">{{ page.summary | escape }}</p>
+          <div class="writeup-lede">{{ page.summary | markdownify }}</div>
         {% endif %}
 
         <div class="metadata-line" aria-label="Writeup metadata">
