@@ -149,7 +149,7 @@ notes:
     **Continue looking after initial access:** Later entries identify a new account, `cyberjunkie`, added to the `sudo` group. Account creation is a persistence clue worth investigating further.
 
 configure:
-  footer_font_size: "15px"
+  footer_font_size: "7px"
 ---
 
 {% include writeup-data.html %}
