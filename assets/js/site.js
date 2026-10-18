@@ -136,7 +136,8 @@
   ? heading.dataset.tocTitle
   : heading.textContent.replace(/^\d+\s*\/\s*/, '');
         
-        if (heading.tagName === 'H3') link.classList.add('toc-h3');
+        
+        if (heading.hasAttribute('data-toc-title')) link.classList.add('toc-h3');
         link.addEventListener('click', () => {
           if (window.innerWidth <= 850) link.scrollIntoView({ block: 'nearest' });
         });
