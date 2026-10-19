@@ -29,8 +29,8 @@ overview:
   - text: |
           After skimming through the output, I saw **multiple Failed password for invalid user server_adm from 65.2.161.68**, and they all happened at the exact same second. This looked like part of a brute force attack so I decided to run a new filter command against that person (the IP). `cat auth.log |grep -i "failed" |grep 65.2.161.68`, this command filters for two things, lines containing the word "failed" (case-insensitive because of the `-i`) and while also containing the IP address of that person. Adding an extra `|wc -l` shows us the total amount of lines (events) found that matched our filter. We saw a 40+ failed password attempts within 10 seconds and also most of them happened in batches, meaning there were like 3+ failed attempts within the same second. This seemed unnatural which led me to believe that IP was the culprit.
    images:
-     - "/assets/images/writeups/brutus.png"
-     - "/assets/images/writeups/baggage.png"
+      - "/assets/images/writeups/brutus.png"
+      - "/assets/images/writeups/baggage.png"
 
 
   - |
