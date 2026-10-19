@@ -19,27 +19,34 @@
  --writeup-footer-padding-top: {{ cfg.footer_padding_top | default: '22px' | escape }}; 
  --writeup-card-radius: {{ cfg.card_radius | default: '13px' | escape }};">
 
-  {% if page.overview and page.overview.size > 0 %}
-    <section class="writeup-data-prose writeup-data-overview">
-      <h2>{{ page.overview_title | default: 'Overview' | escape }}</h2>
-      {% for paragraph in page.overview %}
-       {% if paragraph.text %}
-         {{ paragraph.text | markdownify }}
-         {% if paragraph.image and paragraph.image != '' %}
-           <img src="{{ paragraph.image | relative_url | escape }}"
-                alt="{{ paragraph.alt | default: '' | escape }}"
-                loading="lazy"
-                style="display:block;max-width:100%;height:auto;margin:16px 0;">
-         {% endif %}
-       {% else %}
-         {% if paragraph and paragraph != '' %}
-           {{ paragraph | markdownify }}
-         {% endif %}
-       {% endif %}
-     {% endfor %}
-    </section>
-  {% endif %}
+ {% if page.overview and page.overview.size > 0 %}
+  <section class="writeup-data-prose writeup-data-overview">
+    <h2>{{ page.overview_title | default: 'Overview' | escape }}</h2>
 
+    {% for paragraph in page.overview %}
+      {% if paragraph.text %}
+        {{ paragraph.text | markdownify }}
+
+        {% if paragraph.images %}
+          {% for image in paragraph.images %}
+            <img
+              src="{{ image | relative_url | escape }}"
+              alt=""
+              loading="lazy"
+              style="display:block;max-width:100%;height:auto;margin:16px 0;"
+            >
+          {% endfor %}
+        {% endif %}
+
+      {% else %}
+        {% if paragraph and paragraph != '' %}
+          {{ paragraph | markdownify }}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </section>
+{% endif %}
+ 
   {% if page.side_notes and page.side_notes.size > 0 %}
     <section class="writeup-data-side-notes" aria-label="Investigation notes">
       {% for note in page.side_notes %}
@@ -88,12 +95,14 @@
               <div class="writeup-question-explanation">{{ card.explanation | markdownify }}</div>
             {% endif %}
 
-           {% if card.image and card.image != '' %}
-            <img src="{{ card.image | relative_url | escape }}"
-                 alt="{{ card.image_alt | default: '' | escape }}"
-                 loading="lazy"
-                 style="display:block;max-width:100%;height:auto;margin:16px 0;">
-          {% endif %}
+           {% if card.images %}
+             {% for image in card.images %}
+               <img src="{{ image | relative_url | escape }}"
+                    alt=""
+                    loading="lazy"
+                    style="display:block;max-width:100%;height:auto;margin:16px 0;">
+             {% endfor %}
+           {% endif %}
            
             {% if has_terminal_content %}
               {% assign prompt = cfg.prompt | default: '/home/ningen/brutus>' %}
