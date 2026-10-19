@@ -1,4 +1,4 @@
-# For skill/certificate/achievement images, use files stored in /assets/random_images/image.ext.
+# For skill/certificate/achievement images, use files stored in /assets/images/random_images/image.ext.
 # For projects images, use files stored in /path_to_project/image.ext
 status: Open to opportunities
 name: Ahamad Jalloh
@@ -51,7 +51,7 @@ skills:
     - KAPE
     - Hayabusa
     - Log Correlation
-    image: /assets/random_images/idk.png
+    image: /assets/images/random_images/idk.png
     key: 'yes'
 
 
@@ -61,7 +61,7 @@ achievements:
     place: Badge
     detail: October 2026 | HTB
     rank: 2
-    image: /assets/random_images/achievement1.png
+    image: /assets/images/random_images/achievement1.png
     emoji: ""
     url: "https://labs.hackthebox.com/achievement/badge/3353541/244"
     key: 'no'  
@@ -73,7 +73,7 @@ certifications: {}
   #   issuer: Hack The Box
   #   credential: ''
   #   date: September 2026
-  #   image: /assets/random_images/certificate1.png
+  #   image: /assets/images/random_images/certificate1.png
   #   url: "https://app.hackthebox.com/sherlocks"
   #   key: 'no'
 
@@ -82,7 +82,7 @@ projects: []
   # - title: "TESTING"
   #   redirect_folder: "project1"
   #   description: "This is project test 1's description"
-  #   icon: "/assets/random_images/idk.png"
+  #   icon: "/assets/images/random_images/idk.png"
   #   draft: false
   #   date: "2025-10-10 04:10:10 -04:00"    
 
