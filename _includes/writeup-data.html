@@ -137,6 +137,12 @@
               </div>
             {% endif %}
 
+
+            {% if card.explanation3 and card.explanation3 != '' %}
+              <div class="writeup-question-explanation">{{ card.explanation3 | markdownify }}</div>
+            {% endif %}
+
+
             {% if card.answer and card.answer != '' %}
               <div class="writeup-content-card-foot writeup-card-foot">
                 <span>ANSWER</span>
