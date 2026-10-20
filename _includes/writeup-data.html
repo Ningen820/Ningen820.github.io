@@ -91,7 +91,6 @@
             {% endif %}
 
             {% if card.explanation and card.explanation != '' %}
-              <p class="writeup-data-method-label"><strong>{{ page.explanation_label | default: 'Methodology' | escape }}</strong></p>
               <div class="writeup-question-explanation">{{ card.explanation | markdownify }}</div>
             {% endif %}
 
@@ -103,7 +102,11 @@
                     style="display:block;max-width:100%;height:auto;margin:16px 0;">
              {% endfor %}
            {% endif %}
-           
+
+            {% if card.explanation and card.explanation != '' %}
+              <div class="writeup-question-explanation">{{ card.explanation | markdownify }}</div>
+            {% endif %}
+
             {% if has_terminal_content %}
               {% assign prompt = cfg.prompt | default: '/home/ningen/brutus>' %}
               {% assign terminal_label = card.terminal_label | default: cfg.terminal_label | default: '.bash' %}
