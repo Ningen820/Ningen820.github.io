@@ -81,7 +81,7 @@ cards:
     terminal_output6: "print(\"Output:\",hex(int(input(\"Input Number: \"))))  #One-liner version"
     explanation3: |
                   After finding the number mentioned above and copying it, we run the python code shown above. The first line of the code asks the user for an input number and then pauses the code until they enter a value and submit it, then the next line says "X's new value is integer version of its current value", then the next line changes X into a hexadecimal number. The final line prints out the value of Y.
-        The line below that does that same except its a one-liner version.
+                     The line below that does that same except its a one-liner version.
   card6:
     card_title: "question 06"
     question: "Find the contents of the malicious stager identified in question 3 and answer with the c2 ip and port."
