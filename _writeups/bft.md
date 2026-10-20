@@ -39,10 +39,6 @@ overview:
 side_notes:
   - |
     The biggest clue for identifying the malicious file was its name.
-  - |
-    Text
-  - |
-    Text
 cards:
   card1:
     card_title: "question 01"
