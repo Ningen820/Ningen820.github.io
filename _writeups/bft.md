@@ -79,7 +79,7 @@ cards:
     terminal_output4: "print(\"Output:\",y)"
     terminal_output5: ""
     terminal_output6: "print(\"Output:\",hex(int(input(\"Input Number: \"))))  #One-liner version"
-    explanation: |
+    explanation2: |
                   After finding the number mentioned above and copying it, we run the python code shown above. The first line of the code asks the user for an input number and then pauses the code until they enter a value and submit it, then the next line says "X's new value is integer version of its current value", then the next line changes X into a hexadecimal number. The final line prints out the value of Y.
                   The line below that does that same except its a one-liner version.
   card6:
