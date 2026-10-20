@@ -77,12 +77,12 @@ cards:
     images:
       - "/assets/images/writeups/bft/hexoffset.png"
     terminal_title: "find_hex.py"
-    terminal_code1: "x=input(\"Input Number: \") #if a non-integer number is given then the code below will fail."
-    terminal_code2: "x=int(x)"
-    terminal_code3: "y=hex(x)"
-    terminal_code4: "print(\"Output:\",y)"
-    terminal_code5: ""
-    terminal_code6: "print(\"Output:\",hex(int(input(\"Input Number: \"))))  #One-liner version"
+    terminal_output1: "x=input(\"Input Number: \") #if a non-integer number is given then the code below will fail."
+    terminal_output2: "x=int(x)"
+    terminal_output3: "y=hex(x)"
+    terminal_output4: "print(\"Output:\",y)"
+    terminal_output5: ""
+    terminal_output6: "print(\"Output:\",hex(int(input(\"Input Number: \"))))  #One-liner version"
     explanation2: |
                   After finding the number mentioned above and copying it, we run the python code shown above. The first line of the code asks the user for an input number and then pauses the code until they enter a value and submit it, then the next line says "X's new value is integer version of its current value", then the next line changes X into a hexadecimal number. The final line prints out the value of Y.
                   The line below that does that same except its a one-liner version.
