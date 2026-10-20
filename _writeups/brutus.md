@@ -110,7 +110,7 @@ cards:
     answer: "T1136.001"
     explanation: |
                  For this question, we can just simply google "mitre new account persistence" or something similar, we could also go to the mitre attack website and look for the one that matches. The type of account to look for is local since the attacker only made a local working home environment for the user account they created.
-    terminal_title: "MITRE ATT&CK"
+    card_title2: "MITRE ATT&CK"
   card7:
     card_title: "question 07"
     question: "What time did the attacker's first SSH session end according to auth.log?"
