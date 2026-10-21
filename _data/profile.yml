@@ -55,16 +55,16 @@ skills:
     key: 'yes'
 
 
-achievements:
-  achievement1:
-    title: Trip Down Memory Lane
-    place: Badge
-    detail: October 2026 | HTB
-    rank: 2
-    image: /assets/images/random_images/achievement1.png
-    emoji: ""
-    url: "https://labs.hackthebox.com/achievement/badge/3353541/244"
-    key: 'no'  
+achievements: {}
+  # achievement1:
+  #   title: Trip Down Memory Lane
+  #   place: Badge
+  #   detail: October 2026 | HTB
+  #   rank: 2
+  #   image: /assets/images/random_images/achievement1.png
+  #   emoji: ""
+  #   url: "https://labs.hackthebox.com/achievement/badge/3353541/244"
+  #   key: 'no'  
 
 
 certifications: {}
