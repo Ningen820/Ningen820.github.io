@@ -73,16 +73,9 @@ cards:
     images:
       - "/assets/images/writeups/bft/hexoffset.png"
     terminal_title: "find_hex.py"
-    terminal_output1: "x=input(\"Input Number: \") #if a non-integer number is given then the code below will fail."
-    terminal_output2: "x=int(x)"
-    terminal_output3: "y=hex(x)"
-    terminal_output4: "print(\"Output:\",y)\n a"
-    terminal_output5: ""
-    terminal_output6: "print(\"Output:\",hex(int(input(\"Input Number: \"))))  #One-liner version"
+    terminal_output1: "x=input(\"Input Number: \") #if a non-integer number is given then the code below will fail.\nx=int(x)\n y=hex(x)\nprint(\"Output:\",y)\n\n#One-liner version\nprint(\"Output:\",hex(int(input(\"Input Number: \"))))"
     explanation3: |
-                  After finding the number mentioned above and copying it, we run the python code shown above. The first line of the code asks the user for an input number and then pauses the code until they enter a value and submit it, then the next line says "X's new value is integer version of its current value", then the next line changes X into a hexadecimal number. The final line prints out the value of Y.
-
-                  The line below that does that same except its a one-liner version.
+                  After finding the number mentioned above and copying it, we run the python code shown above. The first line of the code asks the user for an input number and then pauses the code until they enter a value and submit it, then the next line says "X's new value is integer version of its current value", then the next line changes X into a hexadecimal number. The final line prints out the value of Y.\nThe line below that does that same except its a one-liner version.
   card6:
     card_title: "question 06"
     question: "Find the contents of the malicious stager identified in question 3 and answer with the c2 ip and port."
