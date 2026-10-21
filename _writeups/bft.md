@@ -76,7 +76,7 @@ cards:
     terminal_output1: "x=input(\"Input Number: \") #if a non-integer number is given then the code below will fail."
     terminal_output2: "x=int(x)"
     terminal_output3: "y=hex(x)"
-    terminal_output4: "print(\"Output:\",y)"
+    terminal_output4: "print(\"Output:\",y)\n a"
     terminal_output5: ""
     terminal_output6: "print(\"Output:\",hex(int(input(\"Input Number: \"))))  #One-liner version"
     explanation3: |
