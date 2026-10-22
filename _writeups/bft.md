@@ -54,6 +54,8 @@ cards:
     answer: "https://storage.googleapis.com/drive-bulk-export-anonymous/20240213t093324.039z/4133399871716478688/a40aecd0-1cf3-4f88-b55a-e188d5c1c04f/1/c277a8b4-afa9-4d34-b8ca-e1eb5e5f983c?authuser"
     explanation: |
                  After find the malicious file, we can scroll through the entries in Timeline Explorer and one of those entries will be titled Zone.ID Contents which includes the full url from where the file was downloaded.
+                 <img src="/assets/images/writeups/bft/hexoffset.png"
+    explanation2: "This is just a test obviously"
   card3:
     card_title: "question 03"
     question: "What is the full path and name of the malicious file that executed malicious code and connected to a c2 server?"
