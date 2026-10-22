@@ -6,6 +6,7 @@
 .writeup-data-overview > p + p { margin-top: 16px; }
 .writeup-data-side-notes blockquote { margin: 18px 0; font-size: var(--writeup-side-note-font-size, 13px); line-height: 1.8; }
 .writeup-data-side-notes blockquote p { margin: 0; }
+.writeup-content-card img { display:block;max-width:100%;height:auto;margin:16px 0; }
 
 .writeup-data .writeup-content-grid {
   display: grid;
