@@ -34,6 +34,9 @@ defaults:
       os: "Unspecified"
 
 
+plugins:
+  - jekyll-sitemap
+
 
 
 exclude:
