@@ -33,6 +33,11 @@ defaults:
       platform: "Unspecified"
       os: "Unspecified"
 
+include:
+  - sitemap.xml
+  - robots.txt
+
+
 exclude:
   - Gemfile
   - Gemfile.lock
