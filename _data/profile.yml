@@ -79,15 +79,15 @@ achievements:
     key: 'no'
 
 
-certifications: {}
-  # certificate1:
-  #   name: ""
-  #   issuer: ""
-  #   credential: ''
-  #   date: September 2026
-  #   image: /assets/images/random_images/certificate1.png
-  #   url: ""
-  #   key: 'no'
+certifications:
+  certificate1:
+    name: ""
+    issuer: ""
+    credential: ''
+    date: September 2026
+    image: /assets/images/random_images/certificate1.png
+    url: ""
+    key: 'no'
 
     
 projects:
