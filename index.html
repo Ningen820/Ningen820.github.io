@@ -30,7 +30,7 @@ title: "Home — Ningen820"
       </div>
     </div>
   </div>
-  <!-- <div class="stats-bar section-wrap" aria-label="Career highlights">
+  <!-- <div class="stats-bar section-wrap" aria-label="highlights">
     <div class="stat-item"><strong>{{ site.writeups.size | escape }}</strong><span>Writeups Published</span></div>
     <div class="stat-item"><strong>{{ p.achievements.size | escape }}</strong><span>Total Achievements</span></div>
     <div class="stat-item"><strong>{{ p.stats.years_experience | escape }}</strong><span>Years Experience</span></div>
@@ -146,9 +146,9 @@ title: "Home — Ningen820"
   <div class="project-grid project-grid-home">
     {% for project in projects limit: projects_limit %}
     <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
-      <div class="project-card-head"><span> </span></div>
-      <h3>{% if project.icon != blank %}<img class="project-symbol-image" src="{{ project.icon | relative_url }}" loading="lazy" onerror="this.style.display='none'">{% else %}<span class="project-symbol" aria-hidden="true">./</span>{% endif %}<span>{{ project.title | escape }}</span></h3><p>{{ project.description | escape }}</p>      
-      <div class="writeup-card-foot"><span>projects/{{ project.redirect_folder }}</span><span>{{project.date | date: "%Y-%m-%d %H:%M"}}</span><span class="project-open">Open on GitHub ↗</span></div>         <!-- onerror="this.outerHTML = '<span class=\'project-symbol\' aria-hidden=\'true\'>./</span>'"-->
+      <div class="project-card-head"><span> ABCD </span></div>
+      <h3>{% if project.icon != blank %}<img class="project-symbol-image" src="{{ project.icon | relative_url }}" loading="lazy" onerror="this.style.display='none'">{% else %}<span class="project-symbol" aria-hidden="true">./</span>{% endif %}</h3><h3><span class="project-date">{{project.title}}</span></h3><p>{{ project.description | escape }}</p>      
+      <div class="writeup-card-foot"><span>{{ project.redirect_url }}</span><span>{{project.date | date: "%Y-%m-%d %H:%M"}}`</span><span class="project-open">{{ project.goto }}</span></div>
     </a>
     {% endfor %}
   </div>
