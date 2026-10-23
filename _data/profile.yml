@@ -80,7 +80,8 @@ certifications: {}
     
 projects:
   - title: "TESTING"
-    redirect_folder: "project1"
+    redirect_url: "project1"
+    goto: "Open on Github"
     description: "This is project test 1's description"
     icon: "/assets/images/writeups/mangobleed/mangobleed.png"
     draft: false
