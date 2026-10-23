@@ -139,14 +139,14 @@ title: "Home — Ningen820"
 
 <!-- projects -->
 <section class="content-section section-wrap" id="projects">
-  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>PROJECTS</p><h2>Latest <span class="accent">Projects</span></h2><p class="section-intro">Projects sorted by their date time.</p></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">Browse all projects <span aria-hidden="true">↗</span></a></div>
+  <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>PROJECTS</p><h2>Latest <span class="accent">Projects</span></h2><p class="section-intro">Projects sorted by their publication date/time.</p></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">Browse all projects <span aria-hidden="true">↗</span></a></div>
  {% assign projects_limit = 2 %}
   {% assign p = site.data.profile %}
   {% assign projects = p.projects | where_exp: "item", "item.draft != true" | sort: "date" | reverse %}
   <div class="writeup-card-grid">
     {% for project in projects limit: projects_limit %}
-    <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
-      <h3>{% if project.icon != blank %}<img class="writeup-card-thumb" src="{{ project.icon | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ project.title | escape }}</span></h3><p>{{ project.description | default: "Project" | escape }}</p>
+    <a class="writeup-card spotlight" href="{{ writeup.url | relative_url }}">
+      {% if project.icon != blank %}<img class="writeup-card-thumb" src="{{ project.icon | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3><span>{{ project.title | escape }}</span></h3><p>{{ project.description | default: "Project" | escape }}</p>
       <div class="writeup-card-foot"><span class="project-folder">projects/{{project.redirect_url}}/</span><span>{{project.date | date: "%Y-%m-%d %H:%M"}}</span><span class="text-link">{{project.goto}}<span aria-hidden="true">↗</span></span></div>
     </a>
     {% endfor %}
