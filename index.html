@@ -146,7 +146,7 @@ title: "Home — Ningen820"
   <div class="writeup-card-grid">
     {% for project in projects limit: projects_limit %}
     <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
-      <h3>{% if project.icon != blank %}<img class="writeup-card-thumb" src="{{ project.icon | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}<span>{{ project.title | escape }}</span></h3><p>{{ project.description | default: "Project" | escape }}</p>
+      <h3>{% if project.icon != blank %}<img class="writeup-card-thumb" src="{{ project.icon | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ project.title | escape }}</span></h3><p>{{ project.description | default: "Project" | escape }}</p>
       <div class="writeup-card-foot"><span class="project-folder">projects/{{project.redirect_url}}/</span><span>{{project.date | date: "%Y-%m-%d %H:%M"}}</span><span class="text-link">{{project.goto}}<span aria-hidden="true">↗</span></span></div>
     </a>
     {% endfor %}
