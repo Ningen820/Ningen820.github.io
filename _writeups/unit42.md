@@ -10,24 +10,24 @@ date: "2026-10-22 19:45:35 -04:00"
 image: "/assets/images/writeups/unit42/unit42.png"
 description: "An in-depth investigation of the Unit42 sherlock from HackTheBox (HTB)"
 
-<!-- stuff -->
+#stuff
 summary: |
          In this Sherlock, you will familiarize yourself with Sysmon logs and various useful Event IDs for identifying and analyzing malicious activities on a Windows system. Palo Alto's Unit42 recently conducted research on an UltraVNC campaign, wherein attackers utilized a backdoored version of UltraVNC to maintain access to systems. This lab is inspired by that campaign and guides participants through the initial access stage of the campaign.
 
          To answer the questions in this lab, you will only need the Event Viewer, with VirusTotal as an optional supplement. Below are some important Sysmon Event IDs that can be utilized in your analysis: Event ID 1: Process Creation/Execution. Includes process path, parent process path, and command-line arguments. Event ID 2: File Creation Time Changed. Includes the file making the change, the file to which the change is being made, tampered timestamp, and original timestamp. Event ID 3: Network Connection. Includes the process making the connection, destination IP address, and port. Event ID 5: Process Termination. Includes the name of the process that was killed or terminated itself. Event ID 11: File Created. Includes the process creating the file, the file being created, and its full path. Event ID 22: DNS Query. Includes the process querying the domain, the target domain name, and the IP addresses they resolve to.
 
-<!-- stuff -->
+#stuff
 overview_title: "Blind Analysis"
 overview:
   - |
     First I made a csv version of the file and opened the csv in Timeline Explorer (both the tools used for csv conversion and csv viewing where made by Eric Zimmerman). After opening the file, I saw that there were only about 169 events recorded. This meant that I could see skim through each of them straight on. When skimming through them, I got suspicious of a file called preventivo because it attempted network connections, time-stomping, deleting files, scheduled tasks, etc. Then I copied its SHA-256 hash in the hash field of the csv in Timeline Explorer and pasted it into VirusTotal which said the file was likely malicious and it also said it's related to trojan malware behavior. I also noticed that it looked up "www.example.com" which seemed weird to me.
 
-<!-- stuff -->
+#stuff
 side_notes:
   - |
     The files were not extracting properly so I used 7zip to extract the files.
 
-<!-- stuff -->
+#stuff
 cards:
   card1:
     card_title: "question 01"
@@ -85,7 +85,7 @@ cards:
     explanation: |
                  By filtering for eventID 5 (process termination), we see one event that occured at 2024-02-14 03:41:58.
 
-<!-- stuff -->
+#stuff
 notes:
   - |
     Sysmon Event ID 1: Process Creation/Execution. Includes process path, parent process path, and command-line arguments.
