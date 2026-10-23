@@ -47,58 +47,58 @@ skills:
 
 
 
-experience:
-- role: Internship
-  company: XXXX
-  date: Aug 2023 - Nov 2023
-  description: Application security.
-  url: ""
+experience: {}
+# - role: Intern
+#   company: XXXX
+#   date: Aug 2023 - Nov 2023
+#   description: Application security.
+#   url: ""
 
 
 
 experience_highlights:
 - label: Vulnerability disclosure
-  value: 6x CVE publisher
-  description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied profile reference.
-- label: Competitive security
-  value: MENA & global CTFs
-  description: Competition placements across regional and international events.
-research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. DetailedCVE records and writeup evidence should be linked here as they are added to the repository.
+  value: 2 CVE publisher
+  description: Author of 2 CVEs.
+- label: defensive competiiton
+  value: HTB and CTF
+  description: Competition placements across regional events.
+research_note: vulnerability analysis
 
 
 
-achievements:
-  achievement1:
-    place: 1st Place
-    title: Global Ranking
-    detail: text
-    rank: 1
-    image: ""
-    emoji: "🏆"
-    url: ""
-    key: 'no'
+achievements: {}
+  # achievement1:
+  #   place: 1st Place
+  #   title: Global Ranking
+  #   detail: text
+  #   rank: 1
+  #   image: ""
+  #   emoji: "🏆"
+  #   url: ""
+  #   key: 'no'
 
 
-certifications:
-  certificate1:
-    name: ""
-    issuer: ""
-    credential: ''
-    date: September 2026
-    image: /assets/images/random_images/certificate1.png
-    url: ""
-    key: 'no'
+certifications: {}
+  # certificate1:
+  #   name: ""
+  #   issuer: ""
+  #   credential: ''
+  #   date: September 2026
+  #   image: /assets/images/random_images/certificate1.png
+  #   url: ""
+  #   key: 'no'
 
     
-projects:
-  - title: "TESTING"
-    url: "https://github.com"
-    redirect: "github.com"
-    goto: "Open on Github"
-    description: "This is project test 1's description"
-    icon: "/assets/images/writeups/mangobleed/mangobleed.png"
-    draft: false
-    date: "2025-10-10 04:10:10 -04:00"  
+projects: []
+  # - title: "TESTING"
+  #   url: "https://github.com"
+  #   redirect: "github.com"
+  #   goto: "Open on Github"
+  #   description: "This is project test 1's description"
+  #   icon: "/assets/images/writeups/mangobleed/mangobleed.png"
+  #   draft: false
+  #   date: "2025-10-10 04:10:10 -04:00"  
 
 
 
