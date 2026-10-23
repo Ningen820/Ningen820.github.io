@@ -18,7 +18,7 @@ permalink: /projects/
 <section class="section-wrap project-archive-section">
   <div class="project-grid">
     {% for project in projects %}
-    <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
+    <a class="project-card spotlight" href="{{ project.redirect_url }}">
       <div class="project-card-head">
         {% if project.icon != blank %}<img class="project-symbol-image" src="{{ project.icon | relative_url }}" loading="lazy" onerror="this.style.display='none'">
         {% else %}<span class="project-symbol" aria-hidden="true">./</span>{% endif %}
@@ -27,8 +27,8 @@ permalink: /projects/
       <h3>{{ project.title | escape }}</h3>
       <p>{{ project.description | escape }}</p>
       <div class="project-card-foot">
-        <span class="project-folder">projects/{{ project.redirect_folder }}/</span>
-        <span class="project-open">Open on GitHub ↗</span>
+        <span class="project-folder">projects/{{ project.redirect_url }}/</span>
+        <span class="project-open">{{project.goto}}</span>
       </div>
     </a>
     {% endfor %}
