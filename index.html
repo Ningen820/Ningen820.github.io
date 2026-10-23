@@ -144,11 +144,19 @@ title: "Home — Ningen820"
   {% assign p = site.data.profile %}
   {% assign projects = p.projects | where_exp: "item", "item.draft != true" | sort: "date" | reverse %}
   <div class="project-grid project-grid-home">
-    {% for project in projects limit: projects_limit %}
+    {% for project in projects %}
     <a class="project-card spotlight" href="https://github.com/ningen820/ningen820.github.io/tree/main/projects/{{ project.redirect_folder }}">
-      <div class="project-card-head"><span> ABCD </span></div>
-      <h3>{% if project.icon != blank %}<img class="project-symbol-image" src="{{ project.icon | relative_url }}" loading="lazy" onerror="this.style.display='none'">{% else %}<span class="project-symbol" aria-hidden="true">./</span>{% endif %}</h3><h3><span class="project-date">{{project.title}}</span></h3><p>{{ project.description | escape }}</p>      
-      <div class="writeup-card-foot"><span>{{ project.redirect_url }}</span><span>{{project.date | date: "%Y-%m-%d %H:%M"}}`</span><span class="project-open">{{ project.goto }}</span></div>
+      <div class="project-card-head">
+        {% if project.icon != blank %}<img class="project-symbol-image" src="{{ project.icon | relative_url }}" loading="lazy" onerror="this.style.display='none'">
+        {% else %}<span class="project-symbol" aria-hidden="true">./</span>{% endif %}
+        <span class="project-date">{{project.date | date: "%Y-%m-%d %H:%M"}}</span>
+      </div>
+      <h3>{{ project.title | escape }}</h3>
+      <p>{{ project.description | escape }}</p>
+      <div class="project-card-foot">
+        <span class="project-folder">projects/{{project.redirect_url}}/</span>
+        <span class="project-open">{{project.goto}}</span>
+      </div>
     </a>
     {% endfor %}
   </div>
