@@ -11,9 +11,9 @@ age: 17
 location: USA
 languages:
 - English
-education: []
-# - qualification: 
-#   institution: 
+education:
+- qualification: magna cum laude
+  institution: Harvard
 hero_roles:
 - Threat Hunter
 - SOC Analyst
@@ -29,12 +29,17 @@ about:
 
 
 
-experience: []
-# - role: Internship
-#   company: XXXX
-#   date: Aug 2023 - Nov 2023
-#   description: Application security, vulnerability discovery, secure code review, and practical security assessment.
-#   url: ""
+experience:
+- role: Internship
+  company: Google
+  date: Aug 2023 - Nov 2023
+  description: Application security, vulnerability discovery, secure code review, and practical security assessment.
+  url: "https://google.com"
+- role: CEO
+  company: Amazon
+  date: Aug 2025 - Aug 2026
+  description: Application security, vulnerability discovery, secure code review, and practical security assessment.
+  url: "https://amazon.com"
 
   
 skills:
@@ -55,27 +60,36 @@ skills:
     key: 'yes'
 
 
-achievements: {}
-  # achievement1:
-  #   title: Trip Down Memory Lane
-  #   place: Badge
-  #   detail: October 2026 | HTB
-  #   rank: 2
-  #   image: /assets/images/random_images/achievement1.png
-  #   emoji: ""
-  #   url: "https://labs.hackthebox.com/achievement/badge/3353541/244"
-  #   key: 'no'  
+achievements:
+  achievement1:
+    title: "#1"
+    place: Global Rank
+    detail: October 2026 | HTB
+    rank: 1
+    image: /assets/images/random_images/achievement1.png
+    emoji: "🏆"
+    url: "https://labs.hackthebox.com/achievement/badge/3353541/244"
+    key: 'yes'  
+  achievement2:
+    title: "#2"
+    place: Badge
+    detail: October 2023 | NSA
+    rank: 2
+    image: /assets/images/random_images/achievement1.png
+    emoji: "🥈"
+    url: "https://labs.hackthebox.com/achievement/badge/3353541/244"
+    key: 'yes'  
 
 
-certifications: {}
-  # certificate1:
-  #   name: CJCA
-  #   issuer: Hack The Box
-  #   credential: ''
-  #   date: September 2026
-  #   image: /assets/images/random_images/certificate1.png
-  #   url: "https://app.hackthebox.com/sherlocks"
-  #   key: 'no'
+certifications:
+  certificate1:
+    name: CJCA
+    issuer: Hack The Box
+    credential: ''
+    date: September 2026
+    image: /assets/images/random_images/certificate1.png
+    url: "https://app.hackthebox.com/sherlocks"
+    key: 'no'
 
     
 projects:
@@ -93,20 +107,20 @@ projects:
     goto: "Open on HackTheBox"
     description: "This is project test 5's description"
     icon: "/assets/images/writeups/logjammer/logjammer.png"
-    draft: false
+    draft: true
     date: "2025-10-10 02:10:10 -04:00"    
 
 
 
 
-experience_highlights: []
-# - label: Vulnerability disclosure
-#   value: 6x CVE publisher
-#   description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied profile reference.
-# - label: Competitive security
-#   value: MENA & global CTFs
-#   description: Competition placements across regional and international events.
-# research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. DetailedCVE records and writeup evidence should be linked here as they are added to the repository.
+experience_highlights:
+- label: Vulnerability disclosure
+  value: 6x CVE publisher
+  description: Disclosures affecting plugins with more than 2 million active installs, as stated in the supplied profile reference.
+- label: Competitive security
+  value: MENA & global CTFs
+  description: Competition placements across regional and international events.
+research_note: Security research and disclosure, secure code review, and practical vulnerability analysis. DetailedCVE records and writeup evidence should be linked here as they are added to the repository.
 
 
 
