@@ -10,7 +10,7 @@
 .project-card h3 { margin: 0; font-size: 18px; line-height: 1.35; letter-spacing: -.025em; }
 .project-card p { margin: 10px 0 22px; color: var(--muted); font-size: 12px; line-height: 1.75; }
 .project-card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; font-size: 10px; padding-top: 15px; border-top: 1px solid var(--line); }
-.project-folder { color: #8796ad; font-family: var(--mono); font-size: 9px; }
+.project-folder { color: #8796ad; font-family: var(--mono); font-size: 12px; }
 .project-open { color: var(--lime); font-size: 11px; font-weight: 750; }
 .project-open span { display: inline-block; transition: transform .2s ease; }
 .project-card:hover .project-open span { transform: translate(2px, -2px); }
