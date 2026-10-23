@@ -8,7 +8,7 @@ summary: Aspiring cybersecurity professional focused on threat hunting, security
 joinname: Ahamad_Jalloh
 handle: Ningen820
 age: 17
-location: USA
+location: Indiana, USA
 languages:
 - English
 education:
@@ -49,15 +49,10 @@ skills:
 
 experience:
 - role: Internship
-  company: Google
+  company: XXXX
   date: Aug 2023 - Nov 2023
-  description: Application security, vulnerability discovery, secure code review, and practical security assessment.
-  url: "https://google.com"
-- role: CEO
-  company: Amazon
-  date: Aug 2025 - Aug 2026
-  description: Application security, vulnerability discovery, secure code review, and practical security assessment.
-  url: "https://amazon.com"
+  description: Application security.
+  url: ""
 
 
 
@@ -76,32 +71,23 @@ achievements:
   achievement1:
     place: 1st Place
     title: Global Ranking
-    detail: October 2026 | HTB
+    detail: text
     rank: 1
-    image: /assets/images/random_images/achievement1.png
+    image: ""
     emoji: "🏆"
-    url: "https://labs.hackthebox.com/achievement/badge/3353541/244"
-    key: 'yes'  
-  achievement2:
-    title: "Certificate of execellence"
-    place: Badge
-    detail: October 2023 | NSA
-    rank: 2
-    image: /assets/images/random_images/achievement1.png
-    emoji: "🥈"
-    url: "https://labs.hackthebox.com/achievement/badge/3353541/244"
-    key: 'n'  
-
-
-certifications:
-  certificate1:
-    name: CJCA
-    issuer: Hack The Box
-    credential: ''
-    date: September 2026
-    image: /assets/images/random_images/certificate1.png
-    url: "https://app.hackthebox.com/sherlocks"
+    url: ""
     key: 'no'
+
+
+certifications: {}
+  # certificate1:
+  #   name: ""
+  #   issuer: ""
+  #   credential: ''
+  #   date: September 2026
+  #   image: /assets/images/random_images/certificate1.png
+  #   url: ""
+  #   key: 'no'
 
     
 projects:
@@ -112,15 +98,7 @@ projects:
     description: "This is project test 1's description"
     icon: "/assets/images/writeups/mangobleed/mangobleed.png"
     draft: false
-    date: "2025-10-10 04:10:10 -04:00"
-  - title: "TESTING3"
-    url: "https://hackthebox.com"
-    redirect: "hackthebox.com"
-    goto: "Open on HackTheBox"
-    description: "This is project test 5's description"
-    icon: "/assets/images/writeups/logjammer/logjammer.png"
-    draft: true
-    date: "2025-10-10 02:10:10 -04:00"    
+    date: "2025-10-10 04:10:10 -04:00"  
 
 
 
