@@ -85,7 +85,14 @@ projects:
     description: "This is project test 1's description"
     icon: "/assets/images/writeups/mangobleed/mangobleed.png"
     draft: false
-    date: "2025-10-10 04:10:10 -04:00"    
+    date: "2025-10-10 04:10:10 -04:00"
+  - title: "TESTING3"
+    redirect_url: "project6"
+    goto: "Open on Github"
+    description: "This is project test 5's description"
+    icon: "/assets/images/writeups/logjammer/logjammer.png"
+    draft: false
+    date: "2025-10-10 02:10:10 -04:00"    
 
 
 
