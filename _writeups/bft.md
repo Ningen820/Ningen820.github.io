@@ -17,7 +17,7 @@ summary: |
 
          Tools Used: MFTECmd, TimeLine Explorer, HxD Hex Editor.
 
-<!-- stuff -->
+#stuff
 overview_title: "Blind Analysis"
 overview:
   - |
@@ -37,12 +37,12 @@ overview:
     <img src="/assets/images/writeups/bft/chooserange.png" loading="lazy">
     <img src="/assets/images/writeups/bft/datacontents.png" loading="lazy">
 
-<!-- stuff -->
+#stuff
 side_notes:
   - |
     The biggest clue for identifying the malicious file was its name, not only because it's a .bat extension but also because it's made to look like a normal invoice.
 
-<!-- stuff -->
+#stuff
 cards:
   card1:
     card_title: "question 01"
@@ -93,7 +93,7 @@ cards:
     explanation: |
                  By looking at the $DATA contents of the file, we can see malicious code being written and also we could see the IP and port. Look at the last image in the Analysis panel.
 
-<!-- stuff -->
+#stuff
 ---
 {% include writeup-data.html %}
 
