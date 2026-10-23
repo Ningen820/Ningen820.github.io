@@ -21,6 +21,18 @@ hero_roles:
 stats:
   years_experience: 2+
 
+show:
+  stats: "x"
+  about: "x"
+  skills: "x"
+  experience: ""
+  highlights: ""
+  achievements: "x"
+  certifications: ""
+  projects: ""
+  writeups: ""
+  contacts: "x"
+
 about:
   heading: Blue Team & Threat Hunting
   paragraphs:
