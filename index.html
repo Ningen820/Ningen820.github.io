@@ -14,7 +14,7 @@ title: "Home — Ningen820"
       <p class="hero-summary">{{ p.summary | escape }}</p>
       <div class="hero-actions">
         &nbsp;&nbsp;<a class="button button-primary" href="{{ p.cv_path | relative_url }}" download><span aria-hidden="true">↓</span> Download CV</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button button-outline" href="#contact"><span aria-hidden="true">✉</span> Get in touch</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button button-outline" href="#contacts"><span aria-hidden="true">✉</span> Get in touch</a>
       </div>
     </div>
     <div class="hero-aside" aria-label="Profile summary">
@@ -30,12 +30,14 @@ title: "Home — Ningen820"
       </div>
     </div>
   </div>
+  {% if p.show.stats!="" %}
   <div class="stats-bar section-wrap" aria-label="sum">
     <div class="stat-item"><strong>{{ site.writeups.size | escape }}</strong><span>Writeups Published</span></div>
     <div class="stat-item"><strong>{{ p.achievements.size | escape }}</strong><span>Total Achievements</span></div>
     <div class="stat-item"><strong>{{ p.stats.years_experience | escape }}</strong><span>Years Experience</span></div>
     <div class="stat-item"><strong>{{ p.certifications.size | escape }}</strong><span>Certificates</span></div>
   </div>
+  {% endif %}
 </section>
 
 <section class="content-section section-wrap" id="about">
@@ -60,7 +62,8 @@ title: "Home — Ningen820"
   </div>
 </section>
 
-<!--  skills -->
+<!-- skills -->
+{% if p.show.skills!="" %}
 <section class="content-section section-wrap" id="skills">
   <div class="section-heading"><p class="section-kicker"><span>//</span> ARSENAL</p><h2>Skills <span class="accent">&amp; tools</span></h2><p class="section-intro">My areas of expertise and toolkits.</p></div>
   <div class="skills-grid">
@@ -73,8 +76,10 @@ title: "Home — Ningen820"
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
-<!-- experience -->
+<!-- experiences -->
+{% if p.show.experiences!="" %}
 <section class="content-section section-wrap section-tinted" id="experience">
   <div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> FIELD EXPERIENCE</p><h2>Experience <span class="accent">History</span></h2></div>
   <div class="experience-list">
@@ -96,16 +101,20 @@ title: "Home — Ningen820"
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
 <!-- highlights -->
+{% if p.show.highlights!="" %}
 <section class="content-section section-wrap" id="highlights">
   <div class="research-panel spotlight">
     <div class="research-copy"><p class="section-kicker"><span>//</span> DISCLOSURE &amp; IMPACT</p><h2>Research<span class="accent">matters</span></h2><p>{{ p.research_note | escape }}</p><a class="text-link" href="{{ p.github_url | escape }}" target="_blank" rel="noopener noreferrer">View Public Repos <span aria-hidden="true">↗</span></a></div>
     <div class="research-metrics"><div><strong>{{ p.stats.cves_published | escape }}</strong><span>CVE</span></div><div><strong>{{ p.stats.affected_installs | escape }}</strong><span>Pl</span></div><div><strong>H</strong><span>C</span></div></div>
   </div>
 </section>
+{% endif %}
 
 <!-- achievements -->
+{% if p.show.achievements!="" %}
 <section class="content-section section-wrap section-tinted" id="achievements">
   <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2><span class="accent">Achievements</span></h2><p class="section-intro">My achievements across multiple cybersecurity-related platoforms.</p></div>
   <div class="achievements-grid">
@@ -124,8 +133,10 @@ title: "Home — Ningen820"
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
 <!-- certifications -->
+{% if p.show.certifications!="" %}
 <section class="content-section section-wrap section-tinted" id="certifications">
   <div class="section-heading"><p class="section-kicker"><span>//</span> CREDENTIALS</p><h2>Certifications</h2><p class="section-intro">Industry standard certifications &amp; more</p></div>
   <div class="cert-grid">
@@ -144,8 +155,10 @@ title: "Home — Ningen820"
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
 <!-- projects -->
+{% if p.show.projects!="" %}
 <section class="content-section section-wrap" id="projects">
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>PROJECTS</p><h2>Latest <span class="accent">Projects</span></h2><p class="section-intro">Projects sorted by their publication date/time.</p></div><a class="button button-outline" href="{{ '/projects/' | relative_url }}">Browse all projects <span aria-hidden="true">↗</span></a></div>
  {% assign projects_limit = 2 %}
@@ -160,8 +173,10 @@ title: "Home — Ningen820"
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
 <!-- writeups -->
+{% if p.show.writeups!="" %}
 <section class="content-section section-wrap" id="writeups">
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>WRITEUPS</p><h2>Latest <span class="accent">Writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by update time to surface the latest pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
   {% assign home_writeups_limit = 3 %}
@@ -177,10 +192,12 @@ title: "Home — Ningen820"
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
 
 <!-- socials -->
-<section class="content-section section-wrap contact-section" id="contact">
+{% if p.show.contacts!="" %}
+<section class="content-section section-wrap contact-section" id="contacts">
   <div class="section-heading"><p class="section-kicker"><span>//</span> ESTABLISH CONNECTION</p><h2>Let’s talk <span class="accent">security</span></h2><p class="section-intro">For security collaboration, research discussion, and professional opportunities.</p></div>
   <div class="contact-grid">
     {% for social in p.socials %}
@@ -192,6 +209,7 @@ title: "Home — Ningen820"
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
 
 
