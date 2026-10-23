@@ -27,10 +27,10 @@ show:
   skills: "x"
   experiences: ""
   highlights: ""
-  achievements: "x"
+  achievements: ""
   certifications: ""
   projects: ""
-  writeups: ""
+  writeups: "x"
   contacts: "x"
 
 about:
@@ -86,7 +86,7 @@ achievements: {}
   #   detail: text
   #   rank: 1
   #   image: ""
-  #   emoji: "🏆"
+  #   emoji: ""
   #   url: ""
   #   key: 'no'
 
