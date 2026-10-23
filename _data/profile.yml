@@ -62,8 +62,8 @@ skills:
 
 achievements:
   achievement1:
-    title: "#1"
-    place: Global Rank
+    title: Global Ranking
+    place: 1
     detail: October 2026 | HTB
     rank: 1
     image: /assets/images/random_images/achievement1.png
@@ -71,14 +71,14 @@ achievements:
     url: "https://labs.hackthebox.com/achievement/badge/3353541/244"
     key: 'yes'  
   achievement2:
-    title: "#2"
+    title: "Certificate of execellence"
     place: Badge
     detail: October 2023 | NSA
     rank: 2
     image: /assets/images/random_images/achievement1.png
     emoji: "🥈"
     url: "https://labs.hackthebox.com/achievement/badge/3353541/244"
-    key: 'yes'  
+    key: 'n'  
 
 
 certifications:
