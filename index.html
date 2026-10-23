@@ -30,12 +30,12 @@ title: "Home — Ningen820"
       </div>
     </div>
   </div>
-  <!-- <div class="stats-bar section-wrap" aria-label="highlights">
+  <div class="stats-bar section-wrap" aria-label="sum">
     <div class="stat-item"><strong>{{ site.writeups.size | escape }}</strong><span>Writeups Published</span></div>
     <div class="stat-item"><strong>{{ p.achievements.size | escape }}</strong><span>Total Achievements</span></div>
     <div class="stat-item"><strong>{{ p.stats.years_experience | escape }}</strong><span>Years Experience</span></div>
     <div class="stat-item"><strong>{{ p.certifications.size | escape }}</strong><span>Certificates</span></div>
-  </div> -->
+  </div>
 </section>
 
 <section class="content-section section-wrap" id="about">
@@ -60,8 +60,22 @@ title: "Home — Ningen820"
   </div>
 </section>
 
+<!--  skills -->
+<section class="content-section section-wrap" id="skills">
+  <div class="section-heading"><p class="section-kicker"><span>//</span> ARSENAL</p><h2>Skills <span class="accent">&amp; tools</span></h2><p class="section-intro">My areas of expertise and toolkits.</p></div>
+  <div class="skills-grid">
+    {% assign skill_entries = p.skills | sort %}
+    {% for skill_entry in skill_entries %}{% assign skill = skill_entry[1] %}
+    <article class="skill-card spotlight{% if skill.key == 'yes' %} is-featured{% endif %}">
+      <div class="skill-icon" aria-hidden="true">{% if skill.image != blank %}<img src="{{ skill.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ skill.title | escape }}</h3><p>{{ skill.description | escape }}</p>
+      <div class="skill-tags">{% for item in skill.items %}<span>{{ item | escape }}</span>{% endfor %}</div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
 <!-- experience -->
-<!-- <section class="content-section section-wrap section-tinted" id="experience">
+<section class="content-section section-wrap section-tinted" id="experience">
   <div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span> FIELD EXPERIENCE</p><h2>Experience <span class="accent">History</span></h2></div>
   <div class="experience-list">
     {% for item in p.experience %}
@@ -81,19 +95,13 @@ title: "Home — Ningen820"
     {% endif %}
     {% endfor %}
   </div>
-</section> -->
+</section>
 
-<!--  skills -->
-<section class="content-section section-wrap" id="skills">
-  <div class="section-heading"><p class="section-kicker"><span>//</span> ARSENAL</p><h2>Skills <span class="accent">&amp; tools</span></h2><p class="section-intro">My areas of expertise and toolkits.</p></div>
-  <div class="skills-grid">
-    {% assign skill_entries = p.skills | sort %}
-    {% for skill_entry in skill_entries %}{% assign skill = skill_entry[1] %}
-    <article class="skill-card spotlight{% if skill.key == 'yes' %} is-featured{% endif %}">
-      <div class="skill-icon" aria-hidden="true">{% if skill.image != blank %}<img src="{{ skill.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ skill.title | escape }}</h3><p>{{ skill.description | escape }}</p>
-      <div class="skill-tags">{% for item in skill.items %}<span>{{ item | escape }}</span>{% endfor %}</div>
-    </article>
-    {% endfor %}
+<!-- highlights -->
+<section class="content-section section-wrap" id="highlights">
+  <div class="research-panel spotlight">
+    <div class="research-copy"><p class="section-kicker"><span>//</span> DISCLOSURE &amp; IMPACT</p><h2>Research<span class="accent">matters</span></h2><p>{{ p.research_note | escape }}</p><a class="text-link" href="{{ p.github_url | escape }}" target="_blank" rel="noopener noreferrer">View Public Repos <span aria-hidden="true">↗</span></a></div>
+    <div class="research-metrics"><div><strong>{{ p.stats.cves_published | escape }}</strong><span>CVE</span></div><div><strong>{{ p.stats.affected_installs | escape }}</strong><span>Pl</span></div><div><strong>H</strong><span>C</span></div></div>
   </div>
 </section>
 
@@ -118,7 +126,7 @@ title: "Home — Ningen820"
 </section>
 
 <!-- certifications -->
-<!-- <section class="content-section section-wrap section-tinted" id="certifications">
+<section class="content-section section-wrap section-tinted" id="certifications">
   <div class="section-heading"><p class="section-kicker"><span>//</span> CREDENTIALS</p><h2>Certifications</h2><p class="section-intro">Industry standard certifications &amp; more</p></div>
   <div class="cert-grid">
     {% assign certificate_entries = p.certifications | sort %}
@@ -135,7 +143,7 @@ title: "Home — Ningen820"
     {% endif %}
     {% endfor %}
   </div>
-</section> -->
+</section>
 
 <!-- projects -->
 <section class="content-section section-wrap" id="projects">
@@ -153,10 +161,6 @@ title: "Home — Ningen820"
   </div>
 </section>
 
-
-
-
-
 <!-- writeups -->
 <section class="content-section section-wrap" id="writeups">
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>WRITEUPS</p><h2>Latest <span class="accent">Writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by update time to surface the latest pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
@@ -173,16 +177,6 @@ title: "Home — Ningen820"
     {% endfor %}
   </div>
 </section>
-
-
-
-
-<!-- <section class="content-section section-wrap" id="cves">
-  <div class="research-panel spotlight">
-    <div class="research-copy"><p class="section-kicker"><span>//</span> DISCLOSURE &amp; IMPACT</p><h2>Research<span class="accent">matters</span></h2><p>{{ p.research_note | escape }}</p><a class="text-link" href="{{ p.github_url | escape }}" target="_blank" rel="noopener noreferrer">View Public Repos <span aria-hidden="true">↗</span></a></div>
-    <div class="research-metrics"><div><strong>{{ p.stats.cves_published | escape }}</strong><span>CVE</span></div><div><strong>{{ p.stats.affected_installs | escape }}</strong><span>Pl</span></div><div><strong>H</strong><span>C</span></div></div>
-  </div>
-</section> -->
 
 
 <!-- socials -->
