@@ -11,7 +11,6 @@ image: "/assets/images/writeups/bft/bft.png"
 description: "An in-depth investigation of the BFT sherlock from HackTheBox (HTB)"
 
 #stuff
-
 summary: |
          In this Sherlock, you will become acquainted with MFT (Master File Table) forensics. You will be introduced to well-known tools and methodologies for analyzing MFT artifacts to identify malicious activity. During our analysis, you will utilize the MFTECmd tool to parse the provided MFT file, TimeLine Explorer to open and analyze the results from the parsed MFT, and a Hex editor to recover file contents from the MFT. 
 
@@ -73,13 +72,12 @@ cards:
                  If we open the Timeline explorer app with our .csv file loaded and filter for the name of the file, then scroll to the $created0x30 timeline section to find the answer.
 
   card5:
-    card_title: "question 05"
     question: "Finding the hex offset of an mft record is beneficial in many investigative scenarios. find the hex offset of the stager file from question 3."
     answer: "16E3000"
     explanation: |
                  To find this, we will have to look at the number we see in the record offset label and then run a small code to convert that number into a hexadecimal (hex).
                  <img src="/assets/images/writeups/bft/hexoffset.png" loading="lazy">
-    terminal_title: "find_hex.py"
+    terminal_label: "label"
     terminal_output1: "#simple version\nx=input(\"Input Number: \") #if a non-integer number is given then the code below will fail.\nx=int(x)\ny=hex(x)\nprint(\"Output:\",y)"
     terminal_output2: "#One-liner version\nprint(\"Output:\",hex(int(input(\"Input Number: \"))))"
     terminal_output3: "#output\nOutput: 0x16e3000"
