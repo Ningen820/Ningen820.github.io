@@ -1,0 +1,6 @@
+To change configs for a writeup
+  configure:
+    x: y
+
+To add a image in a writeup
+  <img src="/assets/images/writeups/x/smth.png" loading="lazy">
