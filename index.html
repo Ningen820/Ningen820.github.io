@@ -36,6 +36,8 @@ title: "Home — Ningen820"
     <div class="stat-item"><strong>{{ p.achievements.size | escape }}</strong><span>Total Achievements</span></div>
     <div class="stat-item"><strong>{{ p.stats.years_experience | escape }}</strong><span>Years Experience</span></div>
     <div class="stat-item"><strong>{{ p.certifications.size | escape }}</strong><span>Certificates</span></div>
+    <div class="stat-item"><strong>{{ 10 | escape }}</strong><span>Certis</span></div>
+    <div class="stat-item"><strong>{{ 100 | escape }}</strong><span>Ce</span></div>
   </div>
   {% endif %}
 </section>
@@ -181,7 +183,6 @@ title: "Home — Ningen820"
   <div class="section-title-row"><div class="section-heading section-heading-left"><p class="section-kicker"><span>//</span>WRITEUPS</p><h2>Latest <span class="accent">Writeups</span></h2><p class="section-intro">Technical notes and walkthroughs, ranked by update time to surface the latest pieces first.</p></div><a class="button button-outline" href="{{ '/writeups/' | relative_url }}">Browse all writeups <span aria-hidden="true">↗</span></a></div>
   {% assign home_writeups_limit = 3 %}
   {% assign home_writeups = site.writeups | sort: 'date' | reverse %}
-  <p>Writeups found: {{ site.writeups.size }}</p>
   <div class="writeup-card-grid">
     {% for writeup in home_writeups limit: home_writeups_limit %}
     <a class="writeup-card spotlight" href="{{ writeup.url | relative_url }}">
