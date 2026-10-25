@@ -110,7 +110,7 @@
 
            
             {% if has_terminal_content %}
-              {% assign prompt = cfg.prompt | default: '/home/ningen/brutus>' %}
+              {% assign prompt = card.prompt | default: cfg.prompt | default: '/home/ningen/brutus>' %}
               {% assign terminal_label = card.terminal_label | default: cfg.terminal_label | default: '.bash' %}
               <div class="terminal-window">
                 <div class="terminal-window-head">
