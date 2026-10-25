@@ -8,7 +8,7 @@ permalink: /writeups/
   <a class="back-link" href="{{ '/' | relative_url }}"><span aria-hidden="true">←</span> Homepage</a>
   <br><br>
   <p class="section-kicker"><span>//</span> WRITEUPS ARCHIVE</p><h1>Writeups<span class="accent">.</span></h1>
-  <p>Technical walkthroughs, investigation notes, and lessons learned. Search the archive or narrow it down using filtering.</p>
+  <p>Technical walkthroughs, investigation notes, and lessons learned. Browse the archive.</p>
 </section>
 <section class="section-wrap writeup-archive" data-writeup-archive>
   <div class="archive-stats">
@@ -33,7 +33,7 @@ permalink: /writeups/
     {% for item in archive_items %}
     <article class="writeup-row spotlight" data-writeup-row data-title="{{ item.name | escape }}" data-summary="{{ item.summary | escape }}" data-category="{{ item.category | escape }}" data-difficulty="{{ item.difficulty | escape }}" data-platform="{{ item.platform | escape }}" data-os="{{ item.os | escape }}" data-read-time="{{ item.reading_time plus: 0 }}" data-date="{{ item.date }}">
       <a class="writeup-row-main" href="{{ item.url | relative_url }}"><span class="row-index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span class="writeup-row-copy"><span class="writeup-row-kicker">{{ item.category | upcase | escape }}</span><strong class="writeup-row-title">{% if item.image != blank %}<img class="writeup-row-thumb" src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}<span>{{ item.name | escape }}</span></strong><span class="writeup-row-summary">{{ item.summary | escape }}</span></span><span class="row-arrow" aria-hidden="true">↗</span></a>
-      <div class="writeup-row-meta"><span class="difficulty-chip difficulty-{{ item.difficulty | slugify }}">{{ item.difficulty | escape }}</span><span>{{ item.platform | escape }}</span><span>{{ item.os | escape }}</span>{% assign row_time = item.reading_time | plus: 0 %}{% if row_time > 0 %}<span>{{ row_time }} min</span>{% endif %}</div>
+      <div class="writeup-row-meta"><span class="difficulty-chip difficulty-{{ item.difficulty | slugify }}">{{ item.difficulty | escape }}</span><span>{{ item.platform | escape }}</span><span>{{ item.os | escape }}</span>{% assign row_time = item.reading_time | plus: 0 %}{% if row_time > 0 %}<span>{{ row_time }} min</span><span>{{ item.date | escape }}</span>{% endif %}</div>
     </article>
     {% endfor %}
   </div>
