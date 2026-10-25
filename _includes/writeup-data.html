@@ -120,7 +120,7 @@
                   </div>
                 </div>
                 <div class="terminal-window-body">
-                  {% assign count = cfg.prompt | default: '/home/ningen/brutus>' %}
+                  {% assign count = cfg.prompt | default: '>' %}
                   {% for terminal_index in (1..10) %}
                     {% assign code_key = 'terminal_code' | append: terminal_index %}
                     {% assign prompt_key = 'prompt' | append: terminal_index %}
@@ -129,7 +129,7 @@
                     {% assign prompt = card[prompt_key] %}
                     {% assign terminal_output = card[output_key] %}
                     {% if terminal_code and terminal_code != '' %}
-                      {% if prompt and prompt!="" %}
+                      {% if prompt and prompt!='' %}
                         {% assign count = prompt %}
                         <p class="terminal-line"><span class="prompt-symbol">{{ prompt | default: cfg.prompt | escape }}</span> <span id="{{ page.name | default: page.title | slugify }}-q{{ qnumber }}-command-{{ terminal_index }}">{{ terminal_code | escape }}</span></p>
                       {% else %}
