@@ -110,7 +110,6 @@
 
            
             {% if has_terminal_content %}
-              {% assign prompt = card.prompt | default: cfg.prompt | default: '/home/ningen/brutus>' %}
               {% assign terminal_label = card.terminal_label | default: cfg.terminal_label | default: '.bash' %}
               <div class="terminal-window">
                 <div class="terminal-window-head">
@@ -121,13 +120,21 @@
                   </div>
                 </div>
                 <div class="terminal-window-body">
+                  {% assign count = cfg.prompt | default: '/home/ningen/brutus>' %}
                   {% for terminal_index in (1..10) %}
                     {% assign code_key = 'terminal_code' | append: terminal_index %}
+                    {% assign prompt_key = 'prompt' | append: terminal_index %}
                     {% assign output_key = 'terminal_output' | append: terminal_index %}
                     {% assign terminal_code = card[code_key] %}
+                    {% assign prompt = card[prompt_key] %}
                     {% assign terminal_output = card[output_key] %}
                     {% if terminal_code and terminal_code != '' %}
-                      <p class="terminal-line"><span class="prompt-symbol">{{ prompt | escape }}</span> <span id="{{ page.name | default: page.title | slugify }}-q{{ qnumber }}-command-{{ terminal_index }}">{{ terminal_code | escape }}</span></p>
+                      {% if prompt and prompt!="" %}
+                        {% assign count = prompt %}
+                        <p class="terminal-line"><span class="prompt-symbol">{{ prompt | default: cfg.prompt | escape }}</span> <span id="{{ page.name | default: page.title | slugify }}-q{{ qnumber }}-command-{{ terminal_index }}">{{ terminal_code | escape }}</span></p>
+                      {% else %}
+                        <p class="terminal-line"><span class="prompt-symbol">{{ count | escape }}</span> <span id="{{ page.name | default: page.title | slugify }}-q{{ qnumber }}-command-{{ terminal_index }}">{{ terminal_code | escape }}</span></p>
+                      {% endif %}
                     {% endif %}
                     {% if terminal_output and terminal_output != '' %}
                       <p class="terminal-output">{{ terminal_output | escape | newline_to_br }}</p>
