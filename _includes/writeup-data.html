@@ -66,7 +66,7 @@
           {% assign qnumber = forloop.index %}
           {% assign qnum = qnumber | prepend: '0' %}
           {% if qnumber > 9 %}{% assign qnum = qnumber %}{% endif %}
-          {% assign passover=count | default: cfg.prompt | default: 'hjuh' %}
+          {% assign passover=passover | default: cfg.prompt | default: 'hjuh' %}
 
 
           {%- comment -%} A terminal is rendered only if at least one command/output is nonempty. {%- endcomment -%}
@@ -133,6 +133,7 @@
                     {% if terminal_code and terminal_code != '' %}
                       {% if prompt and prompt!='' %}
                         {% assign count = prompt %}
+                        {% assign passover = prompt %}
                         <p class="terminal-line"><span class="prompt-symbol">{{ prompt | default: cfg.prompt | escape }}</span> <span id="{{ page.name | default: page.title | slugify }}-q{{ qnumber }}-command-{{ terminal_index }}">{{ terminal_code | escape }}</span></p>
                       {% else %}
                         <p class="terminal-line"><span class="prompt-symbol">{{ count | escape }}</span> <span id="{{ page.name | default: page.title | slugify }}-q{{ qnumber }}-command-{{ terminal_index }}">{{ terminal_code | escape }}</span></p>
