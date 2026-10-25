@@ -80,7 +80,7 @@
             {% if output_value and output_value != '' %}{% assign has_terminal_content = true %}{% endif %}
           {% endfor %}
 
-          <article class="writeup-content-card writeup-card" id="q{{ qnumber }}" data-toc-title="{% if card.card_title and card.card_title != '' %}{{ card.card_title | upcase | escape }}{% endif %}">
+          <article class="writeup-content-card writeup-card" id="q{{ qnumber }}" {% if card.card_title and card.card_title != '' %} data-toc-title="{{ card.card_title | upcase | escape }}{% endif %}">
             <div class="writeup-content-card-top writeup-card-top">
              {% if card.card_title and card.card_title != '' %}
                 <span class="section-kicker"><span>//</span> {{ card.card_title | upcase | escape }}</span>{% endif %}
