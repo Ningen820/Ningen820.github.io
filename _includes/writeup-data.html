@@ -62,11 +62,12 @@
       <h2>{{ page.questions_heading | default: 'Questions' | escape }}</h2>
       <div class="writeup-content-grid writeup-card-grid">
         {% for card_entry in page.cards %}
-          {% assign passover=count | default: cfg.prompt | default: '>' %}
           {% assign card = card_entry[1] %}
           {% assign qnumber = forloop.index %}
           {% assign qnum = qnumber | prepend: '0' %}
           {% if qnumber > 9 %}{% assign qnum = qnumber %}{% endif %}
+          {% assign passover=count | default: cfg.prompt | default: 'hjuh' %}
+
 
           {%- comment -%} A terminal is rendered only if at least one command/output is nonempty. {%- endcomment -%}
           {% assign has_terminal_content = false %}
