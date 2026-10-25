@@ -83,7 +83,7 @@
  
           <article class="writeup-content-card writeup-card" id="q{{ qnumber }}" {% if card.card_title and card.card_title != '' %} data-toc-title=" {{ card.card_title | upcase | escape }}"{% endif %}>
             <div class="writeup-content-card-top writeup-card-top">
-              <span class="section-kicker"><span>//</span>{% if card.card_title and card.card_title != '' %} {{ card.card_title | upcase | escape }}{% endif %}</span>
+             {% if card.card_title and card.card_title != '' %} <span class="section-kicker"><span>//</span> {{ card.card_title | upcase | escape }}</span> {% endif %}
              {% if card.card_title2 and card.card_title2 != '' %}
                 <span class="difficulty-chip">{{ card.card_title2 | escape }}</span>
               {% endif %}
