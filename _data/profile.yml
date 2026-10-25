@@ -110,7 +110,7 @@ projects:
     description: "This is project test 1's description"
     icon: "/assets/images/writeups/mangobleed/mangobleed.png"
     draft: false
-    date: "2025-10-10 04:10:10 -04:00"  
+    date: 2025-10-10 04:10:10 -04:00
 
 
 
