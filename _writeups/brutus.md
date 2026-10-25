@@ -78,6 +78,8 @@ cards:
     terminal_title: "utmp.py"
     terminal_code1: "py utmp.py wtmp -o parsed.csv"
     terminal_code2: "timelineexplorer.exe parsed.csv"
+    prompt2: "test12"
+    prompt1: "test231"
 
   card4:
     card_title: "question 04"
@@ -141,6 +143,6 @@ cards:
 
 #stuff
 configure:
-  prompt: "/home/ningen/brutus>"
+  prompt: "/brutus>"
 ---
 {% include writeup-data.html %}
