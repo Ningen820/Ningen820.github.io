@@ -70,6 +70,7 @@ cards:
 
   card3:
     card_title: "question 03"
+    prompt2: "t>"
     question: "What is the UTC timestamp when the attacker logged in manually to the server and established a terminal session to carry out their objectives?"
     answer: "2024-03-06 06:32:45"
     explanation: |
@@ -85,7 +86,6 @@ cards:
     explanation: |
                  If we go back to question 2 and look at the script block area, we will see the timestamp of when the attacker manually logged in as root (the second output). It is not the first because the first output was part of the brute force attack. To find the answer for this, we need to `cat` the auth.log and filter the exact timestamp the user logged in as root and then look at the session ID given.
     terminal_title: "Attacker Session ID"
-    prompt: "testing>"
     terminal_code1: "cat auth.log|grep 06:32:44"
     terminal_output1: |-
       [Mar 6 06:32:44]: Accepted password for root from 65.2.161.68
