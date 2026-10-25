@@ -22,16 +22,16 @@ stats:
   years_experience: 2+
 
 show:
-  stats: "x"
-  about: "x"
-  skills: "x"
+  stats: ""
+  about: ""
+  skills: ""
   experiences: ""
   highlights: ""
   achievements: ""
   certifications: ""
-  projects: "x"
+  projects: ""
   writeups: "x"
-  contacts: "x"
+  contacts: ""
 
 about:
   heading: Blue Team & Threat Hunting
