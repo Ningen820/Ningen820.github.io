@@ -68,14 +68,14 @@ experience: {}
 
 
 
-experience_highlights:
-- label: Vulnerability disclosure
-  value: 2 CVE publisher
-  description: Author of 2 CVEs.
-- label: defensive competiiton
-  value: HTB and CTF
-  description: Competition placements across regional events.
-research_note: vulnerability analysis
+experience_highlights: []
+# - label: Vulnerability disclosure
+#   value: 2 CVE publisher
+#   description: Author of 2 CVEs.
+# - label: defensive competiiton
+#   value: HTB and CTF
+#   description: Competition placements across regional events.
+# research_note: vulnerability analysis
 
 
 
@@ -102,22 +102,22 @@ certifications: {}
   #   key: 'no'
 
     
-projects: []
-  # - title: "TESTING"
-  #   url: "https://github.com"
-  #   redirect: "github.com"
-  #   goto: "Open on Github"
-  #   description: "This is project test 1's description"
-  #   icon: "/assets/images/writeups/mangobleed/mangobleed.png"
-  #   draft: false
-  #   date: "2025-10-10 04:10:10 -04:00"  
+projects:
+  - title: "TESTING"
+    url: "https://github.com"
+    redirect: "github.com"
+    goto: "Open on Github"
+    description: "This is project test 1's description"
+    icon: "/assets/images/writeups/mangobleed/mangobleed.png"
+    draft: false
+    date: "2025-10-10 04:10:10 -04:00"  
 
 
 
 
 repo_url: "https://github.com/Ningen820/Ningen820.github.io"
 github_url: "https://github.com/Ningen820"
-cv_path: /assets/ningen820-cv.md
+cv_path: ""
 socials:
 - name: GitHub
   label: github.com/Ningen820
