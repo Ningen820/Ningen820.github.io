@@ -39,6 +39,8 @@ title: "Home — Ningen820"
   {% endif %}
 </section>
 
+<!-- about -->
+{% if p.show.about!="" %}
 <section class="content-section section-wrap" id="about">
   <div class="section-heading"><p class="section-kicker"><span>//</span> WHOAMI</p><h2>About <span class="accent">me</span></h2><p class="section-intro">Curiosity-driven security work, from understanding how systems fail to helping make them stronger.</p></div>
   <div class="about-grid">
@@ -60,6 +62,7 @@ title: "Home — Ningen820"
     </div>
   </div>
 </section>
+{% endif %}
 
 <!-- skills -->
 {% if p.show.skills!="" %}
