@@ -72,6 +72,7 @@ cards:
                  If we open the Timeline explorer app with our .csv file loaded and filter for the name of the file, then scroll to the $created0x30 timeline section to find the answer.
 
   card5:
+    card_title: "question 05"
     question: "Finding the hex offset of an mft record is beneficial in many investigative scenarios. find the hex offset of the stager file from question 3."
     answer: "16E3000"
     explanation: |
