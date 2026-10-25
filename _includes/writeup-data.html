@@ -62,6 +62,7 @@
       <h2>{{ page.questions_heading | default: 'Questions' | escape }}</h2>
       <div class="writeup-content-grid writeup-card-grid">
         {% for card_entry in page.cards %}
+          {% assign passover=count | default: cfg.prompt | default: '>' %}
           {% assign card = card_entry[1] %}
           {% assign qnumber = forloop.index %}
           {% assign qnum = qnumber | prepend: '0' %}
@@ -120,7 +121,7 @@
                   </div>
                 </div>
                 <div class="terminal-window-body">
-                  {% assign count = cfg.prompt | default: '>' %}
+                  {% assign count = passover %}
                   {% for terminal_index in (1..10) %}
                     {% assign code_key = 'terminal_code' | append: terminal_index %}
                     {% assign prompt_key = 'prompt' | append: terminal_index %}
