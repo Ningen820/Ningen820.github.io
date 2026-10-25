@@ -70,7 +70,6 @@ cards:
 
   card3:
     card_title: "question 03"
-    prompt2: "t>"
     question: "What is the UTC timestamp when the attacker logged in manually to the server and established a terminal session to carry out their objectives?"
     answer: "2024-03-06 06:32:45"
     explanation: |
