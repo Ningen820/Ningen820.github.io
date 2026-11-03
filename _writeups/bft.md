@@ -6,7 +6,7 @@ category: "DFIR"
 difficulty: "Very Easy"
 platform: "HTB"
 reading_time: 10
-date: "2026-10-20 17:28:23 -04:00"
+date: "2026-10-20 17:28:23 -05:00"
 image: "/assets/images/writeups/bft/bft.png"
 description: "An in-depth investigation of the BFT sherlock from HackTheBox (HTB)"
 
@@ -93,6 +93,13 @@ cards:
                  By looking at the $DATA contents of the file, we can see malicious code being written and also we could see the IP and port. Look at the last image in the Analysis panel.
 
 #stuff
+notes:
+  - |
+    T1566.001 – Spearphishing Attachment: Delivery of a malicious file through an email-based phishing attack.
+  - |  
+    T1204.002 – Malicious File: A victim executes a malicious file disguised as a legitimate invoice.
+  - |  
+    T1059.003 – Windows Command Shell: Execution of malicious commands through a Windows batch file.
 ---
 {% include writeup-data.html %}
 
