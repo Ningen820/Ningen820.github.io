@@ -6,7 +6,7 @@ category: "SOC"
 difficulty: "Very Easy"
 platform: "HTB"
 reading_time: 10
-date: "2026-07-29 00:26:56 -04:00"
+date: "2026-10-25 17:26:56 -04:00"
 image: "/assets/images/writeups/phishnet/phishnet.png"
 description: "An in-depth investigation of the PhishNet sherlock from HackTheBox (HTB)"
 
