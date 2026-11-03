@@ -236,6 +236,11 @@ cards:
                  Based on all this, we are certain that this sherlock is about a phishing email, so if we go to the mitre att&ck webpage and go to the phishing email section (found in the initial access area), we can see a subtechnique about attachment downloads, and next to it is the technique code which is T1566.001 
 
 #stuff
+notes:
+  - |
+    T1566.001 – Spearphishing Attachment: Delivery of a malicious file through an email-based phishing attack.
+  - |
+    T1204.002 – Malicious File: A victim executes a malicious file disguised as a legitimate invoice.
 
 #stuff
 configure:
