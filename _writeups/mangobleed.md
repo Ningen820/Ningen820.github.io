@@ -6,7 +6,7 @@ category: "DFIR"
 difficulty: "Very Easy"
 platform: "HTB"
 reading_time: 15
-date: "2026-11-01 19:55:23 -05:00"
+date: "2026-11-01 19:56:48 -05:00"
 image: "/assets/images/writeups/mangobleed/mangobleed.png"
 descrption: "An in-depth investigation of the MangoBleed sherlock from HackTheBox (HTB)"
 
