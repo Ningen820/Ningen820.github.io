@@ -133,9 +133,9 @@ cards:
 #stuff
 notes:
   - |
-    MITRE ATT&CK T1110.001 — Password-Guessing Brute Force
+    T1110.001 – Password Guessing: An attacker uses automated tools to brute-force different password combinations to gain access to a target account.
   - |
-    cve-2025-14847 — Mongobleed Vulnerability
+    CVE-2025-14847 – MongoBleed: A vulnerability in MongoDB that allows attackers to access sensitive memory data
 
 #stuff
 configure:
