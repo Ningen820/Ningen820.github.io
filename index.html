@@ -12,10 +12,12 @@ title: "Home — Ningen820"
       <h1 class="hero-title">{{ p.name | escape }}</h1>
       <p class="hero-role">{{ p.hero_specialty | escape }}</p>
       <p class="hero-summary">{{ p.summary | escape }}</p>
+      {% if p.show.cv!="" %}
       <div class="hero-actions">
         &nbsp;&nbsp;<a class="button button-primary" href="{{ p.cv_path | relative_url }}" download><span aria-hidden="true">↓</span> Download CV</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button button-outline" href="#contacts"><span aria-hidden="true">✉</span> Get in touch</a>
       </div>
+      {% endif %}
     </div>
     <div class="hero-aside" aria-label="Profile summary">
       <div class="hero-aside-top"><span class="terminal-led"></span><span class="terminal-led"></span><span class="terminal-led"></span><span class="terminal-label">profile.status</span><span class="terminal-live">LIVE</span></div>
