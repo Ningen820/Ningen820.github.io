@@ -98,7 +98,11 @@ notes:
   - |
     Sysmon Event ID 11: File Created. Includes the process creating the file, the file being created, and its full path.
   - |
-    Sysmon Event ID 22: DNS Query. Includes the process querying the domain, the target domain name, and the IP addresses they resolve to.
+    Sysmon Event ID 22: DNS Query. Includes the process querying the domain, target domain name, and the IP addresses it resolves to.
+  - |
+    T1070.006 – Timestomp: An attacker changes file timestamps to make malicious files appear older and avoid detection.
+  - |
+    T1053.005 – Scheduled Task: An attacker uses Windows scheduled tasks to maintain persistence or execute malicious programs.
 
 ---
 {% include writeup-data.html %}
