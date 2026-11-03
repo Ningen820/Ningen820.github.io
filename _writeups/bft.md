@@ -6,7 +6,7 @@ category: "DFIR"
 difficulty: "Very Easy"
 platform: "HTB"
 reading_time: 10
-date: "2026-10-20 17:28:23 -05:00"
+date: "2026-10-20 17:28:23 -04:00"
 image: "/assets/images/writeups/bft/bft.png"
 description: "An in-depth investigation of the BFT sherlock from HackTheBox (HTB)"
 
