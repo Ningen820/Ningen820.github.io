@@ -240,7 +240,7 @@
       });
       const mode = sort.value;
       visible.sort((a, b) => {
-        if (mode === 'title') return norm(a.dataset.title).localeCompare(norm(b.dataset.title), undefined, { sensitivity: 'base' });
+        if (mode === 'names') return norm(a.dataset.title).localeCompare(norm(b.dataset.title), undefined, { sensitivity: 'base' });
         if (mode === 'difficulty') return difficultyRank(a.dataset.difficulty) - difficultyRank(b.dataset.difficulty) || norm(a.dataset.title).localeCompare(norm(b.dataset.title));
         if (mode === 'date') return (Date.parse(b.dataset.date || '') || -Infinity) - (Date.parse(a.dataset.date || '') || -Infinity) || norm(a.dataset.title).localeCompare(norm(b.dataset.title));
         return (Number(b.dataset.readTime) || 0) - (Number(a.dataset.readTime) || 0) || norm(a.dataset.title).localeCompare(norm(b.dataset.title));
