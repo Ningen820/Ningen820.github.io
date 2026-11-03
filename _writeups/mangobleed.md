@@ -6,7 +6,7 @@ category: "DFIR"
 difficulty: "Very Easy"
 platform: "HTB"
 reading_time: 12
-date: "2026-11-02 20:05:18 -05:00"
+date: "2026-11-02 20:12:18 -05:00"
 image: "/assets/images/writeups/mangobleed/mangobleed.png"
 descrption: "An in-depth investigation of the MangoBleed sherlock from HackTheBox (HTB)"
 
@@ -133,9 +133,9 @@ cards:
 #stuff
 notes:
   - |
-    cve-2025-14847
+    MITRE ATT&CK T1110.001 — Password-Guessing Brute Force
   - |
-    T1110.001
+    cve-2025-14847 — Mongobleed Vulnerability
 
 #stuff
 configure:
