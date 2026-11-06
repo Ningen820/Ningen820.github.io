@@ -5,7 +5,7 @@ name: "Smoke and Mirrors"
 category: "DFIR"
 difficulty: "Very Easy"
 platform: "HTB"
-reading_time: 10
+reading_time: 5
 date: "2026-11-06 00:03:10 -05:00"
 image: "/assets/images/writeups/smokeandmirrors/smokeandmirrors.png"
 descrption: "An in-depth investigation of the Smoke And Mirrors sherlock from HackTheBox (HTB)"
