@@ -1,7 +1,7 @@
 ---
 layout: writeup
 title: "Smoke and Mirrors — HTB Sherlock Writeup"
-name: "Smoke And Mirrors"
+name: "Smoke and Mirrors"
 category: "DFIR"
 difficulty: "Very Easy"
 platform: "HTB"
@@ -20,8 +20,6 @@ overview:
     We are given 3 artifacts and one of them contains powershell commands and scripts ran, and since this sherlock is about disabling or manipulating security controls I decided to focus mostly on the powershell logs to see contents of code ran.
   - |
     When looking through the powershell scripts, I was looking for key words such as disable, defender, protection, etc. I came across multiple code blocks that seemed malicious such as "MpCmdRun.exe -RemoveDefinitions -All" and Set-MpPreference -DisableIOAVProtection $true -DisableEmailScanning $true -DisableBlockAtFirstSeen $true". I also saw the attacker attemptint to delete history. 
-  - |
-    Text
 
 #stuff
 side_notes:
