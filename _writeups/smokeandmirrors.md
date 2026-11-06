@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: "Smoke And Mirrors — HTB Sherlock Writeup"
+title: "Smoke and Mirrors — HTB Sherlock Writeup"
 name: "Smoke And Mirrors"
 category: "DFIR"
 difficulty: "Very Easy"
