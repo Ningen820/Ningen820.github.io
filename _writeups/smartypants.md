@@ -6,7 +6,7 @@ category: "DFIR"
 difficulty: "Very Easy"
 platform: "HTB"
 reading_time: 10
-date: "2026-11-08 16:52:49 -05:00"
+date: "2026-11-08 16:54:28 -05:00"
 image: "/assets/images/writeups/smartypants/smartypants.png"
 descrption: "An in-depth investigation of the Smarty Pants sherlock from HackTheBox (HTB)"
 
