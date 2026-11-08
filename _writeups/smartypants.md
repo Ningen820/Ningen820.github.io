@@ -6,7 +6,7 @@ category: "DFIR"
 difficulty: "Very Easy"
 platform: "HTB"
 reading_time: 10
-date: "2026-11-08 16:50:27 -05:00"
+date: "2026-11-08 16:52:49 -05:00"
 image: "/assets/images/writeups/smartypants/smartypants.png"
 descrption: "An in-depth investigation of the Smarty Pants sherlock from HackTheBox (HTB)"
 
@@ -111,7 +111,7 @@ notes:
   - |
     Windows System Event ID 104: System Log Cleared. Indicates that the Windows System event log was cleared.
   - |
-    RDP RemoteConnectionManager Event ID 1149: Remote Desktop Authentication Succeeded. Includes the authenticated username, domain, and source network address.
+    RDP RemoteConnectionManager Event ID 1149: Remote Desktop Authentication Succeeded. Typically contains the authenticated username, domain, and source network address.
   - |
     T1021.001 – Remote Desktop Protocol: An attacker uses RDP to remotely access a compromised Windows machine.
   - |
