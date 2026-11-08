@@ -1,7 +1,7 @@
 ---
 layout: writeup
-title: "SmartyPants — HTB Sherlock Writeup"
-name: "SmartyPants"
+title: "Smarty Pants — HTB Sherlock Writeup"
+name: "Smarty Pants"
 category: "DFIR"
 difficulty: "Very Easy"
 platform: "HTB"
