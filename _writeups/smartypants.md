@@ -107,7 +107,7 @@ cards:
 #stuff
 notes:
   - |
-    - Windows Security Event ID 1102: Audit Log Cleared. Indicates that the Windows Security event log was cleared.
+    Windows Security Event ID 1102: Audit Log Cleared. Indicates that the Windows Security event log was cleared.
   - |
     Windows System Event ID 104: System Log Cleared. Indicates that the Windows System event log was cleared.
   - |
