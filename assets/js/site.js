@@ -252,7 +252,7 @@
     };
     [search, category, difficulty, platform, os, sort].forEach((control) => control.addEventListener(control === search ? 'input' : 'change', apply));
     clear.addEventListener('click', () => {
-      search.value = ''; category.value = ''; difficulty.value = ''; platform.value = ''; os.value = ''; sort.value = 'reading_time'; apply(); search.focus();
+      search.value = ''; category.value = ''; difficulty.value = ''; platform.value = ''; os.value = ''; sort.value = 'names'; apply(); search.focus();
     });
     apply();
   }
