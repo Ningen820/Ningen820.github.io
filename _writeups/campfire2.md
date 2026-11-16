@@ -5,7 +5,7 @@ name: "Campfire-2"
 category: "DFIR"
 difficulty: "Very Easy"
 platform: "HTB"
-reading_time: 10
+reading_time: 5
 date: "2026-11-15 23:30:43 -05:00"
 image: "/assets/images/writeups/campfire2/campfire2.png"
 descrption: "An in-depth investigation of the Campfire-2 sherlock from HackTheBox (HTB)"
