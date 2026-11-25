@@ -25,9 +25,9 @@ show:
   about: ""
   skills: ""
   experiences: ""
-  highlights: ""
-  achievements: ""
-  certifications: ""
+  highlights: "x"
+  achievements: "x"
+  certifications: "x"
   projects: ""
   writeups: "x"
   contacts: ""
@@ -67,14 +67,14 @@ experience: {}
 
 
 
-experience_highlights: []
-# - label: Vulnerability disclosure
-#   value: 2 CVE publisher
-#   description: Author of 2 CVEs.
-# - label: defensive competiiton
-#   value: HTB and CTF
-#   description: Competition placements across regional events.
-# research_note: vulnerability analysis
+experience_highlights:
+- label: HTB Global Ranking
+  value: "#1"
+  description: "Ranked #1 in the global leaderboard in Hack The Box."
+- label: THM Global Ranking
+  value: "#5"
+  description: "Ranked #5 in the global leaderboard in Hack The Box."
+research_note: yghui yhj yhj yhjk,l hj
 
 
 
