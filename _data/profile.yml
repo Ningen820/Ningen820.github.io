@@ -21,16 +21,16 @@ stats:
 
 show:
   cv: ""
-  stats: ""
-  about: ""
-  skills: ""
-  experiences: ""
+  stats: "x"
+  about: "x"
+  skills: "x"
+  experiences: "x"
   highlights: "x"
   achievements: "x"
   certifications: "x"
-  projects: ""
+  projects: "x"
   writeups: "x"
-  contacts: ""
+  contacts: "x"
 
 about:
   heading: Blue Team & Threat Hunting
@@ -58,12 +58,17 @@ skills:
 
 
 
-experience: {}
-# - role: Intern
-#   company: XXXX
-#   date: Aug 2023 - Nov 2023
-#   description: Application security.
-#   url: ""
+experience:
+- role: Intern
+  company: XXXX
+  date: Aug 2023 - Nov 2023
+  description: Application security.
+  url: ""
+- role: Intern3
+  company: XXXX
+  date: Aug 2025 - Aug 2026
+  description: Application defense.
+  url: ""
 
 
 
@@ -107,7 +112,7 @@ certifications:
     date: November 2026
     image: /assets/images/random_images/introtonetworkinghtb.png
     url: "https://academy.hackthebox.com/achievement/badge/f937a8d8-e86d-11f1-8591-0affe7dfeb45"
-    key: 'yes'
+    key: 'ye'
   certificate2:
     name: "Javascript Deobfuscation"
     issuer: "HackTheBox"
@@ -131,7 +136,7 @@ projects:
     redirect: "github.com"
     goto: "Open on Github"
     description: "This is project test 1's description"
-    icon: "/assets/images/writeups/mangobleed/mangobleed.png"
+    icon: "/assets/images/writeups/brutus/brutus.png"
     draft: false
     date: 2025-10-10 04:10:10 +0000
 
