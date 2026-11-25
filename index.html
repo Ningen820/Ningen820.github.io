@@ -128,7 +128,7 @@ title: "Home — Ningen820"
     {% assign item_url = item.url | default: "" | strip %}
     {% if item_url == "" %}
     <article class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}">
-      <div class="achievement-trophy"{% if item.image != blank %} style="background:transparent; border:none; box-shadow:none; width:100%; height:auto; padding:0;"{% endif %}>{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" style="width:100%; height:200px; max-width:220px; object-fit:contain; background:transparent; border:none; box-shadow:none; border-radius:0;" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
+      <div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" style="width:100%; height:200px; max-width:220px; object-fit:contain; background:transparent; border:none; box-shadow:none; border-radius:0;" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
     </article>
     {% else %}
     <a href="{{ item_url | escape }}" class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">
