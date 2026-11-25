@@ -26,8 +26,8 @@ show:
   skills: ""
   experiences: ""
   highlights: ""
-  achievements: ""
-  certifications: ""
+  achievements: "x"
+  certifications: "x"
   projects: ""
   writeups: "x"
   contacts: ""
@@ -79,27 +79,34 @@ experience_highlights: []
 
 
 achievements: {}
-  # achievement1:
-  #   place: 1st Place
-  #   title: Global Ranking
-  #   detail: text
-  #   rank: 1
-  #   image: ""
-  #   emoji: ""
-  #   url: ""
-  #   key: 'no'
+  achievement1:
+    place: ""
+    title: Web Requests (HTB)
+    detail: Handling web requests (GET, POST, etc.)
+    rank: 1
+    image: "/assets/images/random_images/webrequestshtb.png"
+    emoji: ""
+    url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
+    key: 'no'
 
 
-certifications: {}
-  # certificate1:
-  #   name: ""
-  #   issuer: ""
-  #   credential: ''
-  #   date: September 2026
-  #   image: /assets/images/random_images/certificate1.png
-  #   url: ""
-  #   key: 'no'
-
+certifications:
+  certificate1:
+    name: "Networking"
+    issuer: "HackTheBox"
+    credential: ''
+    date: November 2026
+    image: /assets/images/random_images/introtonetworkinghtb.png
+    url: "https://academy.hackthebox.com/achievement/badge/f937a8d8-e86d-11f1-8591-0affe7dfeb45"
+    key: 'yes'
+  certificate2:
+    name: "Javascript Deobfuscation"
+    issuer: "HackTheBox"
+    credential: ''
+    date: November 2026
+    image: /assets/images/random_images/javascriptdeobfuscationhtb.png
+    url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
+    key: 'no'
     
 projects:
   - title: "TESTING"
