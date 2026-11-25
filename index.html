@@ -127,11 +127,11 @@ title: "Home — Ningen820"
     {% assign item_url = item.url | default: "" | strip %}
     {% if item_url == "" %}
     <article class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}">
-      <div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
+      <div class="achievement-trophy{% if item.image != blank %} has-image{% endif %}">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
     </article>
     {% else %}
     <a href="{{ item_url | escape }}" class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">
-      <div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
+      <div class="achievement-trophy{% if item.image != blank %} has-image{% endif %}">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
     </a>
     {% endif %}
     {% endfor %}
@@ -149,11 +149,11 @@ title: "Home — Ningen820"
     {% assign cert_url = cert.url | default: "" | strip %}
     {% if cert_url == "" %}
     <article class="cert-card spotlight{% if cert.key == 'yes' %} is-featured{% endif %}">
-      <div class="cert-icon">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}
+      <div class="achievement-trophy{% if cert.image != blank %} has-image{% endif %}">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}
     </article>
     {% else %}
     <a href="{{ cert_url | escape }}" class="cert-card spotlight{% if cert.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">
-      <div class="cert-icon">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}
+      <div class="achievement-trophy{% if cert.image != blank %} has-image{% endif %}">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}
     </a>
     {% endif %}
     {% endfor %}
