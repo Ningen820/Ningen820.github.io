@@ -117,6 +117,7 @@ title: "Home — Ningen820"
 </section>
 {% endif %}
 
+
 <!-- achievements -->
 {% if p.show.achievements!="" %}
 <section class="content-section section-wrap section-tinted" id="achievements">
@@ -127,7 +128,7 @@ title: "Home — Ningen820"
     {% assign item_url = item.url | default: "" | strip %}
     {% if item_url == "" %}
     <article class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}">
-      {% if item.image == blank %}<div class="achievement-trophy">{% else %}<div class="achievement-trophy" style="background: transparent; border: none; box-shadow: none;">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
+      {% if item.image == blank %}<div class="achievement-trophy"><span style="font-size:1.8em; line-height:1;">{{ item.emoji }}</span></div>{% else %}<div class="achievement-trophy" style="background: transparent; border: none; box-shadow: none;"><img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'"></div>{% endif %}<div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
     </article>
     {% else %}
     <a href="{{ item_url | escape }}" class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">
@@ -138,6 +139,7 @@ title: "Home — Ningen820"
   </div>
 </section>
 {% endif %}
+
 
 <!-- certifications -->
 {% if p.show.certifications!="" %}
