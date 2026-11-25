@@ -78,7 +78,7 @@ experience_highlights: []
 
 
 
-achievements: {}
+achievements:
   achievement1:
     place: ""
     title: Web Requests (HTB)
