@@ -83,7 +83,7 @@ achievements:
     place: ""
     title: Web Requests (HTB)
     detail: Handling web requests (GET, POST, etc.)
-    rank: 2
+    rank: 1
     image: "/assets/images/random_images/webrequestshtb.png"
     emoji: ""
     url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
