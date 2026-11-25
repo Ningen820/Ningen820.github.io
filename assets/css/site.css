@@ -178,7 +178,7 @@ button { color: inherit; }
 .research-metrics span { margin-top: 9px; color: var(--muted); font-size: 11px; }
 .cert-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
 .cert-card { display: flex; flex-direction: column; align-items: center; min-height: 210px; padding: 25px 18px 22px; border: 1px solid var(--line); border-radius: 13px; background: rgba(23, 29, 46, .83); text-align: center; transition: transform .25s ease, border-color .25s ease; }
-.cert-icon { display: grid; place-items: center; overflow: hidden; width: 58px; height: 58px; margin-bottom: 17px; border: 1px solid rgba(0, 217, 245, .44); border-radius: 50%; background: rgba(0, 217, 245, .09); }
+.cert-icon { display: grid; place-items: center; overflow: hidden; width: 80px; height: 80px; margin-bottom: 17px; border: 1px solid rgba(0, 217, 245, .44); border-radius: 50%; background: rgba(0, 217, 245, .09); }
 .cert-icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .is-featured { border-color: rgba(0, 245, 160, .7) !important; box-shadow: 0 14px 38px rgba(0, 245, 160, .045); }
 .cert-card h3 { margin: 0; font-size: 15px; }
