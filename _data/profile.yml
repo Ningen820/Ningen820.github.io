@@ -53,7 +53,7 @@ skills:
     - KAPE
     - Hayabusa
     - Log Correlation
-    image: ""
+    image: "/assets/images/writeups/mangobleed/mangobleed.png"
     key: 'yes'
 
 
@@ -63,7 +63,7 @@ experience:
   company: XXXX
   date: Aug 2023 - Nov 2023
   description: Application security.
-  url: ""
+  url: "https://youtube.com"
 - role: Intern3
   company: XXXX
   date: Aug 2025 - Aug 2026
