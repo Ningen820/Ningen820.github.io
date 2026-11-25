@@ -83,9 +83,18 @@ achievements:
     place: ""
     title: Web Requests (HTB)
     detail: Handling web requests (GET, POST, etc.)
-    rank: 1
+    rank: 2
     image: "/assets/images/random_images/webrequestshtb.png"
     emoji: ""
+    url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
+    key: 'no'
+  achievement2:
+    place: ""
+    title: wder edrs (HTB)
+    detail: Hand web reests (GET
+    rank: 1
+    image: ""
+    emoji: "🏆"
     url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
     key: 'no'
 
@@ -105,6 +114,14 @@ certifications:
     credential: ''
     date: November 2026
     image: /assets/images/random_images/javascriptdeobfuscationhtb.png
+    url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
+    key: 'no'
+  certificate3:
+    name: "Javat Deobfusc"
+    issuer: "HackTheBox"
+    credential: ''
+    date: November 2026
+    image: ""
     url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
     key: 'no'
     
