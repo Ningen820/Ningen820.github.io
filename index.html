@@ -34,9 +34,10 @@ title: "Home — Ningen820"
   </div>
   {% if p.show.stats!="" %}
   <div class="stats-bar section-wrap" aria-label="sum">
-    <div class="stat-item"><strong>{{ p.achievements.size | escape }}</strong><span>Total Achievements</span></div>
     <div class="stat-item"><strong>{{ p.stats.years_experience | escape }}</strong><span>Years Experience</span></div>
     <div class="stat-item"><strong>{{ p.certifications.size | escape }}</strong><span>Certificates</span></div>
+    <div class="stat-item"><strong>{{ p.achievements.size | escape }}</strong><span>Total Achievements</span></div>
+    <div class="stat-item"><strong>{{ p.projects.size | escape }}</strong><span>Projects Published</span></div>
   </div>
   {% endif %}
 </section>
