@@ -117,22 +117,22 @@ title: "Home — Ningen820"
 </section>
 {% endif %}
 
-
 <!-- achievements -->
 {% if p.show.achievements!="" %}
 <section class="content-section section-wrap section-tinted" id="achievements">
-  <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2><span class="accent">Achievements</span></h2><p class="section-intro">My achievements across multiple cybersecurity-related platforms.</p></div>
+  <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2><span class="accent">Achievements</span></h2><p class="section-intro">My achievements across multiple cybersecurity-related platoforms.</p></div>
   <div class="achievements-grid">
     {% assign achievement_entries = p.achievements | sort %}
     {% for achievement_entry in achievement_entries %}{% assign item = achievement_entry[1] %}
     {% assign item_url = item.url | default: "" | strip %}
     {% if item_url == "" %}
     <article class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}">
-    <div class="achievement-trophy{% if item.image != blank %} has-image{% endif %}" style="{% if item.image != blank %}background:transparent; border:none; box-shadow:none; width:100%; height:auto; padding:0;{% endif %}">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" style="width:100%; height:200px; object-fit:contain; background:transparent; border:none; box-shadow:none; border-radius:0;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span style="display:none; font-size:1.8em; line-height:1;">{{ item.emoji | default: "🏆" }}</span>{% else %}<span style="font-size:1.8em; line-height:1;">{{ item.emoji | default: "🏆" }}</span>{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
+      <div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
     </article>
     {% else %}
     <a href="{{ item_url | escape }}" class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">
-    <div class="achievement-trophy{% if item.image != blank %} has-image{% endif %}" style="{% if item.image != blank %}background:transparent; border:none; box-shadow:none; width:100%; height:auto; padding:0;{% endif %}">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" style="width:100%; height:200px; object-fit:contain; background:transparent; border:none; box-shadow:none; border-radius:0;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span style="display:none; font-size:1.8em; line-height:1;">{{ item.emoji | default: "🏆" }}</span>{% else %}<span style="font-size:1.8em; line-height:1;">{{ item.emoji | default: "🏆" }}</span>{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div></a>
+      <div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
+    </a>
     {% endif %}
     {% endfor %}
   </div>
@@ -149,11 +149,11 @@ title: "Home — Ningen820"
     {% assign cert_url = cert.url | default: "" | strip %}
     {% if cert_url == "" %}
     <article class="cert-card spotlight{% if cert.key == 'yes' %} is-featured{% endif %}">
-      <div class="achievement-trophy{% if cert.image != blank %} has-image{% endif %}" style="{% if cert.image != blank %}background:transparent; border:none; box-shadow:none; width:100%; height:auto; padding:0;{% endif %}">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" style="width:100%; height:200px; object-fit:contain; background:transparent; border:none; box-shadow:none; border-radius:0;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span style="display:none; font-size:1.8em; line-height:1;">{{ cert.emoji | default: "🏆" }}</span>{% else %}<span style="font-size:1.8em; line-height:1;">{{ cert.emoji | default: "🏆" }}</span>{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}
+      <div class="cert-icon">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}
     </article>
     {% else %}
     <a href="{{ cert_url | escape }}" class="cert-card spotlight{% if cert.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">
-      <div class="achievement-trophy{% if cert.image != blank %} has-image{% endif %}" style="{% if cert.image != blank %}background:transparent; border:none; box-shadow:none; width:100%; height:auto; padding:0;{% endif %}">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" style="width:100%; height:200px; object-fit:contain; background:transparent; border:none; box-shadow:none; border-radius:0;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span style="display:none; font-size:1.8em; line-height:1;">{{ cert.emoji | default: "🏆" }}</span>{% else %}<span style="font-size:1.8em; line-height:1;">{{ cert.emoji | default: "🏆" }}</span>{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}
+      <div class="cert-icon">{% if cert.image != blank %}<img src="{{ cert.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ cert.name | escape }}</h3><p class="cert-issuer">{{ cert.issuer | escape }}{% if cert.credential != blank %} <span>·</span> {{ cert.credential | escape }}{% endif %}</p>{% if cert.date != blank %}<p class="cert-date">{{ cert.date | escape }}</p>{% endif %}
     </a>
     {% endif %}
     {% endfor %}
