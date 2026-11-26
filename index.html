@@ -115,7 +115,7 @@ title: "Home — Ningen820"
     <div class="leaderboard-header"><div><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2>Rankings & Recognition</h2><p>{{ p.highlights_note | escape }}</p></div><span class="leaderboard-count">TOP 3 RANKINGS</span></div>
     <div class="leaderboard-grid">
       {% for item in p.highlights limit:3 %}
-      <article class="leaderboard-card {% if forloop.first %}featured{% endif %}">
+      <article class="leaderboard-card">
         <div class="leaderboard-card-top"><span class="rank-label">RANK</span><span class="rank-number">{{ item.value | escape }}</span></div>
         <div class="leaderboard-card-content"><h3>{{ item.label | escape }}</h3><p>{{ item.description | escape }}</p></div>
         <div class="leaderboard-card-footer"><span class="rank-indicator"></span><span>Platform Ranking</span></div>
