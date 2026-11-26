@@ -21,16 +21,15 @@ stats:
 
 show:
   cv: ""
-  stats: "x"
-  about: "x"
-  skills: "x"
-  experiences: "x"
-  highlights: "x"
+  about: ""
+  skills: ""
+  experiences: ""
+  highlights: ""
   achievements: "x"
-  certifications: "x"
-  projects: "x"
+  certifications: ""
+  projects: ""
   writeups: "x"
-  contacts: "x"
+  contacts: ""
 
 about:
   heading: Blue Team & Threat Hunting
@@ -53,92 +52,73 @@ skills:
     - KAPE
     - Hayabusa
     - Log Correlation
-    image: "/assets/images/writeups/mangobleed/mangobleed.png"
+    image: ""
     key: 'yes'
 
 
 
-experience:
-- role: Intern
-  company: XXXX
-  date: Aug 2023 - Nov 2023
-  description: Application security.
-  url: "https://youtube.com"
-- role: Intern3
-  company: XXXX
-  date: Aug 2025 - Aug 2026
-  description: Application defense.
-  url: ""
+experience: []
+# - role: XXXX
+#   company: XXXX
+#   date: Aug 2023 - Nov 2023
+#   description: XXXXX
+#   url: ""
 
 
 
-highlights:
-- label: HTB Global Leaderboard
-  value: "#1"
-  description: "Ranked #1 in the all-time leaderboard in Hack The Box."
-- label: THM Monthly Leaderboard
-  value: "#3"
-  description: "Ranked #3 in the monthly leaderboard in Hack The Box."
-- label: LetsDefend Global Ranking
-  value: "#5"
-  description: "Ranked #5 in the global leaderboard in Hack The Box."
+highlights: []
+# - label: HTB Global Leaderboard
+#   value: "#"
+#   description: ""
 highlights_note: My top rankings across competitions and leaderboards.
 
 
 achievements:
   achievement1:
     name: "Networking"
-    issuer: "HackTheBox"
+    issuer: "HackTheBox Academy"
     credential: ''
     date: November 2026
     image: /assets/images/random_images/introtonetworkinghtb.png
     url: "https://academy.hackthebox.com/achievement/badge/f937a8d8-e86d-11f1-8591-0affe7dfeb45"
-    key: 'ye'
+    key: 'no'
   achievement2:
     name: "Web Requests"
-    issuer: "HackTheBox"
+    issuer: "HackTheBox Academy"
     credential: ''
     date: November 2026
     image: /assets/images/random_images/webrequestshtb.png
-    url: "https://academy.hackthebox.com/achievement/badge/f937a8d8-e86d-11f1-8591-0affe7dfeb45"
-    key: 'ye'
-
-
-certifications:
-  certificate1:
-    name: "Networking"
-    issuer: "HackTheBox"
-    credential: ''
-    date: November 2026
-    image: /assets/images/random_images/introtonetworkinghtb.png
-    url: "https://academy.hackthebox.com/achievement/badge/f937a8d8-e86d-11f1-8591-0affe7dfeb45"
-    key: 'ye'
-  certificate2:
-    name: "Javascript Deobfuscation"
-    issuer: "HackTheBox"
+    url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
+    key: 'no'
+  achievement3:
+    name: "Web Requests"
+    issuer: "HackTheBox Academy"
     credential: ''
     date: November 2026
     image: /assets/images/random_images/javascriptdeobfuscationhtb.png
-    url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
+    url: "https://academy.hackthebox.com/achievement/badge/436cc2c1-e657-11f1-8591-0affe7dfeb45"
     key: 'no'
-  certificate3:
-    name: "Javat Deobfusc"
-    issuer: "HackTheBox"
-    credential: ''
-    date: November 2026
-    image: ""
-    url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
-    key: 'no'
+
+
+certifications: {}
+  # certificate1:
+  #   name: "Networking"
+  #   issuer: "HackTheBox"
+  #   credential: ''
+  #   date: November 2026
+  #   image: /assets/images/random_images/introtonetworkinghtb.png
+  #   url: ""
+  #   key: 'no'
     
-projects:
-  - title: "TESTING"
-    url: "https://github.com"
-    redirect: "github.com"
-    goto: "Open on Github"
-    description: "This is project test 1's description"
-    icon: "/assets/images/writeups/brutus/brutus.png"
-    draft: false
-    date: 2025-10-10 04:10:10 +0000
+projects:  []
+  # - title: "TESTING"
+  #   url: "https://github.com"
+  #   redirect: "github.com"
+  #   goto: "Open on Github"
+  #   description: "This is project test 1's description"
+  #   icon: "/assets/images/writeups/brutus/brutus.png"
+  #   draft: false
+  #   date: 2025-10-10 04:10:10 +0000
 
 
 
