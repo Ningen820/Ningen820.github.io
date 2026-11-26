@@ -109,14 +109,19 @@ title: "Home — Ningen820"
 {% endif %}
 
 <!-- highlights -->
+<!-- highlights -->
 {% if p.show.highlights!="" %}
 <section class="content-section section-wrap" id="highlights">
-  <div class="research-panel spotlight">
-    <div class="research-copy"><p class="section-kicker"><span>//</span> HALL OF FAME</p><p>{{ p.highlights_note | escape }}</p></div>
-    <div class="research-metrics">
-      <div><strong>{{ p.highlights[0].value | escape }}</strong><span>{{ p.highlights[0].label | escape }}</span><span>{{ p.highlights[0].description | escape }}</span></div>
-      <div><strong>{{ p.highlights[1].value | escape }}</strong><span>{{ p.highlights[1].label | escape }}</span><span>{{ p.highlights[0].description | escape }}</span></div>
-      <div><strong>{{ p.highlights[2].value | escape }}</strong><span>{{ p.highlights[2].label | escape }}</span><span>{{ p.highlights[0].description | escape }}</span></div>
+  <div class="leaderboard-section">
+    <div class="leaderboard-header"><div><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2>Rankings & Recognition</h2><p>{{ p.highlights_note | escape }}</p></div><span class="leaderboard-count">TOP 3 RANKINGS</span></div>
+    <div class="leaderboard-grid">
+      {% for item in p.highlights limit:3 %}
+      <article class="leaderboard-card {% if forloop.first %}featured{% endif %}">
+        <div class="leaderboard-card-top"><span class="rank-label">RANK</span><span class="rank-number">{{ item.value | escape }}</span></div>
+        <div class="leaderboard-card-content"><h3>{{ item.label | escape }}</h3><p>{{ item.description | escape }}</p></div>
+        <div class="leaderboard-card-footer"><span class="rank-indicator"></span><span>Platform Ranking</span></div>
+      </article>
+      {% endfor %}
     </div>
   </div>
 </section>
