@@ -113,7 +113,11 @@ title: "Home — Ningen820"
 <section class="content-section section-wrap" id="highlights">
   <div class="research-panel spotlight">
     <div class="research-copy"><p class="section-kicker"><span>//</span> HALL OF FAME</p><p>{{ p.highlights_note | escape }}</p></div>
-    <div class="research-metrics"><div><strong>{{ p.highlights.cves_published | escape }}</strong><span>CVE</span></div><div><strong>{{ p.stats.affected_installs | escape }}</strong><span>Pl</span></div><div><strong>H</strong><span>C</span></div></div>
+    <div class="research-metrics">
+      <div><strong>{{ p.highlights[0].value | escape }}</strong><span>{{ p.highlights[0].label | escape }}</span><span>{{ p.highlights[0].description | escape }}</span></div>
+      <div><strong>{{ p.highlights[1].value | escape }}</strong><span>{{ p.highlights[1].label | escape }}</span><span>{{ p.highlights[0].description | escape }}</span></div>
+      <div><strong>{{ p.highlights[2].value | escape }}</strong><span>{{ p.highlights[2].label | escape }}</span><span>{{ p.highlights[0].description | escape }}</span></div>
+    </div>
   </div>
 </section>
 {% endif %}
@@ -122,18 +126,18 @@ title: "Home — Ningen820"
 <!-- achievements -->
 {% if p.show.achievements!="" %}
 <section class="content-section section-wrap section-tinted" id="achievements">
-  <div class="section-heading"><p class="section-kicker"><span>//</span> HALL OF FAME</p><h2><span class="accent">Achievements</span></h2><p class="section-intro">My achievements across multiple cybersecurity-related platoforms.</p></div>
-  <div class="achievements-grid">
+  <div class="section-heading"><p class="section-kicker"><span>//</span> MILESTONES</p><h2>Achievements</h2><p class="section-intro">My achievements across multiple cybersecurity-related platoforms.</p></div>
+  <div class="cert-grid">
     {% assign achievement_entries = p.achievements | sort %}
-    {% for achievement_entry in achievement_entries %}{% assign item = achievement_entry[1] %}
-    {% assign item_url = item.url | default: "" | strip %}
-    {% if item_url == "" %}
-    <article class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}">
-     <div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
+    {% for achievement_entry in achievement_entries %}{% assign achieve = achievement_entry[1] %}
+    {% assign achieve_url = achieve.url | default: "" | strip %}
+    {% if achieve_url == "" %}
+    <article class="cert-card spotlight{% if achieve.key == 'yes' %} is-featured{% endif %}">
+      <div class="cert-icon">{% if achieve.image != blank %}<img src="{{ achieve.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ achieve.name | escape }}</h3><p class="cert-issuer">{{ achieve.issuer | escape }}{% if achieve.credential != blank %} <span>·</span> {{ achieve.credential | escape }}{% endif %}</p>{% if achieve.date != blank %}<p class="cert-date">{{ achieve.date | escape }}</p>{% endif %}
     </article>
     {% else %}
-    <a href="{{ item_url | escape }}" class="achievement-card spotlight{% if item.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">
-     <div class="achievement-trophy">{% if item.image != blank %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" onerror="this.outerHTML='<span style=\'font-size:1.8em; line-height:1;\'>{{ item.emoji }}</span>'">{% endif %}</div><div class="achievement-copy"><span class="achievement-place place-{{ item.rank }}">{{ item.place | escape }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.detail | escape }}</p></div>
+    <a href="{{ achieve_url | escape }}" class="cert-card spotlight{% if achieve.key == 'yes' %} is-featured{% endif %}" target="_blank" rel="noopener noreferrer">
+      <div class="cert-icon">{% if achieve.image != blank %}<img src="{{ achieve.image | relative_url }}" alt="" loading="lazy" onerror="this.style.display='none'">{% endif %}</div><h3>{{ achieve.name | escape }}</h3><p class="cert-issuer">{{ achieve.issuer | escape }}{% if achieve.credential != blank %} <span>·</span> {{ achieve.credential | escape }}{% endif %}</p>{% if achieve.date != blank %}<p class="cert-date">{{ achieve.date | escape }}</p>{% endif %}
     </a>
     {% endif %}
     {% endfor %}
