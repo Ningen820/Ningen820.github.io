@@ -87,23 +87,21 @@ highlights_note: My top rankings across competitions and leaderboards.
 
 achievements:
   achievement1:
-    place: ""
-    title: Web Requests (HTB)
-    detail: Handling web requests (GET, POST, etc.)
-    rank: 2
-    image: "/assets/images/random_images/webrequestshtb.png"
-    emoji: "🥈"
-    url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
-    key: 'no'
+    name: "Networking"
+    issuer: "HackTheBox"
+    credential: ''
+    date: November 2026
+    image: /assets/images/random_images/introtonetworkinghtb.png
+    url: "https://academy.hackthebox.com/achievement/badge/f937a8d8-e86d-11f1-8591-0affe7dfeb45"
+    key: 'ye'
   achievement2:
-    place: ""
-    title: wder edrs (HTB)
-    detail: Hand web reests (GET
-    rank: 1
-    image: ""
-    emoji: "🏆"
-    url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
-    key: 'no'
+    name: "Web Requests"
+    issuer: "HackTheBox"
+    credential: ''
+    date: November 2026
+    image: /assets/images/random_images/webrequestshtb.png
+    url: "https://academy.hackthebox.com/achievement/badge/f937a8d8-e86d-11f1-8591-0affe7dfeb45"
+    key: 'ye'
 
 
 certifications:
