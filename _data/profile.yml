@@ -91,7 +91,7 @@ achievements:
     url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
     key: 'no'
   achievement3:
-    name: "Web Requests"
+    name: "JavaScript Deobfuscation"
     issuer: "HackTheBox Academy"
     credential: ''
     date: November 2026
