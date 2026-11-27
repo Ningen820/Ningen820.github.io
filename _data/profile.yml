@@ -99,7 +99,7 @@ achievements:
     name: "Windows Fundamentals"
     issuer: "HackTheBox Academy"
     date: November 2026
-    image: /assets/images/achieves/Windowsfundamentalshtb.png
+    image: /assets/images/achieves/windowsfundamentalshtb.png
     url: "https://academy.hackthebox.com/achievement/2998682/49"
     key: 'no'
   achievement5:
