@@ -78,28 +78,35 @@ achievements:
     name: "Networking"
     issuer: "HackTheBox Academy"
     date: November 2026
-    image: /assets/images/random_images/introtonetworkinghtb.png
+    image: /assets/images/achieves/introtonetworkinghtb.png
     url: "https://academy.hackthebox.com/achievement/badge/f937a8d8-e86d-11f1-8591-0affe7dfeb45"
     key: 'no'
   achievement2:
     name: "Web Requests"
     issuer: "HackTheBox Academy"
     date: November 2026
-    image: /assets/images/random_images/webrequestshtb.png
+    image: /assets/images/achieves/webrequestshtb.png
     url: "https://academy.hackthebox.com/achievement/badge/486a3129-e636-11f1-8591-0affe7dfeb45"
     key: 'no'
   achievement3:
     name: "JavaScript Deobfuscation"
     issuer: "HackTheBox Academy"
     date: November 2026
-    image: /assets/images/random_images/javascriptdeobfuscationhtb.png
+    image: /assets/images/achieves/javascriptdeobfuscationhtb.png
     url: "https://academy.hackthebox.com/achievement/badge/436cc2c1-e657-11f1-8591-0affe7dfeb45"
     key: 'no'
   achievement4:
+    name: "Windows Fundamentals"
+    issuer: "HackTheBox Academy"
+    date: November 2026
+    image: /assets/images/achieves/Windowsfundamentalshtb.png
+    url: "https://academy.hackthebox.com/achievement/2998682/49"
+    key: 'no'
+  achievement5:
     name: "Linux Fundamentals"
     issuer: "HackTheBox Academy"
     date: November 2026
-    image: /assets/images/random_images/linuxfundamentalshtb.png
+    image: /assets/images/achieves/linuxfundamentalshtb.png
     url: "https://academy.hackthebox.com/achievement/2998682/18"
     key: 'no'
 
@@ -110,7 +117,7 @@ certifications: {}
   #   issuer: "HackTheBox"
   #   credential: ''
   #   date: November 2026
-  #   image: /assets/images/random_images/introtonetworkinghtb.png
+  #   image: /assets/images/achieves/introtonetworkinghtb.png
   #   url: ""
   #   key: 'no'
     
